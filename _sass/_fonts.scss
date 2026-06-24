@@ -46,3 +46,10 @@
   font-weight: normal;
   src: local('Inter Regular'), url('/assets/fonts/Inter-Regular.woff2') format('woff2');
 }
+
+@font-face {
+  font-family: 'Inter Thin';
+  font-style: normal;
+  font-weight: 100;
+  src: local('Inter Thin'), url('/assets/fonts/InterDisplay-Thin.woff2') format('woff2');
+}

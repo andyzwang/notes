@@ -1,23 +1,26 @@
 $border-radius: 4px;
-$font-body: 'Inter', sans-serif;
-$font-heading: 'Cardo', serif;
-$font-mono: 'IBM Plex Mono', Consolas, monaco, monospace;
+$font-body: "Inter", "IBM Plex Sans", -apple-system, BlinkMacSystemFont,
+  "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+$font-heading: "Cardo", "Iowan Old Style", "Palatino Linotype", Palatino,
+  "Book Antiqua", Georgia, "Times New Roman", serif;
+$font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, "Cascadia Code",
+  Consolas, Monaco, monospace;
 
 body {
   box-sizing: content-box;
   font-family: $font-body;
   margin: 0 auto;
-  line-height: 1.7;
+  line-height: 1.65;
   padding: 4vh 6vw;
   overflow-x: hidden;
   background: var(--color-bg);
   color: var(--color-text);
-  font-size: 1rem;
+  font-size: clamp(1rem, 0.95rem + 0.25vw, 1.15rem);
   max-width: 63em;
   transition: background 200ms, color 200ms;
 
   @media (min-width: 820px) {
-    font-size: 1.2rem;
+    font-size: calc(1rem + .2vw);
   }
 }
 
@@ -34,6 +37,12 @@ h6 {
 
 h1 {
   font-family: $font-heading;
+  font-size: clamp(3rem, 6vw, 4.5rem);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  font-weight: 400;
+  margin-top: 1.5em;
+  margin-bottom: 0.4em;
 }
 
 time {
@@ -67,6 +76,14 @@ blockquote {
   p {
     margin: 0;
   }
+
+  cite {
+    display: block;
+    margin-top: 1rem;
+    font-size: 0.88em;
+    font-style: normal;
+    color: var(--color-subtext);
+  }
 }
 
 hr {
@@ -77,11 +94,21 @@ hr {
   background: var(--color-border);
 }
 
+.homepage-quote {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding: 1.5rem 2rem;
+  background: var(--color-bg-soft);
+  border-radius: $border-radius;
+}
+
 a {
+  text-decoration-line: underline;
+  text-decoration-thickness: 1.5px;
+  text-decoration-color: var(--color-border);
+  text-underline-offset: 0.18em;
   transition: color 200ms;
   padding: 0 0.1em;
-  text-decoration: none;
-  border-bottom: 1px solid var(--color-border);
   color: inherit;
   &:hover {
     color: var(--color-yellow) !important;
@@ -98,14 +125,12 @@ a {
   &.reversefootnote:after {
     content: "";
   }
-  &.site-title {
-    border-bottom: none;
+  &.internal-link{
+    text-decoration-color: var(--color-yellow);
   }
-}
-
-*:focus {
-  background: var(--color-yellow) !important;
-  color: var(--color-bg) !important;
+  &.site-title {
+    text-decoration: none;
+  }
 }
 
 nav {
@@ -123,6 +148,31 @@ nav {
   align-items: center;
   justify-content: space-between;
   gap: 1em;
+}
+
+.recent-notes {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75em;
+  margin-top: 1rem;
+}
+
+.recent-note {
+  display: grid;
+  grid-template-columns: 8em auto;
+  align-items: baseline;
+}
+
+.recent-note-date {
+  font-weight: 400;
+  color: var(--color-subtext);
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.recent-note a {
+  justify-self: start;
+  width: fit-content;
 }
 
 #notes-entry-container {
@@ -202,12 +252,18 @@ body:not(.theme-dark) #theme-toggle:hover .theme-toggle-switch {
   background-color: var(--color-yellow);
 }
 
+body.theme-dark #theme-toggle:hover .theme-toggle-switch {
+  background-color: var(--color-cyan);
+}
+
 body.theme-dark .theme-toggle-switch {
   left: auto;
   right: 1px;
   -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='currentColor' viewBox='0 0 24 24' %3E%3Cpath d='M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z' /%3E%3C/svg%3E");
 }
 
-body.theme-dark #theme-toggle:hover .theme-toggle-switch {
-  background-color: var(--color-cyan);
+mark{
+  background-color: var(--color-highlight);
+  color:var(--color-text);
 }
+
