@@ -78,14 +78,13 @@ hr {
 }
 
 a {
-  transition: background 300ms;
+  transition: color 200ms;
   padding: 0 0.1em;
   text-decoration: none;
   border-bottom: 1px solid var(--color-border);
-  color: var(--color-blue);
+  color: inherit;
   &:hover {
-    color: var(--color-text) !important;
-    background: var(--color-bg-soft);
+    color: var(--color-yellow) !important;
   }
   &:after {
     position: relative;
@@ -204,4 +203,8 @@ body.theme-dark .theme-toggle-switch {
   left: auto;
   right: 1px;
   -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='currentColor' viewBox='0 0 24 24' %3E%3Cpath d='M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z' /%3E%3C/svg%3E");
+}
+
+body.theme-dark #theme-toggle:hover .theme-toggle-switch {
+  background-color: var(--color-cyan);
 }
