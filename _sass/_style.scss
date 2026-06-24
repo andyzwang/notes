@@ -45,6 +45,16 @@ h1 {
   margin-bottom: 0.4em;
 }
 
+h2 {
+  font-family: $font-body;
+  font-size: 1.55rem;
+  line-height: 1.25;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
 time {
   display: block;
   color: var(--color-subtext);
@@ -164,10 +174,9 @@ nav {
 }
 
 .recent-note-date {
-  font-weight: 400;
+  font-size: 0.95em;
   color: var(--color-subtext);
   letter-spacing: 0.02em;
-  white-space: nowrap;
 }
 
 .recent-note a {
