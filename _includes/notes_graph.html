@@ -131,45 +131,6 @@
           link.attr("stroke-width", STROKE);
         };
 
-        const sameNodes = (previous, next) => {
-          if (next.length !== previous.length) {
-            return false;
-          }
-
-          const map = new Map();
-          for (const node of previous) {
-            map.set(node.id, node.label);
-          }
-
-          for (const node of next) {
-            const found = map.get(node.id);
-            if (!found || found !== node.title) {
-              return false;
-            }
-          }
-
-          return true;
-        };
-
-        const sameEdges = (previous, next) => {
-          if (next.length !== previous.length) {
-            return false;
-          }
-
-          const set = new Set();
-          for (const edge of previous) {
-            set.add(`${edge.source.id}-${edge.target.id}`);
-          }
-
-          for (const edge of next) {
-            if (!set.has(`${edge.source.id}-${edge.target.id}`)) {
-              return false;
-            }
-          }
-
-          return true;
-        };
-
         const graphWrapper = document.getElementById('graph-wrapper')
         const element = document.createElementNS("http://www.w3.org/2000/svg", "svg");
         element.setAttribute("width", graphWrapper.getBoundingClientRect().width);
@@ -296,6 +257,14 @@
 
         zoomHandler(svg);
         restart();
+
+        const activeNode = nodesData.find((d) => isCurrentPath(d.path));
+        if (activeNode) {
+          const recenterFactor = 0.6;
+          const dx = (width / 2 - activeNode.x) * recenterFactor;
+          const dy = (height / 2 - activeNode.y) * recenterFactor;
+          svg.call(zoomHandler.transform, d3.zoomIdentity.translate(dx, dy));
+        }
 
         function isCurrentPath(notePath) {
           return window.location.pathname.includes(notePath)
