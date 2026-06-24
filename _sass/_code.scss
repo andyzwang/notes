@@ -1,80 +1,82 @@
-// Colors come from the Flexoki CSS variables defined in _theme.scss
-.highlight  {
-  font-family: 'IBM Plex Mono', Consolas, monaco, monospace;
+// Colors come from the Flexoki CSS variables defined in _colors.scss
+@use "style";
+
+.highlight {
+  font-family: style.$font-mono;
   background: var(--color-bg-soft);
   color: var(--color-text);
   padding: 1px 1em;
   border-radius: 3px;
-  font-size: 1em;
   font-size: 0.9em;
   overflow: auto;
-  margin: 1em -1em;
-  code{
+  margin: 1em 0em;
+
+  code {
     padding: 0;
   }
+
+  .c { color: var(--color-subtext); font-style: italic } /* Comment */
+  .err { color: var(--color-bg); background-color: var(--color-red) } /* Error */
+  .k { color: var(--color-purple); font-weight: bold } /* Keyword */
+  .o { color: var(--color-purple); font-weight: bold } /* Operator */
+  .cm { color: var(--color-subtext); font-style: italic } /* Comment.Multiline */
+  .cp { color: var(--color-subtext); font-weight: bold } /* Comment.Preproc */
+  .c1 { color: var(--color-subtext); font-style: italic } /* Comment.Single */
+  .cs { color: var(--color-subtext); font-weight: bold; font-style: italic } /* Comment.Special */
+  .gd { color: var(--color-text); background-color: color-mix(in srgb, var(--color-red) 15%, transparent) } /* Generic.Deleted */
+  .gd .x { color: var(--color-text); background-color: color-mix(in srgb, var(--color-red) 30%, transparent) } /* Generic.Deleted.Specific */
+  .ge { font-style: italic } /* Generic.Emph */
+  .gr { color: var(--color-red) } /* Generic.Error */
+  .gh { color: var(--color-subtext) } /* Generic.Heading */
+  .gi { color: var(--color-text); background-color: color-mix(in srgb, var(--color-green) 15%, transparent) } /* Generic.Inserted */
+  .gi .x { color: var(--color-text); background-color: color-mix(in srgb, var(--color-green) 30%, transparent) } /* Generic.Inserted.Specific */
+  .go { color: var(--color-subtext) } /* Generic.Output */
+  .gp { color: var(--color-subtext) } /* Generic.Prompt */
+  .gs { font-weight: bold } /* Generic.Strong */
+  .gu { color: var(--color-border) } /* Generic.Subheading */
+  .gt { color: var(--color-red) } /* Generic.Traceback */
+  .kc { color: var(--color-purple); font-weight: bold } /* Keyword.Constant */
+  .kd { color: var(--color-purple); font-weight: bold } /* Keyword.Declaration */
+  .kp { color: var(--color-purple); font-weight: bold } /* Keyword.Pseudo */
+  .kr { color: var(--color-purple); font-weight: bold } /* Keyword.Reserved */
+  .kt { color: var(--color-cyan); font-weight: bold } /* Keyword.Type */
+  .m { color: var(--color-orange) } /* Literal.Number */
+  .s { color: var(--color-green) } /* Literal.String */
+  .na { color: var(--color-blue) } /* Name.Attribute */
+  .nb { color: var(--color-cyan) } /* Name.Builtin */
+  .nc { color: var(--color-cyan); font-weight: bold } /* Name.Class */
+  .no { color: var(--color-blue) } /* Name.Constant */
+  .ni { color: var(--color-magenta) } /* Name.Entity */
+  .ne { color: var(--color-red); font-weight: bold } /* Name.Exception */
+  .nf { color: var(--color-blue); font-weight: bold } /* Name.Function */
+  .nn { color: var(--color-subtext) } /* Name.Namespace */
+  .nt { color: var(--color-red) } /* Name.Tag */
+  .nv { color: var(--color-blue) } /* Name.Variable */
+  .ow { color: var(--color-purple); font-weight: bold } /* Operator.Word */
+  .w { color: var(--color-border) } /* Text.Whitespace */
+  .mf { color: var(--color-orange) } /* Literal.Number.Float */
+  .mh { color: var(--color-orange) } /* Literal.Number.Hex */
+  .mi { color: var(--color-orange) } /* Literal.Number.Integer */
+  .mo { color: var(--color-orange) } /* Literal.Number.Oct */
+  .sb { color: var(--color-green) } /* Literal.String.Backtick */
+  .sc { color: var(--color-green) } /* Literal.String.Char */
+  .sd { color: var(--color-green) } /* Literal.String.Doc */
+  .s2 { color: var(--color-green) } /* Literal.String.Double */
+  .se { color: var(--color-green) } /* Literal.String.Escape */
+  .sh { color: var(--color-green) } /* Literal.String.Heredoc */
+  .si { color: var(--color-green) } /* Literal.String.Interpol */
+  .sx { color: var(--color-green) } /* Literal.String.Other */
+  .sr { color: var(--color-cyan) } /* Literal.String.Regex */
+  .s1 { color: var(--color-green) } /* Literal.String.Single */
+  .dl { color: var(--color-green) } /* Literal.String.Delimiter */
+  .ss { color: var(--color-magenta) } /* Literal.String.Symbol */
+  .bp { color: var(--color-subtext) } /* Name.Builtin.Pseudo */
+  .vc { color: var(--color-blue) } /* Name.Variable.Class */
+  .vg { color: var(--color-blue) } /* Name.Variable.Global */
+  .vi { color: var(--color-blue) } /* Name.Variable.Instance */
+  .il { color: var(--color-orange) } /* Literal.Number.Integer.Long */
 }
 
 div.highlight {
   display: grid;
 }
-
-.highlight .c { color: var(--color-subtext); font-style: italic } /* Comment */
-.highlight .err { color: var(--color-bg); background-color: var(--color-red) } /* Error */
-.highlight .k { color: var(--color-purple); font-weight: bold } /* Keyword */
-.highlight .o { color: var(--color-purple); font-weight: bold } /* Operator */
-.highlight .cm { color: var(--color-subtext); font-style: italic } /* Comment.Multiline */
-.highlight .cp { color: var(--color-subtext); font-weight: bold } /* Comment.Preproc */
-.highlight .c1 { color: var(--color-subtext); font-style: italic } /* Comment.Single */
-.highlight .cs { color: var(--color-subtext); font-weight: bold; font-style: italic } /* Comment.Special */
-.highlight .gd { color: var(--color-text); background-color: color-mix(in srgb, var(--color-red) 15%, transparent) } /* Generic.Deleted */
-.highlight .gd .x { color: var(--color-text); background-color: color-mix(in srgb, var(--color-red) 30%, transparent) } /* Generic.Deleted.Specific */
-.highlight .ge { font-style: italic } /* Generic.Emph */
-.highlight .gr { color: var(--color-red) } /* Generic.Error */
-.highlight .gh { color: var(--color-subtext) } /* Generic.Heading */
-.highlight .gi { color: var(--color-text); background-color: color-mix(in srgb, var(--color-green) 15%, transparent) } /* Generic.Inserted */
-.highlight .gi .x { color: var(--color-text); background-color: color-mix(in srgb, var(--color-green) 30%, transparent) } /* Generic.Inserted.Specific */
-.highlight .go { color: var(--color-subtext) } /* Generic.Output */
-.highlight .gp { color: var(--color-subtext) } /* Generic.Prompt */
-.highlight .gs { font-weight: bold } /* Generic.Strong */
-.highlight .gu { color: var(--color-border) } /* Generic.Subheading */
-.highlight .gt { color: var(--color-red) } /* Generic.Traceback */
-.highlight .kc { color: var(--color-purple); font-weight: bold } /* Keyword.Constant */
-.highlight .kd { color: var(--color-purple); font-weight: bold } /* Keyword.Declaration */
-.highlight .kp { color: var(--color-purple); font-weight: bold } /* Keyword.Pseudo */
-.highlight .kr { color: var(--color-purple); font-weight: bold } /* Keyword.Reserved */
-.highlight .kt { color: var(--color-cyan); font-weight: bold } /* Keyword.Type */
-.highlight .m { color: var(--color-orange) } /* Literal.Number */
-.highlight .s { color: var(--color-green) } /* Literal.String */
-.highlight .na { color: var(--color-blue) } /* Name.Attribute */
-.highlight .nb { color: var(--color-cyan) } /* Name.Builtin */
-.highlight .nc { color: var(--color-cyan); font-weight: bold } /* Name.Class */
-.highlight .no { color: var(--color-blue) } /* Name.Constant */
-.highlight .ni { color: var(--color-magenta) } /* Name.Entity */
-.highlight .ne { color: var(--color-red); font-weight: bold } /* Name.Exception */
-.highlight .nf { color: var(--color-blue); font-weight: bold } /* Name.Function */
-.highlight .nn { color: var(--color-subtext) } /* Name.Namespace */
-.highlight .nt { color: var(--color-red) } /* Name.Tag */
-.highlight .nv { color: var(--color-blue) } /* Name.Variable */
-.highlight .ow { color: var(--color-purple); font-weight: bold } /* Operator.Word */
-.highlight .w { color: var(--color-border) } /* Text.Whitespace */
-.highlight .mf { color: var(--color-orange) } /* Literal.Number.Float */
-.highlight .mh { color: var(--color-orange) } /* Literal.Number.Hex */
-.highlight .mi { color: var(--color-orange) } /* Literal.Number.Integer */
-.highlight .mo { color: var(--color-orange) } /* Literal.Number.Oct */
-.highlight .sb { color: var(--color-green) } /* Literal.String.Backtick */
-.highlight .sc { color: var(--color-green) } /* Literal.String.Char */
-.highlight .sd { color: var(--color-green) } /* Literal.String.Doc */
-.highlight .s2 { color: var(--color-green) } /* Literal.String.Double */
-.highlight .se { color: var(--color-green) } /* Literal.String.Escape */
-.highlight .sh { color: var(--color-green) } /* Literal.String.Heredoc */
-.highlight .si { color: var(--color-green) } /* Literal.String.Interpol */
-.highlight .sx { color: var(--color-green) } /* Literal.String.Other */
-.highlight .sr { color: var(--color-cyan) } /* Literal.String.Regex */
-.highlight .s1 { color: var(--color-green) } /* Literal.String.Single */
-.highlight .dl { color: var(--color-green) } /* Literal.String.Delimiter */
-.highlight .ss { color: var(--color-magenta) } /* Literal.String.Symbol */
-.highlight .bp { color: var(--color-subtext) } /* Name.Builtin.Pseudo */
-.highlight .vc { color: var(--color-blue) } /* Name.Variable.Class */
-.highlight .vg { color: var(--color-blue) } /* Name.Variable.Global */
-.highlight .vi { color: var(--color-blue) } /* Name.Variable.Instance */
-.highlight .il { color: var(--color-orange) } /* Literal.Number.Integer.Long */

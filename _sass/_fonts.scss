@@ -2,42 +2,35 @@
   font-family: 'IBM Plex Mono';
   font-style: normal;
   font-weight: normal;
-  src: local('IBM Plex Mono'), url('/assets/fonts/IBMPlexMono-Regular.ttf') format('truetype');
+  src: local('IBM Plex Mono'), url('/assets/fonts/IBMPlexMono-Regular.woff2') format('woff2');
 }
 
 @font-face {
   font-family: 'Cardo';
   font-style: normal;
   font-weight: normal;
-  src: local('Cardo Regular'), url('/assets/fonts/Cardo-Regular.ttf') format('truetype');
+  src: local('Cardo Regular'), url('/assets/fonts/Cardo-Regular.woff2') format('woff2');
 }
 
 @font-face {
   font-family: 'Cardo';
   font-style: italic;
   font-weight: normal;
-  src: local('Cardo Italic'), url('/assets/fonts/Cardo-Italic.ttf') format('truetype');
+  src: local('Cardo Italic'), url('/assets/fonts/Cardo-Italic.woff2') format('woff2');
 }
 
 @font-face {
   font-family: 'Cardo';
   font-style: normal;
   font-weight: bold;
-  src: local('Cardo Bold'), url('/assets/fonts/Cardo-Bold.ttf') format('truetype');
+  src: local('Cardo Bold'), url('/assets/fonts/Cardo-Bold.woff2') format('woff2');
 }
 
 @font-face {
-  font-family: 'Inter Bold';
+  font-family: 'Inter';
   font-style: normal;
-  font-weight: bold;
-  src: local('Inter Bold'), url('/assets/fonts/InterDisplay-Bold.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'Inter Semi-Bold';
-  font-style: normal;
-  font-weight: bold;
-  src: local('Inter Semi-Bold'), url('/assets/fonts/InterDisplay-SemiBold.woff2') format('woff2');
+  font-weight: 100;
+  src: local('Inter Thin'), url('/assets/fonts/InterDisplay-Thin.woff2') format('woff2');
 }
 
 @font-face {
@@ -48,8 +41,15 @@
 }
 
 @font-face {
-  font-family: 'Inter Thin';
+  font-family: 'Inter';
   font-style: normal;
-  font-weight: 100;
-  src: local('Inter Thin'), url('/assets/fonts/InterDisplay-Thin.woff2') format('woff2');
+  font-weight: 600;
+  src: local('Inter Semi-Bold'), url('/assets/fonts/InterDisplay-SemiBold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: bold;
+  src: local('Inter Bold'), url('/assets/fonts/InterDisplay-Bold.woff2') format('woff2');
 }
