@@ -20,7 +20,7 @@ I'm currently a PhD student in Stanford's [Department of Political Science](http
 
 This site is something of a working notebook, where I can think in public. I treat it both as a memory system and a map. Political theory — and political science more broadly — is a long conversation across texts and concepts. A linked notebook is a useful method for tracking these conversations without forcing them into a linear format.
 
-Like Adam Brown's [WikiSum](https://adambrown.info/p/notes), I originally made this site to guide my studying for [[the-canon|comprehensive exams]]. I am also drawn to many aspects of the philosophy behind [digital gardens](https://maggieappleton.com/garden-history): some entries are relatively polished, but many remain provisional. They might contain mistakes, tangents, or claims I later revise — that is precisely why I keep them here.
+Like the UCSD students who created [WikiSum](https://adambrown.info/p/notes), I originally made this site to guide my studying for [[the-canon|comprehensive exams]]. I am also drawn to many aspects of the philosophy behind [digital gardens](https://maggieappleton.com/garden-history): some entries are relatively polished, but many remain provisional. They might contain mistakes, tangents, or claims I later revise — that is precisely why I keep them here.
 
 Most of these notes draw from lectures, conversations, syllabi, and guidance from a lengthy list of teachers, mentors, and colleagues. Some are also adapted from incredible notes prepared by [Joan O'Bryan](https://joanobryan.com/) and [Joseph Cloward](https://josephcloward.com/). Unless the original source is public, I generally do not attribute these debts directly.
 
