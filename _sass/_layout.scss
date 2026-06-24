@@ -4,9 +4,27 @@ nav {
 }
 
 .nav-bar {
-  display: inline-flex;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .75em;
+}
+
+.nav-links {
+  display: flex;
   align-items: center;
   gap: 0.75em;
+}
+
+@media (max-width: 600px) {
+  .nav-bar {
+    align-items: baseline;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
 }
 
 .footer-bar {
