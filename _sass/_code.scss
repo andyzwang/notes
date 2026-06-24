@@ -1,8 +1,8 @@
 // Colors come from the Flexoki CSS variables defined in _colors.scss
-@use "style";
+@use "variables" as *;
 
 .highlight {
-  font-family: style.$font-mono;
+  font-family: $font-mono;
   background: var(--color-bg-soft);
   color: var(--color-text);
   padding: 1px 1em;

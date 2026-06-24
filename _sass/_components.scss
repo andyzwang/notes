@@ -1,0 +1,59 @@
+blockquote {
+  padding: 1.5em;
+  margin: 0;
+  font-size: 0.88em;
+  background: var(--color-bg-soft);
+  border-radius: $border-radius;
+
+  p {
+    margin: 0;
+  }
+
+  cite {
+    display: block;
+    margin-top: 1rem;
+    font-size: 0.88em;
+    font-style: normal;
+    color: var(--color-subtext);
+  }
+}
+
+.homepage-quote {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding: 1.5rem 2rem;
+  background: var(--color-bg-soft);
+  border-radius: $border-radius;
+}
+
+.backlink-box {
+  background: var(--color-bg-soft);
+  padding: 1em;
+  border-radius: $border-radius;
+}
+
+.outline-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.5em;
+
+  a {
+    display: block;
+    text-decoration: none;
+    color: var(--color-subtext);
+
+    &:hover {
+      color: var(--color-yellow) !important;
+    }
+
+    &.active {
+      color: var(--color-yellow);
+    }
+  }
+
+  .outline-sub {
+    padding-left: 1em;
+  }
+}

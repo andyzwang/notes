@@ -1,0 +1,77 @@
+@use "variables" as *;
+
+// Base elements
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  font-family: $font-body;
+  margin: 0 auto;
+  line-height: 1.5;
+  padding: 4vh 6vw;
+  overflow-x: hidden;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-size: clamp(1rem, 0.95rem + 0.3vw, 1.2rem);
+  max-width: $body-width;
+  transition: background 250ms, color 250ms;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;
+  max-height: 75vh;
+  border-radius: $border-radius;
+}
+
+hr {
+  width: 100%;
+  border: 0;
+  height: 1px;
+  margin: 1.5em 0;
+  background: var(--color-border);
+}
+
+code {
+  font-family: $font-mono;
+  background: var(--color-bg-soft);
+  padding: 0.1em 0.2em;
+  border-radius: 4px;
+}
+
+mark {
+  background-color: var(--color-highlight);
+  color: var(--color-text);
+}
+
+.invalid-link {
+  color: var(--color-subtext);
+  cursor: help;
+  background: var(--color-bg-soft);
+  padding: 0 0.1em;
+}
+
+.invalid-link-brackets {
+  color: var(--color-border);
+  cursor: help;
+}
+
+.only-desktop{
+  @media (max-width: 600px) {
+      display:none !important
+}
+}
+
+.only-mobile {
+  @media (min-width: 601px) {
+    display: none !important;
+  }
+}

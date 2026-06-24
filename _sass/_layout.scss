@@ -1,0 +1,72 @@
+// Page layout
+nav {
+  margin: 1em 0 3em;
+}
+
+.nav-bar {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75em;
+}
+
+.footer-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1em;
+}
+
+footer {
+  margin: 2em 0;
+  font-size: 0.8em;
+  color: var(--color-subtext);
+  padding-top: 1em;
+}
+
+.recent-notes {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75em;
+  margin-top: 1rem;
+}
+
+.recent-note {
+  display: grid;
+  grid-template-columns: 8em auto;
+  align-items: baseline;
+}
+
+.recent-note-date {
+  font-size: 0.95em;
+  color: var(--color-subtext);
+  letter-spacing: 0.02em;
+}
+
+.recent-note a {
+  justify-self: start;
+  width: fit-content;
+}
+
+#notes-entry-container {
+  display: grid;
+  grid-gap: 2em;
+  grid-template-areas:
+    "content"
+    "side";
+
+  @media (min-width: 700px) {
+    grid-gap: 3em;
+    grid-template-columns: 3fr 1fr;
+    grid-template-areas: "content side";
+
+    side {
+      border-left: 1px solid var(--color-border);
+      padding-left: 1.5em;
+    }
+  }
+}
+
+#outline-container {
+  position: sticky;
+  top: 1em;
+}

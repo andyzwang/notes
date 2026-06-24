@@ -1,0 +1,39 @@
+a {
+  text-decoration-line: underline;
+  text-decoration-thickness: 1.5px;
+  text-decoration-color: var(--color-border);
+  text-underline-offset: 0.18em;
+  transition: color 200ms;
+  padding: 0 0.1em;
+  color: inherit;
+
+  &:hover {
+    color: var(--color-yellow) !important;
+  }
+
+  &:after {
+    position: relative;
+    top: -0.5em;
+    font-size: 0.7em;
+    content: "↗";
+    color: var(--color-subtext);
+  }
+
+  &.internal-link:after,
+  &.footnote:after,
+  &.reversefootnote:after {
+    content: "";
+  }
+
+  &.internal-link {
+    text-decoration-color: var(--color-yellow);
+  }
+
+  &.site-title {
+    text-decoration: none;
+  }
+
+  &.site-title-faded {
+    color: var(--color-subtext);
+  }
+}
