@@ -47,8 +47,14 @@
     } else {
       iframe.src = event.target.href;
       iframe.onload = function() {
-        var html = '<div style="font-weight: bold;">' + iframe.contentWindow.document.querySelector('h1').innerHTML + '</div>'
-          + iframe.contentWindow.document.querySelector('content').innerHTML;
+        var doc = iframe.contentWindow.document;
+        var contentEl = doc.querySelector('content');
+        var titleEl = contentEl.querySelector('h1') || doc.querySelector('h1');
+        var titleHtml = titleEl ? titleEl.innerHTML : '';
+        if (titleEl && contentEl.contains(titleEl)) {
+          titleEl.remove();
+        }
+        var html = '<div style="font-weight: bold;">' + titleHtml + '</div>' + contentEl.innerHTML;
         tooltipContent.innerHTML = html;
         linkHistories[event.target.href] = html;
         revealTooltip();
