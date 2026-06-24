@@ -5,9 +5,9 @@ id: home
 permalink: /
 ---
 
-# Welcome! 📚
+# Welcome! 🌌
 
-<blockquote class="homepage-quote">
+<blockquote class="main-quote">
   <p>
     A historian who takes [causation] as his point of departure stops telling
     the sequence of events like the beads of a rosary. Instead, he grasps the
@@ -19,6 +19,8 @@ permalink: /
 This digital garden template is free, open-source, and [available on GitHub here](https://github.com/maximevaillancourt/digital-garden-jekyll-template).
 
 The easiest way to get started is to read this [step-by-step guide explaining how to set this up from scratch](https://maximevaillancourt.com/blog/setting-up-your-own-digital-garden-with-jekyll).
+
+Begin with recently updated notes, a random page, or view the canon. 
 
 <hr>
 
@@ -33,3 +35,19 @@ The easiest way to get started is to read this [step-by-step guide explaining ho
     </div>
   {% endfor %}
 </div>
+
+<p><a href="#" id="random-note-link" class="internal-link">Random note</a></p>
+
+<script>
+  (function () {
+    var noteUrls = [
+      {% for note in site.notes %}"{{ site.baseurl }}{{ note.url }}"{% unless forloop.last %},{% endunless %}{% endfor %}
+    ];
+    var link = document.getElementById('random-note-link');
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+      if (noteUrls.length === 0) return;
+      window.location.href = noteUrls[Math.floor(Math.random() * noteUrls.length)];
+    });
+  })();
+</script>
