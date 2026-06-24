@@ -98,6 +98,9 @@ a {
   &.reversefootnote:after {
     content: "";
   }
+  &.site-title {
+    border-bottom: none;
+  }
 }
 
 *:focus {

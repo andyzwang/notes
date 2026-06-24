@@ -25,9 +25,3 @@ The easiest way to get started is to read this [step-by-step guide explaining ho
     </li>
   {% endfor %}
 </ul>
-
-<style>
-  .wrapper {
-    max-width: 46em;
-  }
-</style>
