@@ -55,7 +55,7 @@
           titleEl.remove();
         }
         contentEl.querySelectorAll('.main-image-caption').forEach(function(el) { el.remove(); });
-        var html = '<div style="font-weight: bold;">' + titleHtml + '</div>' + contentEl.innerHTML;
+        var html = '<div class="tooltip-title">' + titleHtml + '</div>' + contentEl.innerHTML;
         tooltipContent.innerHTML = html;
         linkHistories[event.target.href] = html;
         revealTooltip();

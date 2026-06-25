@@ -1,3 +1,11 @@
+@use "variables" as *;
+
+.tooltip-title {
+  font-family: $font-heading;
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
 #tooltip-wrapper {
   background: var(--color-bg);
   color: var(--color-text);
