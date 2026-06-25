@@ -35,6 +35,7 @@
   }
 
   #graph-wrapper {
+    position: relative;
     background: var(--color-bg-soft);
     border-radius: 4px;
     height: auto;
@@ -44,9 +45,38 @@
     max-width: 100%;
     display: block;
   }
+
+  #graph-zoom-controls {
+    position: absolute;
+    top: 0.5em;
+    right: 0.5em;
+    display: flex;
+    gap: 0.25em;
+    z-index: 1;
+  }
+
+  #graph-zoom-controls button {
+    width: 1.8em;
+    height: 1.8em;
+    border: none;
+    background: none;
+    color: var(--color-subtext);
+    font-size: 1em;
+    line-height: 1;
+    cursor: pointer;
+    transition: color 150ms;
+  }
+
+  #graph-zoom-controls button:hover {
+    color: var(--color-text);
+  }
 </style>
 
 <div id="graph-wrapper">
+  <div id="graph-zoom-controls">
+    <button id="graph-zoom-out" aria-label="Zoom out" title="Zoom out">&minus;</button>
+    <button id="graph-zoom-in" aria-label="Zoom in" title="Zoom in">+</button>
+  </div>
   <script>
     window.addEventListener("load", loadGraph);
 
@@ -145,22 +175,19 @@
         element.setAttribute("height", window.innerHeight * 0.8);
         graphWrapper.appendChild(element);
 
-        const reportWindowSize = () => {
-          element.setAttribute("width", window.innerWidth);
-          element.setAttribute("height", window.innerHeight * 0.8);
-        };
-
-        window.onresize = reportWindowSize;
-
         const svg = d3.select("svg");
-        const width = Number(svg.attr("width"));
-        const height = Number(svg.attr("height"));
+        let width = Number(svg.attr("width"));
+        let height = Number(svg.attr("height"));
         let zoomLevel = 1;
+
+        const forceX = d3.forceX().x(width / 2);
+        const forceY = d3.forceY().y(height / 2);
+        const forceCenter = d3.forceCenter(width / 2, height / 2);
 
         const simulation = d3
           .forceSimulation(nodesData)
-          .force("forceX", d3.forceX().x(width / 2))
-          .force("forceY", d3.forceY().y(height / 2))
+          .force("forceX", forceX)
+          .force("forceY", forceY)
           .force("charge", d3.forceManyBody())
           .force(
             "link",
@@ -169,7 +196,7 @@
               .id((d) => d.id)
               .distance(70)
           )
-          .force("center", d3.forceCenter(width / 2, height / 2))
+          .force("center", forceCenter)
           .force("collision", d3.forceCollide().radius(80))
           .stop();
 
@@ -280,6 +307,16 @@
         const zoomHandler = d3.zoom().scaleExtent([0.2, 3]).on("zoom", resize);
 
         zoomHandler(svg);
+
+        const ZOOM_BUTTON_SCALE_FACTOR = 1.3;
+
+        document.getElementById('graph-zoom-in').addEventListener('click', () => {
+          zoomHandler.scaleBy(svg.transition().duration(150), ZOOM_BUTTON_SCALE_FACTOR);
+        });
+
+        document.getElementById('graph-zoom-out').addEventListener('click', () => {
+          zoomHandler.scaleBy(svg.transition().duration(150), 1 / ZOOM_BUTTON_SCALE_FACTOR);
+        });
         restart();
 
         const activeNode = nodesData.find((d) => isCurrentPath(d.path));
@@ -289,6 +326,22 @@
           const dy = (height / 2 - activeNode.y) * recenterFactor;
           svg.call(zoomHandler.transform, d3.zoomIdentity.translate(dx, dy));
         }
+
+        const reportWindowSize = () => {
+          width = graphWrapper.getBoundingClientRect().width;
+          height = window.innerHeight * 0.8;
+
+          element.setAttribute("width", width);
+          element.setAttribute("height", height);
+
+          forceX.x(width / 2);
+          forceY.y(height / 2);
+          forceCenter.x(width / 2).y(height / 2);
+
+          restart();
+        };
+
+        window.onresize = reportWindowSize;
 
         function isCurrentPath(notePath) {
           return !!notePath && window.location.pathname.includes(notePath)

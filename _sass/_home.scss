@@ -1,0 +1,23 @@
+.recent-notes {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75em;
+  margin-top: 1rem;
+}
+
+.recent-note {
+  display: grid;
+  grid-template-columns: 8em auto;
+  align-items: baseline;
+}
+
+.recent-note-date {
+  font-size: 0.95em;
+  color: var(--color-subtext);
+  letter-spacing: 0.02em;
+}
+
+.recent-note a {
+  justify-self: start;
+  width: fit-content;
+}

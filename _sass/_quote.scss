@@ -1,0 +1,29 @@
+@use "variables" as *;
+
+blockquote {
+  padding: 1.5em;
+  margin: 0;
+  font-size: 0.88em;
+  background: var(--color-bg-soft);
+  border-radius: $border-radius;
+
+  p {
+    margin: 0;
+  }
+
+  cite {
+    display: block;
+    margin-top: 1rem;
+    font-size: 0.88em;
+    font-style: normal;
+    color: var(--color-subtext);
+  }
+}
+
+.main-quote {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding: 1.5rem 2rem;
+  background: var(--color-bg-soft);
+  border-radius: $border-radius;
+}

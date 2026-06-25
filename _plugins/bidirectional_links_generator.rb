@@ -83,7 +83,7 @@ class BidirectionalLinksGenerator < Jekyll::Generator
       # pointing to non-existing pages. Register a ghost graph node for
       # each one (notes only, not pages) before greying them out below.
       if all_notes.include?(current_note)
-        current_note.content.scan(/\[\[([^\]]+)\]\]/i).flatten.each do |name|
+        current_note.content.scan(/\[\[([^\]|]+)(?:\|[^\]]+)?\]\]/i).flatten.each do |name|
           register_ghost_link(ghost_nodes, graph_edges, current_note, name)
         end
 
@@ -91,37 +91,34 @@ class BidirectionalLinksGenerator < Jekyll::Generator
           value = current_note.data[field]
           next unless value.is_a?(String)
 
-          value.scan(/\[\[([^\]]+)\]\]/i).flatten.each do |name|
+          value.scan(/\[\[([^\]|]+)(?:\|[^\]]+)?\]\]/i).flatten.each do |name|
             register_ghost_link(ghost_nodes, graph_edges, current_note, name)
           end
         end
       end
 
       # Turn remaining double-bracket links into disabled links by
-      # greying them out and changing the cursor
+      # greying them out and changing the cursor. If a display name was
+      # given via [[name|display]], show only the display text.
       current_note.content = current_note.content.gsub(
-        /\[\[([^\]]+)\]\]/i, # match on the remaining double-bracket links
-        <<~HTML.delete("\n") # replace with this HTML (\\1 is what was inside the brackets)
-          <span title='There is no note that matches this link.' class='invalid-link'>
-            <span class='invalid-link-brackets'>[[</span>
-            \\1
-            <span class='invalid-link-brackets'>]]</span></span>
-        HTML
-      )
+        /\[\[[^\]|]+\|([^\]]+)\]\]|\[\[([^\]]+)\]\]/i
+      ) do
+        display = $~[1] || $~[2]
+        "<span title='There is no note that matches this link.' class='invalid-link'>" \
+          "<span class='invalid-link-brackets'>[[</span>#{display}<span class='invalid-link-brackets'>]]</span></span>"
+      end
 
       metadata_fields.each do |field|
         value = current_note.data[field]
         next unless value.is_a?(String)
 
         current_note.data[field] = value.gsub(
-          /\[\[([^\]]+)\]\]/i,
-          <<~HTML.delete("\n")
-            <span title='There is no note that matches this link.' class='invalid-link'>
-              <span class='invalid-link-brackets'>[[</span>
-              \\1
-              <span class='invalid-link-brackets'>]]</span></span>
-          HTML
-        )
+          /\[\[[^\]|]+\|([^\]]+)\]\]|\[\[([^\]]+)\]\]/i
+        ) do
+          display = $~[1] || $~[2]
+          "<span title='There is no note that matches this link.' class='invalid-link'>" \
+            "<span class='invalid-link-brackets'>[[</span>#{display}<span class='invalid-link-brackets'>]]</span></span>"
+        end
       end
     end
 

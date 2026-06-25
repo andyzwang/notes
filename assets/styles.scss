@@ -11,9 +11,13 @@
 @use "links";
 @use "code";
 
-@use "components";
-@use "layout";
-@use "list";
+@use "quote";
+@use "image";
+@use "reading-list";
+
+@use "nav";
+@use "home";
+@use "note-page";
 
 @use "toggle";
 @use "tooltip";

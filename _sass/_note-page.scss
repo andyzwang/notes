@@ -1,0 +1,82 @@
+@use "variables" as *;
+
+// Layout and sidebar widgets specific to the note layout (metadata, backlinks, outline)
+#notes-entry-container {
+  display: grid;
+  grid-gap: 2em;
+  grid-template-areas:
+    "content"
+    "side";
+
+  @media (min-width: 700px) {
+    grid-gap: 1.5em;
+    grid-template-columns: 3fr 1fr;
+    grid-template-areas: "content side";
+
+    side {
+      border-left: 1px solid var(--color-border);
+      padding-left: 1.5em;
+    }
+  }
+}
+
+.backlink-box {
+  background: var(--color-bg-soft);
+  padding: 1em;
+  border-radius: $border-radius;
+}
+
+.metadata-list {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.5em;
+}
+
+.metadata-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 1em;
+
+  dt {
+    color: var(--color-subtext);
+  }
+
+  dd {
+    margin: 0;
+    text-align: right;
+  }
+}
+
+#outline-container {
+  position: sticky;
+  top: 1em;
+}
+
+.outline-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.5em;
+
+  a {
+    display: block;
+    text-decoration: none;
+    color: var(--color-subtext);
+    transition: color 150ms, transform 150ms;
+
+    &:hover {
+      color: var(--color-yellow) !important;
+    }
+
+    &.active {
+      color: var(--color-yellow);
+      transform: translateX(0.5em);
+    }
+  }
+
+  .outline-sub {
+    padding-left: 1em;
+  }
+}
