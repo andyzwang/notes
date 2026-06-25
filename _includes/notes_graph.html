@@ -22,6 +22,13 @@
     fill: var(--color-red);
   }
 
+  .nodes [ghost],
+  .text [ghost] {
+    cursor: help;
+    fill: var(--color-subtext);
+    opacity: 0.6;
+  }
+
   .inactive {
     opacity: 0.1;
     transition: all 0.15s ease-out;
@@ -84,6 +91,7 @@
         };
 
         const onClick = (d) => {
+          if (!d.path) return;
           window.location = d.path
         };
 
@@ -243,6 +251,19 @@
 
           node.attr("active", (d) => isCurrentPath(d.path) ? true : null);
           text.attr("active", (d) => isCurrentPath(d.path) ? true : null);
+          node.attr("ghost", (d) => d.ghost ? true : null);
+          text.attr("ghost", (d) => d.ghost ? true : null);
+
+          [node, text].forEach((selection) => {
+            selection.each(function (d) {
+              let title = this.querySelector('title');
+              if (!title) {
+                title = document.createElementNS('http://www.w3.org/2000/svg', 'title');
+                this.appendChild(title);
+              }
+              title.textContent = d.ghost ? 'There is no note that matches this link.' : '';
+            });
+          });
 
           simulation.nodes(nodesData);
           simulation.force("link").links(linksData);
@@ -270,7 +291,7 @@
         }
 
         function isCurrentPath(notePath) {
-          return window.location.pathname.includes(notePath)
+          return !!notePath && window.location.pathname.includes(notePath)
         }
 
         function shorten(str, maxLen, separator = ' ') {

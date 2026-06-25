@@ -9,6 +9,11 @@ class BidirectionalLinksGenerator < Jekyll::Generator
 
     all_docs = all_notes + all_pages
 
+    # Ghost nodes: links to notes that don't exist yet, keyed by
+    # normalized name so multiple notes pointing at the same
+    # not-yet-written note collapse into a single grey node.
+    ghost_nodes = {}
+
     link_extension = !!site.config["use_html_extension"] ? '.html' : ''
 
     # Frontmatter fields whose wikilinks should be resolved the same way
@@ -75,8 +80,25 @@ class BidirectionalLinksGenerator < Jekyll::Generator
       end
 
       # At this point, all remaining double-bracket-wrapped words are
-      # pointing to non-existing pages, so let's turn them into disabled
-      # links by greying them out and changing the cursor
+      # pointing to non-existing pages. Register a ghost graph node for
+      # each one (notes only, not pages) before greying them out below.
+      if all_notes.include?(current_note)
+        current_note.content.scan(/\[\[([^\]]+)\]\]/i).flatten.each do |name|
+          register_ghost_link(ghost_nodes, graph_edges, current_note, name)
+        end
+
+        metadata_fields.each do |field|
+          value = current_note.data[field]
+          next unless value.is_a?(String)
+
+          value.scan(/\[\[([^\]]+)\]\]/i).flatten.each do |name|
+            register_ghost_link(ghost_nodes, graph_edges, current_note, name)
+          end
+        end
+      end
+
+      # Turn remaining double-bracket links into disabled links by
+      # greying them out and changing the cursor
       current_note.content = current_note.content.gsub(
         /\[\[([^\]]+)\]\]/i, # match on the remaining double-bracket links
         <<~HTML.delete("\n") # replace with this HTML (\\1 is what was inside the brackets)
@@ -135,11 +157,29 @@ class BidirectionalLinksGenerator < Jekyll::Generator
 
     File.write('_includes/notes_graph.json', JSON.dump({
       edges: graph_edges,
-      nodes: graph_nodes,
+      nodes: graph_nodes + ghost_nodes.values,
     }))
   end
 
   def note_id_from_note(note)
     note.data['title'].bytes.join
+  end
+
+  def register_ghost_link(ghost_nodes, graph_edges, current_note, name)
+    clean_name = name.strip
+    return if clean_name.empty?
+
+    key = clean_name.downcase
+    ghost_nodes[key] ||= {
+      id: "ghost-#{key.bytes.join}",
+      path: nil,
+      label: clean_name,
+      ghost: true,
+    }
+
+    graph_edges << {
+      source: note_id_from_note(current_note),
+      target: ghost_nodes[key][:id],
+    }
   end
 end

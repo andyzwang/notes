@@ -64,6 +64,11 @@ mark {
   cursor: help;
 }
 
+.footnotes {
+  color: var(--color-subtext);
+  font-size: 0.88em;
+}
+
 .only-desktop{
   @media (max-width: 600px) {
       display:none !important

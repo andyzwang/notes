@@ -16,7 +16,7 @@ layout: default
       {{ content }}
     </content>
 
-    <side style="font-size: 0.9em">
+    <side style="font-size: 0.88em">
       {% assign metadata_fields = "author,year" | split: "," %}
       {% assign metadata_labels = "Author,Date" | split: "," %}
       {% assign has_metadata = false %}
@@ -48,7 +48,7 @@ layout: default
         {% for backlink in page.backlinks %}
           <div class="backlink-box">
           <a class="internal-link" href="{{ site.baseurl }}{{ backlink.url }}{%- if site.use_html_extension -%}.html{%- endif -%}">{{ backlink.title }}</a><br>
-          <div style="font-size: 0.9em">{{ backlink.excerpt | strip_caption | strip_html | truncatewords: 20 }}</div>
+          <div style="font-size: 0.88em">{{ backlink.excerpt | strip_caption | strip_html | truncatewords: 20 }}</div>
           </div>
         {% endfor %}
         </div>
