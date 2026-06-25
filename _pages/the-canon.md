@@ -14,7 +14,7 @@ Greyed-out links mark pages yet to be created. Unbolded authors indicate additio
 
 <div class="reading-list">
   <div class="reading-list-entry">
-    <span class="reading-list-date">7th c. BCE</span>
+    <span class="reading-list-date">c. 700 BCE</span>
     <span class="reading-list-author minor-author">[[Homer]]</span>
     <span class="reading-list-works"><em>[[Illiad]]</em></span>
   </div>
@@ -185,7 +185,7 @@ Greyed-out links mark pages yet to be created. Unbolded authors indicate additio
     <div class="reading-list-entry">
       <span class="reading-list-date"></span>
       <span class="reading-list-author"></span>
-      <span class="reading-list-works">"[[Critique of the Gotha Program]]"</span>
+      <span class="reading-list-works">[["Critique of the Gotha Program"]]</span>
     </div>
   </div>
   <div class="reading-list-group">
@@ -236,7 +236,7 @@ Greyed-out links mark pages yet to be created. Unbolded authors indicate additio
     <div class="reading-list-entry">
       <span class="reading-list-date"></span>
       <span class="reading-list-author"></span>
-      <span class="reading-list-works">"[[Politics as a Vocation]]"</span>
+      <span class="reading-list-works">[["Politics as a Vocation"]]</span>
     </div>
   </div>
   <div class="reading-list-entry">
@@ -257,7 +257,7 @@ Greyed-out links mark pages yet to be created. Unbolded authors indicate additio
   <div class="reading-list-entry">
     <span class="reading-list-date">1958</span>
     <span class="reading-list-author">[[Berlin]]</span>
-    <span class="reading-list-works">"[[Two Concepts of Liberty]]"</span>
+    <span class="reading-list-works">[["Two Concepts of Liberty"]]</span>
   </div>
   <div class="reading-list-group">
     <div class="reading-list-entry">
@@ -306,7 +306,7 @@ Greyed-out links mark pages yet to be created. Unbolded authors indicate additio
   <div class="reading-list-entry">
     <span class="reading-list-date">1975</span>
     <span class="reading-list-author">[[Scanlon]]</span>
-    <span class="reading-list-works">"[[Preference and Urgency]]"</span>
+    <span class="reading-list-works">[["Preference and Urgency"]]</span>
   </div>
   <div class="reading-list-entry">
     <span class="reading-list-date">1975</span>
@@ -316,7 +316,7 @@ Greyed-out links mark pages yet to be created. Unbolded authors indicate additio
   <div class="reading-list-entry">
     <span class="reading-list-date">1981</span>
     <span class="reading-list-author">[[Dworkin]]</span>
-    <span class="reading-list-works">"[[What is Equality? Part II: Equality of Resources]]"</span>
+    <span class="reading-list-works">[["What is Equality? Part II: Equality of Resources"]]</span>
   </div>
   <div class="reading-list-entry">
     <span class="reading-list-date">1983</span>
@@ -332,7 +332,7 @@ Greyed-out links mark pages yet to be created. Unbolded authors indicate additio
     <div class="reading-list-entry">
       <span class="reading-list-date">1989</span>
       <span class="reading-list-author">[[Cohen]]</span>
-      <span class="reading-list-works">"[[On the Currency of Egalitarian Justice]]"</span>
+      <span class="reading-list-works">[["On the Currency of Egalitarian Justice"]]</span>
     </div>
     <div class="reading-list-entry">
       <span class="reading-list-date"></span>
@@ -358,7 +358,7 @@ Greyed-out links mark pages yet to be created. Unbolded authors indicate additio
   <div class="reading-list-entry">
     <span class="reading-list-date">1993</span>
     <span class="reading-list-author">[[Sen]]</span>
-    <span class="reading-list-works">"[[Capability and Well-Being]]"</span>
+    <span class="reading-list-works">[["Capability and Well-Being"]]</span>
   </div>
   <div class="reading-list-entry">
     <span class="reading-list-date">1993</span>
@@ -368,12 +368,12 @@ Greyed-out links mark pages yet to be created. Unbolded authors indicate additio
   <div class="reading-list-entry">
     <span class="reading-list-date">1999</span>
     <span class="reading-list-author">[[Anderson]]</span>
-    <span class="reading-list-works">"[[What Is the Point of Equality?]]"</span>
+    <span class="reading-list-works">[["What Is the Point of Equality?"]]</span>
   </div>
   <div class="reading-list-entry">
     <span class="reading-list-date">2005</span>
     <span class="reading-list-author">[[Nagel]]</span>
-    <span class="reading-list-works">"[[The Problem of Global Justice]]"</span>
+    <span class="reading-list-works">[["The Problem of Global Justice"]]</span>
   </div>
   <div class="reading-list-entry">
     <span class="reading-list-date">2006</span>
