@@ -22,7 +22,7 @@ This site is something of a working notebook, where I can think in public. I tre
 
 Like the UCSD students who created [WikiSum](https://adambrown.info/p/notes), I originally made this site to guide my studying for [[the-canon|comprehensive exams]]. I am also drawn to many aspects of the philosophy behind [digital gardens](https://maggieappleton.com/garden-history): some entries are relatively polished, but many remain provisional.[^1] They might contain mistakes, tangents, or claims I later revise — that is precisely why I keep them here.
 
-Most of these notes draw from lectures, conversations, syllabi, and guidance from a lengthy list of teachers, mentors, and colleagues. Some are also adapted from incredible notes prepared by [Joan O'Bryan](https://joanobryan.com/) and [Joseph Cloward](https://josephcloward.com/). I am incredibly grateful for these debts, even when I do not name them individually. When a source is public, I try to cite it directly. When it comes from private teaching or conversations, I generally do not attribute it directly, since these notes often end in a final form in ways that others might not endorse or even recognize as their own. 
+Most of these notes draw from lectures, conversations, syllabi, and guidance from a lengthy list of teachers, mentors, and colleagues. Some are also adapted from incredible notes prepared by [Joan O'Bryan](https://joanobryan.com/) and [Joseph Cloward](https://josephcloward.com/). I am incredibly grateful for these debts, even when I do not name them individually. When a source is public, I try to cite it directly. When it comes from private teaching or conversations, I generally do not attribute it directly, since these notes often end in a final form in ways that others might not endorse or even recognize as their own.
 
 If anything on this site was helpful to you, or if you just want to chat, please reach out at `hi at andyzwang dot com`.
 
@@ -38,5 +38,5 @@ Built with love in Palo Alto — a place that sometimes, as Hannah Arendt writes
 
 ## Footnotes
 
-[^1]: See, for example, Vivian Qu's [excellent writing](https://vivqu.com/blog/2020/10/18/digital-gardens/) that is skeptical of digital gardens, which contains many arguments I also find quite compelling. At the very least, this site is just as "performative" as the rest of my digital content.
+[^1]: See, for example, Vivian Qu's [excellent writing](https://vivqu.com/blog/2020/10/18/digital-gardens/) that is skeptical of digital gardens, which contains many arguments I also find quite compelling. At the very least, I concede that this site is no less "performative" than the rest of my digital content.
 [^2]: Letter from Hannah Arendt to Heinrich Blücher, 27 Feb. 1955. As found in *Within Four Walls: The Correspondence between Hannah Arendt and Heinrich Blücher 1936-1968.* 1st U.S. ed. Edited by Lotte Köhler. Hartcourt, 2000.
