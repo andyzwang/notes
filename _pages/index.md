@@ -16,11 +16,11 @@ permalink: /
   <cite>— Walter Benjamin, <em>Theses on the Philosophy of History</em></cite>
 </blockquote>
 
-This digital garden template is free, open-source, and [available on GitHub here](https://github.com/maximevaillancourt/digital-garden-jekyll-template).
+This site is an [[about|experiment]] in thinking.
 
-The easiest way to get started is to read this [step-by-step guide explaining how to set this up from scratch](https://maximevaillancourt.com/blog/setting-up-your-own-digital-garden-with-jekyll).
+I use this public notebook to gather fragments, concepts, readings, and questions into shifting *constellations*, as Benjamin writes. By linking texts across time and space — political theory, philosophy, literature, and whatever else happens to draw my attention — I hope to trace connections between ideas and invite you to think alongside me as they take shape.
 
-Begin with recently updated notes, a random page, or view the canon. 
+Begin with recently-updated notes below or view a <a href="#" id="random-note-link" class="internal-link">random note</a>.
 
 <hr>
 
@@ -35,8 +35,6 @@ Begin with recently updated notes, a random page, or view the canon.
     </div>
   {% endfor %}
 </div>
-
-<p><a href="#" id="random-note-link" class="internal-link">Random note</a></p>
 
 <script>
   (function () {
