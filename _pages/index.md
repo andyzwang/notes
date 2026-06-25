@@ -28,7 +28,7 @@ Begin with recently-updated notes below or view a <a href="#" id="random-note-li
 
 <div class="recent-notes">
   {% assign recent_notes = site.notes | sort: "last_modified_at_timestamp" | reverse %}
-  {% for note in recent_notes limit: 10%}
+  {% for note in recent_notes limit: 10 %}
     <div class="recent-note">
       <span class="recent-note-date">{{ note.last_modified_at | date: "%Y" }} · {{ note.last_modified_at | date: "%m" }} · {{ note.last_modified_at | date: "%d" }}</span>
       <a class="internal-link" href="{{ site.baseurl }}{{ note.url }}">{{ note.title }}</a>
