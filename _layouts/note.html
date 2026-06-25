@@ -17,6 +17,30 @@ layout: default
     </content>
 
     <side style="font-size: 0.9em">
+      {% assign metadata_fields = "author,year" | split: "," %}
+      {% assign metadata_labels = "Author,Date" | split: "," %}
+      {% assign has_metadata = false %}
+      {% for field in metadata_fields %}
+        {% if page[field] %}{% assign has_metadata = true %}{% endif %}
+      {% endfor %}
+      {% if has_metadata %}
+      <div id="metadata-container">
+        <h3 style="margin-bottom: 1em">Metadata</h3>
+        <dl class="metadata-list">
+          {% for field in metadata_fields %}
+            {% if page[field] %}
+            <div class="metadata-row">
+              <dt>{{ metadata_labels[forloop.index0] }}</dt>
+              <dd>{{ page[field] }}</dd>
+            </div>
+            {% endif %}
+          {% endfor %}
+        </dl>
+      </div>
+
+      <hr>
+      {% endif %}
+
       {% if page.backlinks.size > 0 %}
       <div id="backlinks-container">
         <h3 style="margin-bottom: 1em">Notes mentioning this note</h3>
@@ -24,11 +48,13 @@ layout: default
         {% for backlink in page.backlinks %}
           <div class="backlink-box">
           <a class="internal-link" href="{{ site.baseurl }}{{ backlink.url }}{%- if site.use_html_extension -%}.html{%- endif -%}">{{ backlink.title }}</a><br>
-          <div style="font-size: 0.9em">{{ backlink.excerpt | strip_html | truncatewords: 20 }}</div>
+          <div style="font-size: 0.9em">{{ backlink.excerpt | strip_caption | strip_html | truncatewords: 20 }}</div>
           </div>
         {% endfor %}
         </div>
       </div>
+
+      <hr>
       {% endif %}
 
       <div id="outline-container">

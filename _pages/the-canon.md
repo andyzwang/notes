@@ -16,7 +16,7 @@ Greyed-out links mark pages yet to be created. Unbolded authors indicate additio
   <div class="reading-list-entry">
     <span class="reading-list-date">c. 700 BCE</span>
     <span class="reading-list-author minor-author">[[Homer]]</span>
-    <span class="reading-list-works"><em>[[Illiad]]</em></span>
+    <span class="reading-list-works"><em>[[The Illiad]]</em></span>
   </div>
   <div class="reading-list-group">
     <div class="reading-list-entry">

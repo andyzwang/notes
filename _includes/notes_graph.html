@@ -229,7 +229,6 @@
           text = text
             .enter()
             .append("text")
-            .text((d) => shorten(d.label.replace(/_*/g, ""), MAX_LABEL_LENGTH))
             .attr("font-size", `${FONT_SIZE}px`)
             .attr("text-anchor", "middle")
             .attr("alignment-baseline", "central")
@@ -237,6 +236,10 @@
             .on("mouseover", onMouseover)
             .on("mouseout", onMouseout)
             .merge(text);
+
+          text.each(function (d) {
+            renderLabel(d3.select(this), d.label.replace(/_*/g, ""), MAX_LABEL_LENGTH);
+          });
 
           node.attr("active", (d) => isCurrentPath(d.path) ? true : null);
           text.attr("active", (d) => isCurrentPath(d.path) ? true : null);
@@ -273,6 +276,25 @@
         function shorten(str, maxLen, separator = ' ') {
           if (str.length <= maxLen) return str;
           return str.substr(0, str.lastIndexOf(separator, maxLen)) + '...';
+        }
+
+        function renderLabel(textSelection, label, maxLen) {
+          const plain = label.replace(/<\/?em>/g, '');
+          textSelection.selectAll('tspan').remove();
+
+          if (plain.length > maxLen) {
+            textSelection.text(shorten(plain, maxLen));
+            return;
+          }
+
+          textSelection.text(null);
+          label.split(/(<em>.*?<\/em>)/g).filter(Boolean).forEach((segment) => {
+            const match = segment.match(/^<em>(.*)<\/em>$/);
+            textSelection
+              .append('tspan')
+              .style('font-style', match ? 'italic' : 'normal')
+              .text(match ? match[1] : segment);
+          });
         }
       }
     }
