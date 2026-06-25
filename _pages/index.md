@@ -31,7 +31,7 @@ Begin with recently-updated notes below or view a <a href="#" id="random-note-li
   {% for note in recent_notes limit: 10 %}
     <div class="recent-note">
       <span class="recent-note-date">{{ note.last_modified_at | date: "%Y" }} · {{ note.last_modified_at | date: "%m" }} · {{ note.last_modified_at | date: "%d" }}</span>
-      <a class="internal-link" href="{{ site.baseurl }}{{ note.url }}">{{ note.title }}</a>
+      <a class="internal-link" href="{{ site.baseurl }}{{ note.url }}">{{ note.display_title | default: note.title }}</a>
     </div>
   {% endfor %}
 </div>

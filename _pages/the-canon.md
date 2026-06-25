@@ -14,6 +14,28 @@ Greyed-out links mark pages yet to be created. Unbolded authors indicate additio
 
 <div class="reading-list">
   <div class="reading-list-entry">
+    <span class="reading-list-date">7th c. BCE</span>
+    <span class="reading-list-author minor-author">[[Homer]]</span>
+    <span class="reading-list-works"><em>[[Illiad]]</em></span>
+  </div>
+  <div class="reading-list-group">
+    <div class="reading-list-entry">
+      <span class="reading-list-date">c. 700 BCE</span>
+      <span class="reading-list-author minor-author">[[Hesoid]]</span>
+      <span class="reading-list-works"><em>[[Works and Days]]</em></span>
+    </div>
+    <div class="reading-list-entry">
+      <span class="reading-list-date"></span>
+      <span class="reading-list-author"></span>
+      <span class="reading-list-works"><em>[[Theogony]]</em></span>
+    </div>
+    <div class="reading-list-entry">
+      <span class="reading-list-date"></span>
+      <span class="reading-list-author minor-author"><em></em></span>
+      <span class="reading-list-works"><em>[[Catalogue of Women]] (attributed)</em></span>
+    </div>
+  </div>
+  <div class="reading-list-entry">
     <span class="reading-list-date">431 BCE</span>
     <span class="reading-list-author">[[Thucydides]]</span>
     <span class="reading-list-works"><em>[[The History of the Peloponnesian War]]</em></span>
