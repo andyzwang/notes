@@ -5,7 +5,7 @@ title: Ancient Political Thought
 <div class="note-header" markdown="1">
 <img class = "main-image" src="{{ site.baseurl }}/assets/img/caryatid.jpg"/>
 <span class="main-image-caption">
-Caryatid porch of the Erechtheion. Photo by <a href = "https://www.pexels.com/photo/the-erechtheion-temple-of-athena-polias-acropolis-athens-greece-14375261/">Wendy Wei.</a>
+Caryatid porch of the Erechtheion, Athens.<a href = "https://www.pexels.com/photo/the-erechtheion-temple-of-athena-polias-acropolis-athens-greece-14375261/"></a>
 </span>
 
 *Most of this note comes from materials prepared by [Josh Ober](https://politicalscience.stanford.edu/people/josiah-ober) and [Sal Salamanca](https://emilysal.neocities.org/) for POLISCI 330A: "Origins of Political Thought". I also draw on surveys by Balot[^1] (the course's textbook) and Ryan[^2].*
