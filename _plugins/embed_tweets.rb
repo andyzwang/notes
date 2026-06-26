@@ -1,4 +1,8 @@
 # frozen_string_literal: true
+
+# Runs as a Jekyll Generator (during the `site.generate` phase).
+# Disabled by default; set `embed_tweets: true` in _config.yml to turn
+# bare tweet URLs into embedded tweet widgets.
 class TweetEmbedGenerator < Jekyll::Generator
   def generate(site)
     return if !site.config["embed_tweets"]
