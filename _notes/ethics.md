@@ -17,6 +17,8 @@ Ethics derives from the Greek *êthos*, which means "custom, disposition, charac
 
 > For the ancient Greeks, ethics was primarily a matter of managing one's desires and appetites and keeping them under control, of training oneself to exhibit virtues such as the canonical justice, temperance, courage, and piety — and of acting virtuously because one had the proper motivations, desires, and dispositions.[^2]
 
+The ancient Greek system of [[virtue ethics]] believed that the soul could be managed through the proper arrangement of desires, proclivities, passions, and habits — chiefly through education. Due to the tight relationship between ethics and politics, [[Ancient political thought |ancient political thought]] focuses on defining these virtues and connecting them to political life, broadly speaking.
+
 
 [^1]: Balot, Ryan K. _Greek Political Thought_. 1st ed. Ancient Cultures Series. John Wiley & Sons, Incorporated, 2006. Page 11.
 

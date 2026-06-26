@@ -39,7 +39,7 @@ Once we have described how a society answers this basic question at a given mome
 1. **First, how does that order come about?** How did *this* political order emerge over any other political arrangement, and over a state of no order at all?
 2. **Second, how might that order be changed?** This question comes up in cases where some are dissatisfied with the existing order, or when circumstances change, and the old arrangement no longer seems well-suited to current needs.
 
-## Primary themes
+### Primary themes
 Throughout ancient texts, the basic question also gives rise to recurring themes:
 
 - *[[interdependence | Interdependence]]*: we need each other — sometimes reluctantly; how do we make that work?

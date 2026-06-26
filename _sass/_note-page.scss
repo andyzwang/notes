@@ -64,15 +64,17 @@
     display: block;
     text-decoration: none;
     color: var(--color-subtext);
-    transition: color 150ms, transform 150ms;
+    border-left: 2px solid transparent;
+    padding-left: 0.4em;
+    transition: color 150ms, border-color 150ms;
 
     &:hover {
       color: var(--color-yellow) !important;
     }
 
     &.active {
-      color: var(--color-yellow);
-      transform: translateX(0.5em);
+      color: var(--color-text);
+      border-left-color: var(--color-yellow);
     }
   }
 
