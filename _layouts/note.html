@@ -76,7 +76,7 @@ layout: default
       {% endif %}
 
       <div id="outline-container">
-        <h3 id="outline-heading" style="margin-bottom: 1em">Outline</h3>
+        <h3 id="outline-heading" style="margin-bottom: 1em; transition: opacity 150ms">Outline</h3>
         <nav id="outline"></nav>
       </div>
     </side>
@@ -127,6 +127,8 @@ layout: default
     var outlineContainer = document.getElementById('outline-container');
     var outlineHeading = document.getElementById('outline-heading');
     var stickyTop = parseFloat(getComputedStyle(outlineContainer).top) || 0;
+    var stuckHeading = {{ page.display_title | default: page.title | jsonify }};
+    var wasStuck = null;
 
     function updateActiveSection() {
       var scrollPos = window.scrollY + 80;
@@ -144,7 +146,14 @@ layout: default
       });
 
       var isStuck = outlineContainer.getBoundingClientRect().top <= stickyTop;
-      outlineHeading.textContent = isStuck ? '§' : 'Outline';
+      if (isStuck !== wasStuck) {
+        wasStuck = isStuck;
+        outlineHeading.style.opacity = '0';
+        setTimeout(function () {
+          outlineHeading.innerHTML = isStuck ? stuckHeading : 'Outline';
+          outlineHeading.style.opacity = '1';
+        }, 150);
+      }
 
       ticking = false;
     }
