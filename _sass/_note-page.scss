@@ -74,6 +74,7 @@
 
     &.active {
       color: var(--color-text);
+      font-weight: bold;
       border-left-color: var(--color-yellow);
     }
   }

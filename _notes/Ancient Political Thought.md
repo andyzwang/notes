@@ -48,7 +48,7 @@ Throughout ancient texts, the basic question also gives rise to recurring themes
 - *[[legitimacy | Legitimacy]]*: what justifies the current arrangement of goods and power?
 - *[[reason | Reason]]*: what is it, who has it, how is it achieved, and what are its limits?
 
-## Poetry and Political Thought
+## Poetry and political thought
 
 The study of ancient political thought has traditionally focused on the "systematic theorists of politics in the classical period," especially Plato and Aristotle.[^4] But "the systemic theoreticians did not invent their intellectual worlds from scratch."[^5] Dating back to [[Homer]] and [[Hesiod]], Greek poets addressed many of the same themes while working in a different medium. Given the expansive understanding of "[[The political]]" in ancient Greece, we should understand a continuity between earlier Greek texts and the systematic theorists who came later.
 
