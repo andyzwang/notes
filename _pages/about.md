@@ -5,7 +5,7 @@ id: about
 permalink: /about/
 ---
 
-# About This Site
+# About this site
 
 <blockquote class="main-quote">
   <p>

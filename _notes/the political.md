@@ -1,6 +1,5 @@
 ---
-title: the political
-display_title: the political
+title: The political
 ---
 
 <div class="note-header" markdown="1">

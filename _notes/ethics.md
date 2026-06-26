@@ -1,5 +1,5 @@
 ---
-title: ethics
+title: Ethics
 ---
 
 <div class="note-header" markdown="1">

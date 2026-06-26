@@ -4,7 +4,7 @@ title: The Canon
 permalink: /the-canon/
 ---
 
-# The Political Theory Canon
+# The political theory canon
 
 This is my working "canonical" list of political theory works. Pragmatically, it is the list of texts and authors that students in Stanford's political theory program are expected to master in order to advance to candidacy. Philosophically, these texts are foundational to later debates: later thinkers variously dispute, revise, reject, and return to them. This list, therefore, is both a reading plan and a way of tracking the main debates that organize the discipline of political theory.
 

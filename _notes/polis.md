@@ -1,6 +1,6 @@
 ---
-title: polis
-display_title: <em>polis</em>
+title: Polis
+display_title: <em>Polis</em>
 ---
 
 <div class="note-header" markdown="1">
@@ -8,14 +8,14 @@ display_title: <em>polis</em>
 <span class="main-image-caption">*Piazza San Marco*, Canaletto, c. 1720s.<a href = "https://www.metmuseum.org/art/collection/search/435839"></a></span>
 </div>
 
-The *polis* (plural *poleis*) is a unit of political analysis, with its origins in ancient Greece.[^1] It also lends its name to the Greek *ta politika* — "the things of the polis" — which is the root of the English terms "[[the political]]" and "[[politics]]."
+**The *polis*** — plural *poleis* — is a central unit of political analysis with origins in ancient Greece.[^1] It also gives its name to the Greek *ta politika* — "the things of the polis" — from which the English terms "[[The political]]" and "[[politics]]" derive.
 ## In ancient thought
 
-The *polis* — typically translated as "city-state" — was a self-governing political community in ancient Greece. At the time of the classical period — that is, the time when [[Plato]] and [[Aristotle]] were active — there were roughly 750 Greek poleis scattered around the Eastern Mediterranean. Most had fewer than 1,000 citizens, though [[Athens]], at 45,000 citizens, was a notable outlier.[^2]
+The *polis* — usually translated as "city-state" — was a self-governing political community in ancient Greece. By the classical period — when [[Plato]] and [[Aristotle]] wrote — there were roughly 750 Greek poleis scattered around the eastern Mediterranean. Most had fewer than 1,000 citizens, though [[Athens]], with 45,000 citizens, was a notable outlier.[^2]
 
-[[citizenship|Citizenship]] was the central political feature of the poleis. A select group of free adult men had the power to make decisions on behalf of the community. They also shared common religious, civic, legal, and administrative customs. "Basic standards of equality and mutual respect" governed interactions among citizens, who were understood as being free and equal individuals.[^2]
+[[citizenship|Citizenship]] was the defining political feature of the polis. A select group of free adult men had the power to make decisions on behalf of the community. Citizens were bound together by common religious, civic, legal, and administrative customs. Their relations were governed by "basic standards of equality and mutual respect," and they were understood, at least in principle, as free and equal members of a political community. [^2]
 
-Geographically, the polis was organized around a fortified "acropolis," which was surrounded by an agricultural hinterland.
+Geographically, the polis was typically organized around a fortified acropolis and extended outward into an agricultural hinterland.
 
 [^1]: As a technical term transliterated from Greek, I italicize *polis* on first mention in most articles, including this one. After that, I get lazy.
 
