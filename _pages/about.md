@@ -30,7 +30,7 @@ If anything on this site was helpful to you, or if you just want to chat, please
 
 Individual Markdown notes for this site are first written offline in [Obsidian](https://obsidian.md/). Backend editing on the site is done in [Pulsar](https://pulsar-edit.dev/). The site is compiled with Jekyll and adapted from Maxime Vaillancourt's [digital garden template](https://github.com/maximevaillancourt/digital-garden-jekyll-template). Its colors are based on Steph Ango's beautiful [Flexoki](https://stephango.com/flexoki) palette. The body text is set in Inter, headings in Cardo, and code in IBM Plex Mono. Source code and version history for this site are available in its [GitHub repo](https://github.com/andyzwang/notes).
 
-Except where otherwise noted, my writing on this site is licensed under <a class = "external-link" href = "https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. You may share, quote, and adapt it with attribution. This is a working notebook — accordingly, I am not responsible for errors of fact, interpretation, or judgment that follow from trusting what I have written here.
+Except where otherwise noted, my writing on this site is licensed under <a class = "external-link" href = "https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. You may share, quote, and adapt it with attribution. This is a working notebook — accordingly, I am not responsible for errors of fact, interpretation, or judgment that follow from trusting what I have written here. Typos are also to be expected.
 
 Built with love in Palo Alto — a place that sometimes, as Hannah Arendt writes, can be "an ultra-modern prison for the rehabilitation of ultra-modern criminals."[^2]
 
