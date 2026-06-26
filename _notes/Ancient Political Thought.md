@@ -60,7 +60,7 @@ In sum, Greek political thought is concerned with general and abstract reflectio
 
 > The importance of Greek political thought to us has to be argued for in specific and detailed terms, in the here and now. I would argue that studying Greek political thought provides an important political perspective for us in virtue of its combination of similarity to us and difference from us.[^7]
 
-For Balot, our chief difference with the Greeks — and accordingly, the chief value of studying them — is that "[[Ethics]] and [[politics]] were connected at their foundations" in antiquity.
+For Balot, our chief difference with the Greeks — and accordingly, the chief value of studying them — is that "[[Ethics|ethics]] and [[politics]] were connected at their foundations" in antiquity.
 
 
 [^1]: Balot, Ryan K. _Greek Political Thought_. 1st ed. Ancient Cultures Series. John Wiley & Sons, Incorporated, 2006.
