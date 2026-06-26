@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
-# Turns ==something== in Markdown to <mark>something</mark> in output HTML
+# Runs on the `:pre_render` hook, per-document, right before kramdown
+# converts markdown to HTML (so this must run before markdown
+# conversion, and must mutate raw markdown rather than rendered HTML).
+# Turns ==something== in Markdown to <mark>something</mark> in output HTML.
 
 Jekyll::Hooks.register [:notes], :pre_render do |doc|
   replace(doc)

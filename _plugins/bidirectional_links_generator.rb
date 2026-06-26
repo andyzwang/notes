@@ -1,182 +1,141 @@
 # frozen_string_literal: true
+
+# Runs as a Jekyll Generator (during the `site.generate` phase, before
+# any document is rendered to HTML).
+#
+# Resolves [[Wiki Link]] / [[name|Display]] syntax into real anchor tags
+# (or greyed-out "ghost" links to not-yet-written notes), and computes
+# the backlinks + graph data used by the "Mentioned in" sidebar and the
+# notes graph.
+#
+# Performance note: this does a single pass over each note (building a
+# name -> doc lookup index once, then resolving + recording backlinks as
+# it goes), rather than the O(notes^2) nested-loop-over-every-pair
+# approach this previously used. That matters once the notes collection
+# grows past a few dozen files.
 class BidirectionalLinksGenerator < Jekyll::Generator
+  # Frontmatter fields whose wikilinks should be resolved the same way
+  # as note body content (e.g. `author: "[[Homer]]"`)
+  METADATA_FIELDS = ['author'].freeze
+
+  WIKILINK_REGEX = /\[\[([^\]]+)\]\]/.freeze
+
   def generate(site)
-    graph_nodes = []
-    graph_edges = []
+    @site = site
+    @all_notes = site.collections['notes'].docs
+    @all_docs = @all_notes + site.pages
+    @link_extension = site.config['use_html_extension'] ? '.html' : ''
 
-    all_notes = site.collections['notes'].docs
-    all_pages = site.pages
+    @lookup = build_lookup_index(@all_docs)
+    @ghost_nodes = {}
+    @graph_edges = []
+    @backlinks = Hash.new { |h, k| h[k] = [] }
 
-    all_docs = all_notes + all_pages
+    @all_docs.each { |doc| resolve_links_in_doc(doc) }
 
-    # Ghost nodes: links to notes that don't exist yet, keyed by
-    # normalized name so multiple notes pointing at the same
-    # not-yet-written note collapse into a single grey node.
-    ghost_nodes = {}
-
-    link_extension = !!site.config["use_html_extension"] ? '.html' : ''
-
-    # Frontmatter fields whose wikilinks should be resolved the same way
-    # as note body content (e.g. `author: "[[Homer]]"`)
-    metadata_fields = ['author']
-
-    # Convert all Wiki/Roam-style double-bracket link syntax to plain HTML
-    # anchor tag elements (<a>) with "internal-link" CSS class
-    all_docs.each do |current_note|
-      all_docs.each do |note_potentially_linked_to|
-        note_title_regexp_pattern = Regexp.escape(
-          File.basename(
-            note_potentially_linked_to.basename,
-            File.extname(note_potentially_linked_to.basename)
-          )
-        ).gsub('\_', '[ _]').gsub('\-', '[ -]').capitalize
-
-        title_from_data = note_potentially_linked_to.data['title']
-        if title_from_data
-          title_from_data = Regexp.escape(title_from_data)
-        end
-
-        new_href = "#{site.baseurl}#{note_potentially_linked_to.url}#{link_extension}"
-        anchor_tag = "<a class='internal-link' href='#{new_href}'>\\1</a>"
-
-        # Replace double-bracketed links with label using note title
-        # [[A note about cats|this is a link to the note about cats]]
-        current_note.content.gsub!(
-          /\[\[#{note_title_regexp_pattern}\|(.+?)(?=\])\]\]/i,
-          anchor_tag
-        )
-
-        # Replace double-bracketed links with label using note filename
-        # [[cats|this is a link to the note about cats]]
-        current_note.content.gsub!(
-          /\[\[#{title_from_data}\|(.+?)(?=\])\]\]/i,
-          anchor_tag
-        )
-
-        # Replace double-bracketed links using note title
-        # [[a note about cats]]
-        current_note.content.gsub!(
-          /\[\[(#{title_from_data})\]\]/i,
-          anchor_tag
-        )
-
-        # Replace double-bracketed links using note filename
-        # [[cats]]
-        current_note.content.gsub!(
-          /\[\[(#{note_title_regexp_pattern})\]\]/i,
-          anchor_tag
-        )
-
-        metadata_fields.each do |field|
-          value = current_note.data[field]
-          next unless value.is_a?(String)
-
-          value = value.gsub(/\[\[#{note_title_regexp_pattern}\|(.+?)(?=\])\]\]/i, anchor_tag)
-          value = value.gsub(/\[\[#{title_from_data}\|(.+?)(?=\])\]\]/i, anchor_tag)
-          value = value.gsub(/\[\[(#{title_from_data})\]\]/i, anchor_tag)
-          value = value.gsub(/\[\[(#{note_title_regexp_pattern})\]\]/i, anchor_tag)
-          current_note.data[field] = value
-        end
-      end
-
-      # At this point, all remaining double-bracket-wrapped words are
-      # pointing to non-existing pages. Register a ghost graph node for
-      # each one (notes only, not pages) before greying them out below.
-      if all_notes.include?(current_note)
-        current_note.content.scan(/\[\[([^\]|]+)(?:\|[^\]]+)?\]\]/i).flatten.each do |name|
-          register_ghost_link(ghost_nodes, graph_edges, current_note, name)
-        end
-
-        metadata_fields.each do |field|
-          value = current_note.data[field]
-          next unless value.is_a?(String)
-
-          value.scan(/\[\[([^\]|]+)(?:\|[^\]]+)?\]\]/i).flatten.each do |name|
-            register_ghost_link(ghost_nodes, graph_edges, current_note, name)
-          end
-        end
-      end
-
-      # Turn remaining double-bracket links into disabled links by
-      # greying them out and changing the cursor. If a display name was
-      # given via [[name|display]], show only the display text.
-      current_note.content = current_note.content.gsub(
-        /\[\[[^\]|]+\|([^\]]+)\]\]|\[\[([^\]]+)\]\]/i
-      ) do
-        display = $~[1] || $~[2]
-        "<span title='There is no note that matches this link.' class='invalid-link'>" \
-          "<span class='invalid-link-brackets'>[[</span>#{display}<span class='invalid-link-brackets'>]]</span></span>"
-      end
-
-      metadata_fields.each do |field|
-        value = current_note.data[field]
-        next unless value.is_a?(String)
-
-        current_note.data[field] = value.gsub(
-          /\[\[[^\]|]+\|([^\]]+)\]\]|\[\[([^\]]+)\]\]/i
-        ) do
-          display = $~[1] || $~[2]
-          "<span title='There is no note that matches this link.' class='invalid-link'>" \
-            "<span class='invalid-link-brackets'>[[</span>#{display}<span class='invalid-link-brackets'>]]</span></span>"
-        end
-      end
-    end
-
-    # Identify note backlinks and add them to each note
-    all_notes.each do |current_note|
-      # Nodes: Jekyll
-      notes_linking_to_current_note = all_notes.filter do |e|
-        next false if e.url == current_note.url
-
-        e.content.include?(current_note.url) || metadata_fields.any? do |field|
-          e.data[field].is_a?(String) && e.data[field].include?(current_note.url)
-        end
-      end
-
-      # Nodes: Graph
-      graph_nodes << {
-        id: note_id_from_note(current_note),
-        path: "#{site.baseurl}#{current_note.url}#{link_extension}",
-        label: current_note.data['display_title'] || current_note.data['title'],
-      } unless current_note.path.include?('_notes/index.html')
-
-      # Edges: Jekyll
-      current_note.data['backlinks'] = notes_linking_to_current_note
-
-      # Edges: Graph
-      notes_linking_to_current_note.each do |n|
-        graph_edges << {
-          source: note_id_from_note(n),
-          target: note_id_from_note(current_note),
-        }
-      end
-    end
-
-    File.write('_includes/notes_graph.json', JSON.dump({
-      edges: graph_edges,
-      nodes: graph_nodes + ghost_nodes.values,
-    }))
+    assign_backlinks
+    write_graph_data
   end
 
-  def note_id_from_note(note)
-    note.data['title'].bytes.join
+  private
+
+  # Build a normalized-name => doc index so each note's links can be
+  # resolved with a single hash lookup instead of scanning every other
+  # note. Names are normalized so spaces/underscores/hyphens are
+  # interchangeable (e.g. "the-political" / "the_political" / "the
+  # political" all resolve to the same doc), and lookups are
+  # case-insensitive.
+  def build_lookup_index(docs)
+    index = {}
+    docs.each do |doc|
+      filename = File.basename(doc.basename, File.extname(doc.basename))
+      index[normalize(filename)] = doc
+
+      title = doc.data['title']
+      index[normalize(title)] = doc if title.is_a?(String)
+    end
+    index
   end
 
-  def register_ghost_link(ghost_nodes, graph_edges, current_note, name)
+  def normalize(str)
+    str.to_s.downcase.gsub(/[-_\s]+/, ' ').strip
+  end
+
+  def resolve_links_in_doc(doc)
+    doc.content = doc.content.gsub(WIKILINK_REGEX) { replace_wikilink(doc, Regexp.last_match(1)) }
+
+    METADATA_FIELDS.each do |field|
+      value = doc.data[field]
+      next unless value.is_a?(String)
+
+      doc.data[field] = value.gsub(WIKILINK_REGEX) { replace_wikilink(doc, Regexp.last_match(1)) }
+    end
+  end
+
+  # `inner` is whatever was inside the double brackets, e.g. "Homer" or
+  # "the-political|the political".
+  def replace_wikilink(doc, inner)
+    name, display = inner.split('|', 2)
+    display ||= name
+    target = @lookup[normalize(name)]
+
+    if target
+      register_backlink(doc, target)
+      href = "#{@site.baseurl}#{target.url}#{@link_extension}"
+      "<a class='internal-link' href='#{href}'>#{display}</a>"
+    else
+      register_ghost_link(doc, name) if @all_notes.include?(doc)
+      "<span title='There is no note that matches this link.' class='invalid-link'>" \
+        "<span class='invalid-link-brackets'>[[</span>#{display}<span class='invalid-link-brackets'>]]</span></span>"
+    end
+  end
+
+  def register_backlink(doc, target)
+    return unless @all_notes.include?(doc) && @all_notes.include?(target)
+    return if doc.url == target.url
+    return if @backlinks[target.url].include?(doc)
+
+    @backlinks[target.url] << doc
+    @graph_edges << { source: note_id_from_note(doc), target: note_id_from_note(target) }
+  end
+
+  def register_ghost_link(doc, name)
     clean_name = name.strip
     return if clean_name.empty?
 
     key = clean_name.downcase
-    ghost_nodes[key] ||= {
+    @ghost_nodes[key] ||= {
       id: "ghost-#{key.bytes.join}",
       path: nil,
       label: clean_name,
       ghost: true,
     }
 
-    graph_edges << {
-      source: note_id_from_note(current_note),
-      target: ghost_nodes[key][:id],
-    }
+    @graph_edges << { source: note_id_from_note(doc), target: @ghost_nodes[key][:id] }
+  end
+
+  def assign_backlinks
+    @all_notes.each { |note| note.data['backlinks'] = @backlinks[note.url] }
+  end
+
+  def write_graph_data
+    graph_nodes = @all_notes
+      .reject { |note| note.path.include?('_notes/index.html') }
+      .map do |note|
+        {
+          id: note_id_from_note(note),
+          path: "#{@site.baseurl}#{note.url}#{@link_extension}",
+          label: note.data['display_title'] || note.data['title'],
+        }
+      end
+
+    File.write('_includes/notes_graph.json', JSON.dump({
+      edges: @graph_edges,
+      nodes: graph_nodes + @ghost_nodes.values,
+    }))
+  end
+
+  def note_id_from_note(note)
+    note.data['title'].bytes.join
   end
 end
