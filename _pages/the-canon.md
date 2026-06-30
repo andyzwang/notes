@@ -18,12 +18,12 @@ Practically, students in Stanford's political theory program are expected to mas
   <div class="reading-list-entry">
     <span class="reading-list-date">c. 700 BCE</span>
     <span class="reading-list-author minor-author">[[Homer]]</span>
-    <span class="reading-list-works"><em>[[The Illiad]]</em></span>
+    <span class="reading-list-works"><em>[[The Iliad]]</em></span>
   </div>
   <div class="reading-list-group">
     <div class="reading-list-entry">
       <span class="reading-list-date">c. 700 BCE</span>
-      <span class="reading-list-author minor-author">[[Hesoid]]</span>
+      <span class="reading-list-author minor-author">[[Hesiod]]</span>
       <span class="reading-list-works"><em>[[Works and Days]]</em></span>
     </div>
     <div class="reading-list-entry">
@@ -156,7 +156,7 @@ Practically, students in Stanford's political theory program are expected to mas
   <div class="reading-list-entry">
     <span class="reading-list-date">1789</span>
     <span class="reading-list-author">[[Bentham]]</span>
-    <span class="reading-list-works"><em>[[Introduction to the Principles of Morals and Legislation]]</em></span>
+    <span class="reading-list-works"><em>[[An Introduction to the Principles of Morals and Legislation]]</em></span>
   </div>
   <div class="reading-list-entry">
     <span class="reading-list-date">1790</span>
@@ -204,7 +204,7 @@ Practically, students in Stanford's political theory program are expected to mas
     <div class="reading-list-entry">
       <span class="reading-list-date"></span>
       <span class="reading-list-author"></span>
-      <span class="reading-list-works"><em>[[Representative Government]]</em></span>
+      <span class="reading-list-works"><em>[[Considerations on Representative Government]]</em></span>
     </div>
     <div class="reading-list-entry">
       <span class="reading-list-date"></span>
