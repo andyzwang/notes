@@ -13,7 +13,7 @@ display_title: <em>Polis</em>
 
 The *polis* — usually translated as "city-state" — was a self-governing political community in ancient Greece. By the classical period — when [[Plato]] and [[Aristotle]] wrote — there were roughly 750 Greek poleis scattered around the eastern Mediterranean. Most had fewer than 1,000 citizens, though [[Athens]], with 45,000 citizens, was a notable outlier.[^2]
 
-[[citizenship|Citizenship]] was the defining political feature of the polis. A select group of free adult men had the power to make decisions on behalf of the community. Citizens were bound together by common religious, civic, legal, and administrative customs. Their relations were governed by "basic standards of equality and mutual respect," and they were understood, at least in principle, as free and equal members of a political community. [^2]
+[[Citizenship]] was the defining political feature of the polis. A select group of free adult men had the power to make decisions on behalf of the community. Citizens were bound together by common religious, civic, legal, and administrative customs. Their relations were governed by "basic standards of equality and mutual respect," and they were understood, at least in principle, as free and equal members of a political community. [^2]
 
 Geographically, the polis was typically organized around a fortified acropolis and extended outward into an agricultural hinterland.
 

@@ -23,7 +23,7 @@ Greek societies thought of "the political" as a broad concept that encompassed b
 
 As a scholar of [[virtue ethics]], Balot argues that in addition to the power field of politics, "the political" in Greek culture was also "the field of activity in which citizens struggled for power by claiming ethical and intellectual virtue for themselves."[^2]
 
-Ancient Greece had a distinctive focus on *producing* virtuous citizens through [[education]]. Communal norms defined how citizens should conduct themselves starting, which were reproduced through the politics and policing of virtue and vice. [[religion|Religion]], too, played a central role in maintaining these standards of communal conduct.
+Ancient Greece had a distinctive focus on *producing* virtuous citizens through [[Education|education]]. Communal norms defined how citizens should conduct themselves starting, which were reproduced through the politics and policing of virtue and vice. [[Religion]], too, played a central role in maintaining these standards of communal conduct.
 
 ## Definitions
 
@@ -39,4 +39,4 @@ In the context of ancient Greek societies, Balot believes "there was an essentia
 
 [^3]: Balot 2. Citing Meier, *Discovery of Politics.
 
-[^4]: Balot writes that "the invention of [[privacy|private]] life was some 400 years in the future" (5)
+[^4]: Balot writes that "the invention of [[Privacy|private]] life was some 400 years in the future" (5)

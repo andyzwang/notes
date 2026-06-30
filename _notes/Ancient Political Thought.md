@@ -24,7 +24,7 @@ This article, accordingly, provides some background on the Greek world and synth
 
 In the age of [[Aristotle]], approximately 8–10 million Greek-speaking people were distributed across ca. 1,000 city-states (*poleis*, singular *[[polis]]*). The Greek world stood at the edge of great empires and kingdoms, including Persia and Egypt.
 
-It was, therefore, a world of small states, fierce competition, and new modes of social cooperation, including the invention of [[democracy]]. It was also a world that was marked by problematic gender roles, social inequality, and master-slave relations. And, despite these differences, it was a world that bears remarkable similarities to our modern one. Themes of equality, freedom, leadership, and authority run core to Greek political thought and remain central to our political lives today.
+It was, therefore, a world of small states, fierce competition, and new modes of social cooperation, including the invention of [[Democracy|democracy]]. It was also a world that was marked by problematic gender roles, social inequality, and master-slave relations. And, despite these differences, it was a world that bears remarkable similarities to our modern one. Themes of equality, freedom, leadership, and authority run core to Greek political thought and remain central to our political lives today.
 
 ## The basic question: *politeia*
 
@@ -42,17 +42,17 @@ Once we have described how a society answers this basic question at a given mome
 ### Primary themes
 Throughout ancient texts, the basic question also gives rise to recurring themes:
 
-- *[[interdependence | Interdependence]]*: we need each other — sometimes reluctantly; how do we make that work?
-- *[[justice | Justice]]*: who gets what, and why?
-- *[[power | Power]]*: who rules?
-- *[[legitimacy | Legitimacy]]*: what justifies the current arrangement of goods and power?
-- *[[reason | Reason]]*: what is it, who has it, how is it achieved, and what are its limits?
+- *[[Interdependence]]*: we need each other — sometimes reluctantly; how do we make that work?
+- *[[Justice]]*: who gets what, and why?
+- *[[Power]]*: who rules?
+- *[[Legitimacy]]*: what justifies the current arrangement of goods and power?
+- *[[Reason]]*: what is it, who has it, how is it achieved, and what are its limits?
 
 ## Poetry and political thought
 
 The study of ancient political thought has traditionally focused on the "systematic theorists of politics in the classical period," especially Plato and Aristotle.[^4] But "the systemic theoreticians did not invent their intellectual worlds from scratch."[^5] Dating back to [[Homer]] and [[Hesiod]], Greek poets addressed many of the same themes while working in a different medium. Given the expansive understanding of "[[The political|the political]]" in ancient Greece, we should understand a continuity between earlier Greek texts and the systematic theorists who came later.
 
-How should we read these poets and historians as *political* thinkers? Balot writes that "all of Greek political literature is normative in the sense that the authors...shaped their material in order to provide an ethical analysis and a political evaluation."[^5] This literature — especially [[poetry]] — often served a didactic function, imparting moral and political wisdom to its audiences.
+How should we read these poets and historians as *political* thinkers? Balot writes that "all of Greek political literature is normative in the sense that the authors...shaped their material in order to provide an ethical analysis and a political evaluation."[^5] This literature — especially [[Poetry|poetry]] — often served a didactic function, imparting moral and political wisdom to its audiences.
 
 In sum, Greek political thought is concerned with general and abstract reflections on the domain of politics, and on the ways human beings exercise their political capacities. Well-formulated reflections on political issues "could be adapted to make sense of specific situations and to give rhetorical and intellectual support to others," even when many texts originated in response to immediate political circumstances and for different audiences.[^6]
 
@@ -60,7 +60,7 @@ In sum, Greek political thought is concerned with general and abstract reflectio
 
 > The importance of Greek political thought to us has to be argued for in specific and detailed terms, in the here and now. I would argue that studying Greek political thought provides an important political perspective for us in virtue of its combination of similarity to us and difference from us.[^7]
 
-For Balot, our chief difference with the Greeks — and accordingly, the chief value of studying them — is that "[[Ethics|ethics]] and [[politics]] were connected at their foundations" in antiquity.
+For Balot, our chief difference with the Greeks — and accordingly, the chief value of studying them — is that "[[Ethics|ethics]] and [[Politics|politics]] were connected at their foundations" in antiquity.
 
 
 [^1]: Balot, Ryan K. _Greek Political Thought_. 1st ed. Ancient Cultures Series. John Wiley & Sons, Incorporated, 2006.
