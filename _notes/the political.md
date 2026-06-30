@@ -1,5 +1,6 @@
 ---
 title: The political
+stage: ⭐️
 ---
 
 <div class="note-header" markdown="1">

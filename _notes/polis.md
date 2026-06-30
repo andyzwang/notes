@@ -1,6 +1,7 @@
 ---
 title: Polis
 display_title: <em>Polis</em>
+stage: ⭐️
 ---
 
 <div class="note-header" markdown="1">
