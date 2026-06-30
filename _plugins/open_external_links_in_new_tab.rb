@@ -1,8 +1,11 @@
-# If the configuration sets `open_external_links_in_new_tab` to a truthy value,
-# add 'target=_blank' to anchor tags that don't have `internal-link` class
-
 # frozen_string_literal: true
 require 'nokogiri'
+
+# Runs on the `:post_convert` hook, per-document, right after kramdown
+# converts markdown to HTML (needs real HTML to parse with Nokogiri).
+# If `open_external_links_in_new_tab` is truthy in _config.yml, add
+# target="_blank" to anchor tags that don't have the `internal-link`
+# class.
 
 Jekyll::Hooks.register [:notes], :post_convert do |doc|
   convert_links(doc)

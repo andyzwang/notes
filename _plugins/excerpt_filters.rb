@@ -1,5 +1,10 @@
 # frozen_string_literal: true
-module StripNoteHeaderFilter
+
+# Liquid filters used by _layouts/note.html to build excerpts (the
+# "Mentioned in" preview text) and the word count metadata row. Not
+# tied to a specific Jekyll build phase — these run wherever they're
+# called from a template.
+module ExcerptFilters
   def strip_note_header(input)
     input.to_s.gsub(%r{<div[^>]*class=["'][^"']*\bnote-header\b[^"']*["'][^>]*>.*?</div>}im, '')
   end
@@ -29,4 +34,4 @@ module StripNoteHeaderFilter
   end
 end
 
-Liquid::Template.register_filter(StripNoteHeaderFilter)
+Liquid::Template.register_filter(ExcerptFilters)
