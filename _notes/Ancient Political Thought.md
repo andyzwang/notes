@@ -63,7 +63,7 @@ In sum, Greek political thought is concerned with general and abstract reflectio
 
 For Balot, our chief difference with the Greeks — and accordingly, the chief value of studying them — is that "[[Ethics|ethics]] and [[Politics|politics]] were connected at their foundations" in antiquity.[^8] As such, Greek political thought — its "virtue politics," so to say — also took the form of analyzing virtues and vices.[^9] 
 
-In analyzing the contemporary debate between [[Liberalism|liberalism]] and [[Communitarianism|communitarianism]], Balot argues that Greek thought "provides a genuine *tertium quid*."[^10] Like liberalism, Greek political thought approved of individual autonomy, private freedom, and equality of opportunity, but also provides virtues that can support these "liberal" values. Similarly, like communitarians, Greek political thinkers rejected the "thin" (as Balot writes) conception of individualism, instead analyzing individuals through their attachments to families, religions, communities, and ultimately, poleis. 
+In analyzing the contemporary debate between [[Liberalism|liberalism]] and [[Communitarianism|communitarianism]], Balot argues that Greek thought "provides a genuine *tertium quid*."[^10] Like liberalism, Greek political thought approved of individual autonomy, private freedom, and equality of opportunity: beyond this, it also provided virtues that could support these "liberal" values. Similarly, like communitarians, Greek political thinkers rejected the "thin" (as Balot writes) conception of individualism, instead analyzing individuals through their attachments to families, religions, communities, and ultimately, poleis. 
 
 
 
