@@ -16,27 +16,33 @@ permalink: /about/
 
 Hi! I'm Andy.
 
-I'm currently a PhD student in Stanford's [Department of Political Science](https://politicalscience.stanford.edu/people/andy-wang), studying Political Theory and Comparative Politics. You can find more about me and see more polished work on my [main site](https://andyzwang.com).
+I'm currently a PhD student in Stanford's [Department of Political Science](https://politicalscience.stanford.edu/people/andy-wang), studying Political Theory and Comparative Politics. You can learn more about me on my [main site](https://andyzwang.com).
 
-This site is something of a working notebook, where I can think in public. I treat it both as a memory system and a map. Political theory — and political science more broadly — is a long conversation across texts and concepts. A linked notebook is a useful method for tracking these conversations without forcing them into a linear format.
+This site is a working notebook where I think in public. I originally created it as a companion to my [[the-canon|comprehensive exam reading]], inspired by [WikiSum](https://adambrown.info/p/notes). It is also an ever-evolving project with two main aims:
 
-Like the UCSD students who created [WikiSum](https://adambrown.info/p/notes), I originally made this site as a sort of wiki to guide my studying for [[the-canon|comprehensive exams]]. I am also drawn to many aspects of the philosophy behind [digital gardens](https://maggieappleton.com/garden-history): some entries are relatively polished, but many remain provisional.[^1] They might contain mistakes, tangents, or claims I later revise — that is precisely why I keep them here.
+1. **A map of ideas:** Political theory is a long and recursive conversation across texts, concepts, and traditions. Linked notes let me trace these conversations across authors, works, ideas, and debates.[^1] This site is intended not as a comprehensive reference like the [*SEP*](https://plato.stanford.edu/), but as a reflection of the ideas I encounter both within political theory and across adjacent disciplines.
 
-Most of these notes draw from lectures, conversations, syllabi, and guidance from a lengthy list of teachers, mentors, and colleagues. Some are also adapted from incredible notes prepared by [Joan O'Bryan](https://joanobryan.com/) and [Joseph Cloward](https://josephcloward.com/). I am incredibly grateful for these debts, even when I do not name them individually. When a source is public, I try to cite it directly. When it comes from private teaching or conversations, I generally do not attribute it directly, since these notes often end in a final form in ways that others might not endorse or even recognize as their own.
+2. **A living notebook:** Inspired by the philosophy of [digital gardens](https://maggieappleton.com/garden-history), the notes on this site are meant to evolve over time, and their [`version history`](https://github.com/andyzwang/notes) is public.[^2] Some entries are relatively polished, while many  remain provisional, with mistakes, tangents, or claims I later revise. By revisiting texts and drawing new connections over time, I hope this notebook will evolve with my understanding.
+
+Most of these notes draw from lectures, conversations, syllabi, and guidance from teachers, mentors, and colleagues. Some are also adapted from meticulous notes by [Joan O'Bryan](https://joanobryan.com/) and [Joseph Cloward](https://josephcloward.com/). I am incredibly grateful for these debts, even when I do not name them individually.[^3]
 
 If anything on this site was helpful to you, or if you just want to chat, please reach out at `hi [at] andyzwang [dot] com`.
 
 ## Colophon
 
-Individual Markdown notes for this site are first written offline in [Obsidian](https://obsidian.md/), while backend editing is done in [Pulsar](https://pulsar-edit.dev/). The site is compiled with [Jekyll](https://jekyllrb.com/) and adapted from Maxime Vaillancourt's [digital garden template](https://github.com/maximevaillancourt/digital-garden-jekyll-template). Its colors are based on Steph Ango's beautiful [Flexoki](https://stephango.com/flexoki) palette. The body text is set in Inter, headings in Cardo, and code in IBM Plex Mono. Source code and version history for this site are available in its [GitHub repo](https://github.com/andyzwang/notes).
+Markdown notes for this site are first written offline in [Obsidian](https://obsidian.md/), while backend editing is done in [Pulsar](https://pulsar-edit.dev/). The site is compiled with [Jekyll](https://jekyllrb.com/) and adapted from Maxime Vaillancourt's terrific [digital garden template](https://github.com/maximevaillancourt/digital-garden-jekyll-template). Its colors are based on Steph Ango's beautiful [Flexoki](https://stephango.com/flexoki) palette. The body text is set in Inter, headings in Cardo, and code in IBM Plex Mono. All citations are [Chicago Style](https://www.chicagomanualofstyle.org/home.html). Source code and full version history are available on [GitHub](https://github.com/andyzwang/notes).
 
-Except where otherwise noted, my writing on this site is licensed under <a class = "external-link" href = "https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. You may share, quote, and adapt it with attribution. This is a working notebook — accordingly, I am not responsible for errors of fact, interpretation, or judgment that follow from trusting what I have written here. Typos are also to be expected.
+Except where otherwise noted, my writing on this site is licensed under <a class = "external-link" href = "https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. You may share, quote, and adapt it with attribution. This is a working notebook, so I can't promise that everything here is free of errors of fact, interpretation, or judgment. Typos, too, are to be expected.
 
-Built with love in Palo Alto — a place that sometimes, as Hannah Arendt writes, can be "an ultra-modern prison for the rehabilitation of ultra-modern criminals."[^2]
+Built with love in Palo Alto — a place that sometimes, as Hannah Arendt writes, can be "an ultra-modern prison for the rehabilitation of ultra-modern criminals."[^4]
 
 <hr>
 
 ## Footnotes
+[^1]: Early experiments with this form include the [Zettelkasten method](https://zettelkasten.de/introduction/), while graduate students of all disciplines (me too!) have loved [Obsidian](https://obsidian.md/).
 
-[^1]: See, for example, Vivian Qu's [excellent writing](https://vivqu.com/blog/2020/10/18/digital-gardens/) that is skeptical of digital gardens, which contains many arguments I also find quite compelling. At the very least, I concede that this site is no less "performative" than the rest of my digital content.
-[^2]: Letter from Hannah Arendt to Heinrich Blücher, 27 Feb. 1955. As found in *Within Four Walls: The Correspondence between Hannah Arendt and Heinrich Blücher 1936-1968.* 1st U.S. ed. Edited by Lotte Köhler. Hartcourt, 2000.
+[^2]: See, for example, Vivian Qu's [skepticism of digital gardens](https://vivqu.com/blog/2020/10/18/digital-gardens/), which contains many arguments I also find quite compelling. At the very least, I will concede that this site is no less "performative" than the rest of my digital content.
+
+[^3]: When a source is public, I try to cite it directly. When it comes from private teaching or conversations, I generally do not attribute it directly, since these notes often take on a final form that others might not endorse or even recognize as their own.
+
+[^4]: Letter from Hannah Arendt to Heinrich Blücher, 27 Feb. 1955. As found in *Within Four Walls: The Correspondence between Hannah Arendt and Heinrich Blücher 1936-1968.* 1st U.S. ed. Edited by Lotte Köhler. Hartcourt, 2000.

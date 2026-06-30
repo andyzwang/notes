@@ -12,7 +12,7 @@ Caryatid porch of the Erechtheion, Athens.<a href = "https://www.pexels.com/phot
 
 </div>
 
-Ancient political thought is the study of a continuous, coherent, and highly influential tradition of reflection on political life. To study this tradition is to understand the arguments and ideas presented in those texts, and then to form a judgment about their value — both in their original contexts and for contemporary political life.
+**Ancient political thought** is the study of a continuous, coherent, and highly influential tradition of reflection on political life. To study this tradition is to understand the arguments and ideas presented in those texts, and then to form a judgment about their value — both in their original contexts and for contemporary political life.
 
 Doing so is an exercise in history, philosophy, and literature, as Ryan Balot writes:
 
