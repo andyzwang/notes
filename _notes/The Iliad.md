@@ -3,6 +3,7 @@ title: The Iliad
 display_title: <em>The Iliad</em>
 author: "[[Homer]]"
 year: 700 BCE
+stage: ⭐️
 ---
 
 <div class="note-header" markdown="1">
