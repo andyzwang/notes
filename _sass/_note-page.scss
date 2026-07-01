@@ -58,7 +58,15 @@
   margin: 0;
   padding: 0;
   display: grid;
-  gap: 0.5em;
+  gap: 0;
+
+  li {
+    margin-bottom: 0.5em;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
 
   a {
     display: block;
@@ -81,5 +89,23 @@
 
   .outline-sub {
     padding-left: 1em;
+  }
+}
+
+// Sub-items collapse/expand as the active H2 section changes (see the
+// outline script in note.html) — max-height is kept close to the
+// actual content height so the transition doesn't visually "finish
+// early" once the real content stops growing.
+.outline-list .outline-sub-item {
+  max-height: 0;
+  margin-bottom: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 200ms ease-out, opacity 150ms ease-out, margin-bottom 200ms ease-out;
+
+  &.visible {
+    max-height: 2.5em;
+    margin-bottom: 0.5em;
+    opacity: 1;
   }
 }

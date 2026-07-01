@@ -113,16 +113,25 @@ layout: default
     var list = document.createElement('ul');
     list.className = 'outline-list';
     var headingLinks = [];
+    var currentH2 = null;
 
     document.querySelectorAll('content h2, content h3').forEach(function (heading) {
+      var isSub = heading.tagName === 'H3';
+      if (!isSub) {
+        currentH2 = heading;
+      }
+
       var item = document.createElement('li');
       var link = document.createElement('a');
       link.href = '#' + heading.id;
-      link.className = 'internal-link' + (heading.tagName === 'H3' ? ' outline-sub' : '');
+      link.className = 'internal-link' + (isSub ? ' outline-sub' : '');
       link.innerHTML = heading.innerHTML;
       item.appendChild(link);
+      if (isSub) {
+        item.className = 'outline-sub-item';
+      }
       list.appendChild(item);
-      headingLinks.push({ heading: heading, link: link });
+      headingLinks.push({ heading: heading, link: link, item: item, parentH2: isSub ? currentH2 : heading });
     });
 
     if (headingLinks.length === 0) {
@@ -152,6 +161,13 @@ layout: default
 
       headingLinks.forEach(function (pair, i) {
         pair.link.classList.toggle('active', i === activeIndex);
+      });
+
+      var activeH2 = activeIndex >= 0 ? headingLinks[activeIndex].parentH2 : null;
+      headingLinks.forEach(function (pair) {
+        if (pair.heading.tagName === 'H3') {
+          pair.item.classList.toggle('visible', pair.parentH2 === activeH2);
+        }
       });
 
       var isStuck = outlineContainer.getBoundingClientRect().top <= stickyTop;
