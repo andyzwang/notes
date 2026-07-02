@@ -10,7 +10,7 @@ stage: ⚡️
 </span>
 </div>
 
-**Homer** (c. 8th century BCE) was an ancient Greek poet who is credited as the author of [[The Iliad]] and [[The Odyssey]]. However, modern scholars do not believe that there was a single author behind the two works.
+**Homer** (c. 8th century BCE) was an ancient Greek poet who is credited as the author of *[[The Iliad]]* and *[[The Odyssey]]*. However, modern scholars do not believe that there was a single author behind the two works.
 
 Balot writes:
 
