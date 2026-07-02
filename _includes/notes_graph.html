@@ -4,6 +4,18 @@
     opacity: 0.5;
   }
 
+  /* Hovered node's links take on a subdued version of that node's colour:
+     yellow for the current page, purple for other created pages. */
+  .links line.link-highlight-yellow {
+    stroke: var(--color-yellow-soft);
+    opacity: 1;
+  }
+
+  .links line.link-highlight-purple {
+    stroke: var(--color-purple-soft);
+    opacity: 1;
+  }
+
   .nodes circle {
     cursor: pointer;
     fill: var(--color-purple);
@@ -19,7 +31,7 @@
   .nodes [active],
   .text [active] {
     cursor: pointer;
-    fill: var(--color-red);
+    fill: var(--color-yellow);
   }
 
   .nodes [ghost],
@@ -27,6 +39,25 @@
     cursor: help;
     fill: var(--color-subtext);
     opacity: 0.6;
+  }
+
+  /* Keep ghost node circles opaque so highlighted links don't show through
+     them; the faded look stays on the ghost labels only. */
+  .nodes [ghost] {
+    opacity: 1;
+  }
+
+  /* Hovered label is bolded and raised above other labels via .raise() in the
+     mouseover handler. */
+  .text text.hovered {
+    font-weight: bold;
+    opacity: 1;
+  }
+
+  /* Non-active labels also pop to full-strength text color on hover; the
+     active/current-page label keeps its red. */
+  .text text.hovered:not([active]) {
+    fill: var(--color-text);
   }
 
   .inactive {
@@ -93,8 +124,8 @@
         const ACTIVE_RADIUS_FACTOR = 1.5;
         const STROKE = 1;
         const FONT_SIZE = 16;
-        const TICKS = 200;
-        const FONT_BASELINE = 40;
+        const TICKS = 400;
+        const FONT_BASELINE = 28;
         const MAX_LABEL_LENGTH = 50;
 
         const graphData = {% include notes_graph.json %}
@@ -120,6 +151,13 @@
           });
         };
 
+        // Link thickness scales with the nodes it connects — averaging the two
+        // endpoint sizes so a link is thicker when either end is a bigger hub.
+        const endpointSize = (endpoint) =>
+          nodeSize[endpoint && endpoint.id != null ? endpoint.id : endpoint];
+        const linkWidth = (d) =>
+          STROKE * ((endpointSize(d.source) + endpointSize(d.target)) / 2 / MINIMAL_NODE_SIZE);
+
         const onClick = (d) => {
           if (!d.path) return;
           window.location = d.path
@@ -141,18 +179,27 @@
             return "";
           });
 
+          // Colour the hovered node's links to match the node: yellow for the
+          // current page, purple for other created (non-ghost) pages.
+          let linkHighlight = "";
+          if (isCurrentPath(d.path)) {
+            linkHighlight = "link-highlight-yellow";
+          } else if (!d.ghost) {
+            linkHighlight = "link-highlight-purple";
+          }
+
           link.attr("class", (link_d) => {
             if (link_d.source.id !== d.id && link_d.target.id !== d.id) {
               return "inactive";
             }
-            return "";
+            return linkHighlight;
           });
 
           link.attr("stroke-width", (link_d) => {
             if (link_d.source.id === d.id || link_d.target.id === d.id) {
-              return STROKE * 4;
+              return linkWidth(link_d) * 4;
             }
-            return STROKE;
+            return linkWidth(link_d);
           });
           text.attr("class", (text_d) => {
             if (text_d.id !== d.id && !relatedNodesSet.has(text_d.id)) {
@@ -160,13 +207,30 @@
             }
             return "";
           });
+
+          // Make the hovered label black and paint it above any overlapping
+          // labels (SVG paint order = document order, so move it last).
+          text
+            .filter((text_d) => text_d.id === d.id)
+            .classed("hovered", true)
+            .raise();
+        };
+
+        // Resting state: the current page's links are already yellow, so the
+        // active note's connections read at a glance without hovering.
+        const applyDefaultLinkState = () => {
+          link.attr("class", (link_d) =>
+            isCurrentPath(link_d.source.path) || isCurrentPath(link_d.target.path)
+              ? "link-highlight-yellow"
+              : ""
+          );
+          link.attr("stroke-width", linkWidth);
         };
 
         const onMouseout = function (d) {
           node.attr("class", "");
-          link.attr("class", "");
           text.attr("class", "");
-          link.attr("stroke-width", STROKE);
+          applyDefaultLinkState();
         };
 
         const graphWrapper = document.getElementById('graph-wrapper')
@@ -180,24 +244,59 @@
         let height = Number(svg.attr("height"));
         let zoomLevel = 1;
 
-        const forceX = d3.forceX().x(width / 2);
-        const forceY = d3.forceY().y(height / 2);
+        // Obsidian-style physics: strong many-body repulsion (not collision)
+        // is the spacer, balanced by spring links and a weak center pull. This
+        // gives the organic, evenly-floating spread rather than a packed ring.
+        // A weak center pull keeps leaf/disconnected nodes from drifting off;
+        // the active note is pulled a little harder for slight emphasis.
+        const centeringStrength = (d) => (isCurrentPath(d.path) ? 0.12 : 0.05);
+        const forceX = d3.forceX().x(width / 2).strength(centeringStrength);
+        const forceY = d3.forceY().y(height / 2).strength(centeringStrength);
         const forceCenter = d3.forceCenter(width / 2, height / 2);
+
+        // Degree per node id (source/target may be ids or resolved node objects
+        // depending on when this runs, so accept either).
+        const degree = {};
+        linksData.forEach((l) => {
+          const s = l.source.id != null ? l.source.id : l.source;
+          const t = l.target.id != null ? l.target.id : l.target;
+          degree[s] = (degree[s] || 0) + 1;
+          degree[t] = (degree[t] || 0) + 1;
+        });
 
         const simulation = d3
           .forceSimulation(nodesData)
           .force("forceX", forceX)
           .force("forceY", forceY)
-          .force("charge", d3.forceManyBody())
+          // Repulsion scales with node size (hubs clear more space), and
+          // loosely-linked "individuals" (degree 1) repel extra hard so they
+          // drift out of dense clusters rather than crowding them — well-linked
+          // nodes are already held in place by their own links.
+          .force(
+            "charge",
+            d3.forceManyBody().strength((d) => {
+              const individualBoost = (degree[d.id] || 0) <= 1 ? 1.8 : 1;
+              return -130 * nodeSize[d.id] * individualBoost;
+            })
+          )
           .force(
             "link",
             d3
               .forceLink(linksData)
               .id((d) => d.id)
-              .distance(70)
+              // Leaf nodes (single link) sit farther out so they float clear of
+              // the clusters; densely-linked nodes stay closer in.
+              .distance((d) => {
+                const s = d.source.id != null ? d.source.id : d.source;
+                const t = d.target.id != null ? d.target.id : d.target;
+                return degree[s] === 1 || degree[t] === 1 ? 190 : 130;
+              })
           )
           .force("center", forceCenter)
-          .force("collision", d3.forceCollide().radius(80))
+          // Collision as a minimum-gap floor — repulsion still does the real
+          // spacing. Kept soft (low strength) to preserve the organic look, but
+          // with extra iterations so the odd exact-overlap still resolves.
+          .force("collision", d3.forceCollide().radius((d) => nodeSize[d.id] + 24).strength(0.8).iterations(2))
           .stop();
 
         const g = svg.append("g");
@@ -218,7 +317,7 @@
 
           text.attr("font-size", (d) => font);
           text.attr("y", (d) => d.y - zoomOrKeep(FONT_BASELINE) + 8);
-          link.attr("stroke-width", zoomOrKeep(STROKE));
+          link.attr("stroke-width", (d) => zoomOrKeep(linkWidth(d)));
           node.attr("r", (d) => {
             return zoomOrKeep(nodeSize[d.id]);
           });
@@ -257,7 +356,7 @@
 
           link = link.data(linksData, (d) => `${d.source.id}-${d.target.id}`);
           link.exit().remove();
-          link = link.enter().append("line").attr("stroke-width", STROKE).merge(link);
+          link = link.enter().append("line").attr("stroke-width", linkWidth).merge(link);
 
           text = text.data(nodesData, (d) => d.label);
           text.exit().remove();
@@ -302,6 +401,7 @@
           }
 
           ticked();
+          applyDefaultLinkState();
         };
 
         const zoomHandler = d3.zoom().scaleExtent([0.2, 3]).on("zoom", resize);
@@ -321,7 +421,7 @@
 
         const activeNode = nodesData.find((d) => isCurrentPath(d.path));
         if (activeNode) {
-          const recenterFactor = 0.6;
+          const recenterFactor = 0.35;
           const dx = (width / 2 - activeNode.x) * recenterFactor;
           const dy = (height / 2 - activeNode.y) * recenterFactor;
           svg.call(zoomHandler.transform, d3.zoomIdentity.translate(dx, dy));

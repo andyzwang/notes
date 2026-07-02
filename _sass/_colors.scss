@@ -148,6 +148,10 @@
   --color-purple: var(--flexoki-purple-600);
   --color-magenta: var(--flexoki-magenta-600);
   --color-highlight: var(--flexoki-yellow-300);
+
+  // Subdued accents (stepped toward the background) for graph link highlights.
+  --color-yellow-soft: var(--flexoki-yellow-400);
+  --color-purple-soft: var(--flexoki-purple-400);
 }
 
 body.theme-dark {
@@ -166,4 +170,8 @@ body.theme-dark {
   --color-purple: var(--flexoki-purple-400);
   --color-magenta: var(--flexoki-magenta-400);
   --color-highlight: var(--flexoki-yellow-600);
+
+  // Subdued accents (stepped toward the background) for graph link highlights.
+  --color-yellow-soft: var(--flexoki-yellow-600);
+  --color-purple-soft: var(--flexoki-purple-600);
 }
