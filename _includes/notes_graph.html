@@ -421,10 +421,18 @@
 
         const activeNode = nodesData.find((d) => isCurrentPath(d.path));
         if (activeNode) {
-          const recenterFactor = 0.35;
-          const dx = (width / 2 - activeNode.x) * recenterFactor;
-          const dy = (height / 2 - activeNode.y) * recenterFactor;
-          svg.call(zoomHandler.transform, d3.zoomIdentity.translate(dx, dy));
+          // Start more zoomed out on narrow (mobile) viewports so the whole
+          // graph is visible.
+          const initialScale = window.innerWidth <= 768 ? 0.55 : 1;
+          // Pan most of the way toward the current article so it sits near the
+          // centre without fully uprooting the natural layout.
+          const recenterFactor = 0.66;
+          const dx = (width / 2 - initialScale * activeNode.x) * recenterFactor;
+          const dy = (height / 2 - initialScale * activeNode.y) * recenterFactor;
+          svg.call(
+            zoomHandler.transform,
+            d3.zoomIdentity.translate(dx, dy).scale(initialScale)
+          );
         }
 
         const reportWindowSize = () => {
