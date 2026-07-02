@@ -134,8 +134,20 @@ layout: default
       headingLinks.push({ heading: heading, link: link, item: item, parentH2: isSub ? currentH2 : heading });
     });
 
-    if (headingLinks.length === 0) {
-      document.getElementById('outline-container').style.display = 'none';
+    // Hide the outline entirely when there are no real headings — i.e. nothing
+    // but the auto-inserted "Footnotes" heading (or nothing at all).
+    var contentHeadings = headingLinks.filter(function (h) {
+      return h.heading.id !== 'footnotes';
+    });
+    if (contentHeadings.length === 0) {
+      var outlineContainer = document.getElementById('outline-container');
+      outlineContainer.style.display = 'none';
+      // Also hide the separator immediately above it, which would otherwise be
+      // left dangling at the bottom of the sidebar.
+      var prev = outlineContainer.previousElementSibling;
+      if (prev && prev.tagName === 'HR') {
+        prev.style.display = 'none';
+      }
       return;
     }
 
