@@ -20,6 +20,38 @@ blockquote {
   }
 }
 
+blockquote.verse {
+  padding-right: 3.5rem;
+  counter-reset: line 1;
+
+  p {
+    position: relative;
+
+    &::after {
+      content: counter(line);
+      position: absolute;
+      top: 0;
+      right: -2.25rem;
+      font-size: 0.75rem;
+      color: var(--color-subtext);
+    }
+  }
+
+  p ~ p {
+    counter-increment: line;
+  }
+
+  &[cite]::after {
+    content: attr(cite);
+    display: block;
+    margin-top: 0.75rem;
+    text-align: right;
+    font-size: 0.75rem;
+    font-style: italic;
+    color: var(--color-subtext);
+  }
+}
+
 .main-quote {
   margin-top: 1rem;
   margin-bottom: 1rem;
