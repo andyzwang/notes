@@ -94,14 +94,26 @@ layout: default
 
 <script>
   (function () {
-    var footnotes = document.querySelector('content .footnotes');
-    if (footnotes) {
-      var heading = document.createElement('h2');
+    var heading = Array.prototype.filter.call(document.querySelectorAll('content h2'), function (h) {
+      return h.textContent.trim() === 'Footnotes';
+    })[0];
+
+    if (heading) {
       heading.id = 'footnotes';
-      heading.textContent = 'Footnotes';
-      footnotes.parentNode.insertBefore(heading, footnotes);
-      footnotes.parentNode.insertBefore(document.createElement('hr'), heading);
+      if (heading.previousElementSibling && heading.previousElementSibling.tagName !== 'HR') {
+        heading.parentNode.insertBefore(document.createElement('hr'), heading);
+      }
+      return;
     }
+
+    var footnotes = document.querySelector('content .footnotes');
+    if (!footnotes) return;
+
+    heading = document.createElement('h2');
+    heading.id = 'footnotes';
+    heading.textContent = 'Footnotes';
+    footnotes.parentNode.insertBefore(heading, footnotes);
+    footnotes.parentNode.insertBefore(document.createElement('hr'), heading);
   })();
 </script>
 
