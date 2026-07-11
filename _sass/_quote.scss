@@ -42,7 +42,7 @@ blockquote.verse {
     counter-increment: line;
   }
 
-  &[cite] p::after {
+  &[cite] p:first-child::after {
     content: var(--verse-cite) "." counter(line);
   }
 }
