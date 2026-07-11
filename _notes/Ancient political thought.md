@@ -35,7 +35,7 @@ The central question of political thought — not just in antiquity, though acut
 
 This question is recursive (circular, though not illogical) in that the *who*, *how*, and *here* depend on the *what* at stake: different groups and peoples have decision authority, using different procedures, over different things, in different settings (for example, thinking about the family versus a democratic state).
 
-The *what* can be positive (offices, rights, goods, happiness) or negative (harms, punishments, misery). The *how* can be answered by formal rules, some type of judgment, or arbitrary preference. The *here* is 
+The *what* can be positive (offices, rights, goods, happiness) or negative (harms, punishments, misery). The *how* can be answered by formal rules, some type of judgment, or arbitrary preference. The *here* is the space of domain in which the decider has authority. And the *why* is justificatory — it must explain on what grounds who gets to decide.
 
 By the age of [[Plato]] and [[Aristotle]], this question was examined through a society's *[[politeia]]*. Although *politeia* is often translated as "Constitution," it refers not just to formal institutions: it encompasses the entire social and political order of a city-state, including its laws, customs, norms, and practices.
 
