@@ -31,7 +31,11 @@ It was, therefore, a world of small states, fierce competition, and new modes of
 
 The central question of political thought — not just in antiquity, though acutely present here — is formulated by Josh Ober as follows:
 
-> **Who** decides, and how, **the** question of **who**, around here, **gets** **what**, and **why**?
+> **Who** decides, and **how**, the question of **who**, around **here**, gets **what**, and **why**?
+
+This question is recursive (circular, though not illogical) in that the *who*, *how*, and *here* depend on the *what* at stake: different groups and peoples have decision authority, using different procedures, over different things, in different settings (for example, thinking about the family versus a democratic state).
+
+The *what* can be positive (offices, rights, goods, happiness) or negative (harms, punishments, misery). The *how* can be answered by formal rules, some type of judgment, or arbitrary preference. The *here* is 
 
 By the age of [[Plato]] and [[Aristotle]], this question was examined through a society's *[[politeia]]*. Although *politeia* is often translated as "Constitution," it refers not just to formal institutions: it encompasses the entire social and political order of a city-state, including its laws, customs, norms, and practices.
 
@@ -61,9 +65,9 @@ In sum, Greek political thought is concerned with general and abstract reflectio
 
 > The importance of Greek political thought to us has to be argued for in specific and detailed terms, in the here and now. I would argue that studying Greek political thought provides an important political perspective for us in virtue of its combination of similarity to us and difference from us.[^7]
 
-For Balot, our chief difference with the Greeks — and accordingly, the chief value of studying them — is that "[[Ethics|ethics]] and [[Politics|politics]] were connected at their foundations" in antiquity.[^8] As such, Greek political thought — its "virtue politics," so to say — also took the form of analyzing virtues and vices.[^9] 
+For Balot, our chief difference with the Greeks — and accordingly, the chief value of studying them — is that "[[Ethics|ethics]] and [[Politics|politics]] were connected at their foundations" in antiquity.[^8] As such, Greek political thought — its "virtue politics," so to say — also took the form of analyzing virtues and vices.[^9]
 
-In analyzing the contemporary debate between [[Liberalism|liberalism]] and [[Communitarianism|communitarianism]], Balot argues that Greek thought "provides a genuine *tertium quid*."[^10] Like liberalism, Greek political thought approved of individual autonomy, private freedom, and equality of opportunity: beyond this, it also provided virtues that could support these "liberal" values. Similarly, like communitarians, Greek political thinkers rejected the "thin" (as Balot writes) conception of individualism, instead analyzing individuals through their attachments to families, religions, communities, and ultimately, poleis. 
+In analyzing the contemporary debate between [[Liberalism|liberalism]] and [[Communitarianism|communitarianism]], Balot argues that Greek thought "provides a genuine *tertium quid*."[^10] Like liberalism, Greek political thought approved of individual autonomy, private freedom, and equality of opportunity: beyond this, it also provided virtues that could support these "liberal" values. Similarly, like communitarians, Greek political thinkers rejected the "thin" (as Balot writes) conception of individualism, instead analyzing individuals through their attachments to families, religions, communities, and ultimately, poleis.
 
 
 
