@@ -93,6 +93,15 @@ layout: default
 </article>
 
 <script>
+  document.querySelectorAll('content blockquote.verse[start-line]').forEach(function (verse) {
+    verse.style.counterReset = 'line ' + verse.getAttribute('start-line');
+  });
+  document.querySelectorAll('content blockquote.verse[cite]').forEach(function (verse) {
+    verse.style.setProperty('--verse-cite', JSON.stringify(verse.getAttribute('cite')));
+  });
+</script>
+
+<script>
   (function () {
     var heading = Array.prototype.filter.call(document.querySelectorAll('content h2'), function (h) {
       return h.textContent.trim() === 'Footnotes';
