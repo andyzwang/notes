@@ -15,8 +15,6 @@ stage: ⭐️
 
 *The Iliad* tells a story from the 10th year of the Trojan War: the conflict between [[Achilles]] and [[Agamemnon]], and the consequences of Achilles’ subsequent withdrawal from battle. While the poem is primarily set during war, it is also a deeply political work: how can [[Justice|justice]] exist in a world governed by personal relationships, honor, and force — rather than stable norms?
 
-*N.B. This note uses Lattimore's translation, as found on the [Chicago Homer Project](https://homer.library.northwestern.edu).*
-
 ## Synopsis
 
 The Trojan War begins after Paris, prince of Troy, seizes Helen from Menelaus, king of Sparta. In response, the Achaean kings lead an expedition against Troy, commanded by [[Agamemnon]], who is king of Mycenae and the brother of Menelaus.
@@ -157,6 +155,5 @@ What does it mean to read poetry as political theory?
 
 ## Analysis
 
-
-
-[^1]: Abductions were common in ancient Greece, but Agamemnon's *refusal* to return Chryseis is significant.
+## Footnotes
+*N.B. This note uses Lattimore's translation, as found on the [Chicago Homer Project](https://homer.library.northwestern.edu).*
