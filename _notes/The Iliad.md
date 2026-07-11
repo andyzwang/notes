@@ -11,7 +11,7 @@ stage: ✨
 <span class="main-image-caption">*The Iliad of Homer, Translated by Mr. Pope.* Vol. 4, Page 15.<a href = "https://commons.wikimedia.org/wiki/File:THE_ILLIAD_OF_HOMER_(translated_by_POPE)_p4.015_13th_Book_Page_957.jpg"></a></span>
 </div>
 
-***The Iliad*** is an epic poem from the 8th century BCE, attributed to [[Homer]]. As one of the oldest surviving pieces of literature, it is a foundational text for [[Ancient political thought|ancient political thought]].
+***The Iliad*** is an epic [[Poetry|poem]] from the 8th century BCE, attributed to [[Homer]]. As one of the oldest surviving pieces of literature, it is a foundational text for [[Ancient political thought|ancient political thought]].
 
 *The Iliad* tells a story from the 10th year of the Trojan War: the conflict between [[Achilles]] and [[Agamemnon]], and the consequences of Achilles’ subsequent withdrawal from battle. While the poem is primarily set during war, it is also a deeply political work: how can [[Justice|justice]] exist in a world governed by personal relationships, honor, and force — rather than political institutions or moral norms?
 
@@ -153,7 +153,7 @@ What does it mean to read poetry as political theory? Specifically, what does it
 
 > All of Greek political literature is *normative*.[^1]
 
-As part of the oral tradition, *The Iliad* served a didactic function, imparting moral and political wisdom to its audiences. Thus, even if the epic does not concern itself with formal political institutions, its reflections on justice and leadership are presented through the form of dramatic conflicts.
+As part of the oral tradition, *The Iliad* served a didactic function, imparting moral and political wisdom to its audiences. Thus, even if the epic does not concern itself with formal political institutions, its dramatic conflicts present reflections on justice and leadership that would be important to inhabitants of the early polis.
 
 ## Analysis
 
@@ -161,9 +161,14 @@ The world of *The Iliad* is a heroic political order.[^2] Homeric society is led
 
 ### Book I: Justice and Authority
 
-The central problem in Book I is that there is no reliable way to resolve conflict between powerful leaders. Agamemnon has **[[Authority|authority]] without justice,** as he is commander of the forces but uses his power badly and lets his *hubris* get to his head. Achilles, meanwhile, has **justice without authority:** while his grievance is legitimate, he does not have the means to overrule Agamemnon. Their conflict, then, is about both justice and honor, since Achilles objects to (what he perceives) as unfair treatment at the hands of Agamemnon.
+The term for [[Justice|justice]] in *The Iliad* is *dike* (literally "the right way"), particularly as determined by custom.[^3] The book's central conflict kicks off because Agamemnon and Achilles disagree on what this "right way" is, and there is no reliable way to resolve the conflict between these powerful leaders.
+
+Agamemnon has **[[Authority|authority]] without justice,** as he is commander of the forces but uses his power badly and lets his *hubris* get to his head. Achilles, meanwhile, has **justice without authority:** while his grievance is legitimate, he does not have the means to overrule Agamemnon. Their conflict, then, is about both justice and honor, since Achilles objects to (what he perceives) as unfair treatment at the hands of Agamemnon.
+
+Balot describes this tension as between fairness on the basis of rank (Agamemnon) and merit (Achilles). Achilles charges Agamemnon with two character defects: greed and hubris. He says that Agamemnon "devoured" his own people for the sake of his greed (1.231). Meanwhile, *hubris* is "a form of arrogant contempt designed to display superiority"[^4] — by sharing his "victimization," Achilles aligns himself with the army as a whole, whom Agamemnon is oppressing. The takeaway in Balot's view is that the poem demonstrates that the character and emotions of individuals must be managed — even that of leaders — to have a well-functioning and norm-abiding community.
 
 Ultimately, Athena intervenes to stop Achilles from killing Agamemnon in his fit of rage. Without proper human institutions to adjudicate between their claims, divine intervention becomes the substitute (as it does many times in *The Iliad*). Meanwhile, Achilles' withdrawal damages the entire Greek army, so this personal dispute between the two turns into a collective political crisis.
+
 ### Book II: The Power to Speak
 
 After receiving Zeus's dream, Agamemnon tests the troops by suggesting that they return home, but the plan nearly backfires when the wider army takes his suggestion too eagerly. This episode may suggest the difficulties of mass cooperation.
@@ -216,3 +221,7 @@ In the city, justice is a public and participatory practice, rather than the pri
 [^1]: Balot, Ryan K. _Greek Political Thought_. 1st ed. Ancient Cultures Series. John Wiley & Sons, Incorporated, 2006. Page 7, emphasis added.
 
 [^2]: To be contrasted with the "middling" tradition in [[Hesiod]].
+
+[^3]: Balot 17.
+
+[^4]: Balot 19.
