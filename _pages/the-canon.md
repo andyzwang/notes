@@ -16,7 +16,7 @@ Practically, students in Stanford's political theory program are expected to mas
 
 <div class="reading-list">
   <div class="reading-list-entry">
-    <span class="reading-list-date">c. 700 BCE</span>
+    <span class="reading-list-date">c. 725 BCE</span>
     <span class="reading-list-author minor-author">[[Homer]]</span>
     <span class="reading-list-works"><em>[[The Iliad]]</em></span>
   </div>
@@ -24,12 +24,12 @@ Practically, students in Stanford's political theory program are expected to mas
     <div class="reading-list-entry">
       <span class="reading-list-date">c. 700 BCE</span>
       <span class="reading-list-author minor-author">[[Hesiod]]</span>
-      <span class="reading-list-works"><em>[[Works and Days]]</em></span>
+      <span class="reading-list-works"><em>[[Theogony]]</em></span>
     </div>
     <div class="reading-list-entry">
       <span class="reading-list-date"></span>
       <span class="reading-list-author"></span>
-      <span class="reading-list-works"><em>[[Theogony]]</em></span>
+      <span class="reading-list-works"><em>[[Works and Days]]</em></span>
     </div>
     <div class="reading-list-entry">
       <span class="reading-list-date"></span>
