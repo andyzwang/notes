@@ -2,7 +2,7 @@
 title: The Iliad
 display_title: <em>The Iliad</em>
 author: "[[Homer]]"
-year: 700 BCE
+year: c. 800–750 BCE
 stage: ✨
 ---
 
