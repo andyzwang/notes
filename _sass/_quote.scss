@@ -34,6 +34,7 @@ blockquote.verse {
       right: -2.25rem;
       font-size: 0.75rem;
       color: var(--color-subtext);
+      font-variant-numeric: tabular-nums;
     }
   }
 
@@ -41,14 +42,8 @@ blockquote.verse {
     counter-increment: line;
   }
 
-  &[cite]::after {
-    content: attr(cite);
-    display: block;
-    margin-top: 0.75rem;
-    text-align: right;
-    font-size: 0.75rem;
-    font-style: italic;
-    color: var(--color-subtext);
+  &[cite] p::after {
+    content: var(--verse-cite) "." counter(line);
   }
 }
 
