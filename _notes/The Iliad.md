@@ -13,7 +13,7 @@ stage: ⭐️
 
 ***The Iliad*** is an epic poem from the 8th century BCE, attributed to [[Homer]]. As one of the oldest surviving pieces of literature, it is a foundational text for [[Ancient political thought|ancient political thought]].
 
-*The Iliad* tells a story from the 10th year of the Trojan War: the conflict between [[Achilles]] and [[Agamemnon]], and the consequences of Achilles’ subsequent withdrawal from battle. While the poem is primarily set during war, it is also a deeply political work: how can [[Justice|justice]] exist in a world governed by personal relationships, honor, and force — rather than stable norms?
+*The Iliad* tells a story from the 10th year of the Trojan War: the conflict between [[Achilles]] and [[Agamemnon]], and the consequences of Achilles’ subsequent withdrawal from battle. While the poem is primarily set during war, it is also a deeply political work: how can [[Justice|justice]] exist in a world governed by personal relationships, honor, and force — rather than political institutions or moral norms?
 
 ## Synopsis
 
@@ -26,7 +26,7 @@ By the time the poem begins, the war is soon to begin its tenth year, and the Ac
 > SING, goddess, the anger of Peleus' son Achilleus
 >
 > and its devastation, which put pains thousandfold upon the Achaians.
-{: .verse style="counter-reset: line 1;"}
+{: .verse cite="I" start-line="1"}
 
 Chryseis's father, a priest of Apollo, comes to ransom his daughter. However, Agamemnon refuses and doubles down by insulting the priest. To defend the honor of his priest sends a plague raging through the Greek armies for nine days. When the seer Kalchas explains the cause of the plague, Agamemnon agrees to return Chryseis but demands compensation.
 
@@ -35,7 +35,7 @@ Chryseis's father, a priest of Apollo, comes to ransom his daughter. However, Ag
 > among the Argives go without, since that were unfitting;
 >
 > you are all witnesses to this thing, that my prize goes elsewhere.
-{: .verse style="counter-reset: line 118;"}
+{: .verse cite="I" start-line="118"}
 
 After Achilles suggests that "there is no great store of things lying about," Agamemnon accuses Achilles of trying to cheat him. He threatens to seize the prizes of Achilles, Ajax, or Odysseus unless the Achaeans immediately provide him with a replacement for Chryseis. Achilles, in turn, only escalates the conflict:
 
@@ -52,7 +52,7 @@ After Achilles suggests that "there is no great store of things lying about," Ag
 > my hands; but when the time comes to distribute the booty
 >
 > yours is far the greater reward.
-{: .verse style="counter-reset: line 161;"}
+{: .verse cite="I" start-line="161"}
 
 Ultimately, Agamemnon seizes Briseis, and in a fit of rage, Achilles nearly draws his sword against him. The goddess Athena intervenes and restrains Achilles, who ends the confrontation by swearing that he will stop fighting for the Greeks. One day, we predicts, the sons of the Achaeans will long for his return.
 
@@ -67,7 +67,7 @@ Achilles's weeping is heard by his mother, the sea nymph Thetis, who comes to co
 > who was pondering in his heart how he might bring honour
 >
 > to Achilleus, and destroy many beside the shops of the Achaians.
-{: .verse style="counter-reset: line 1;"}
+{: .verse cite="II" start-line="1"}
 
 Zeus decides that the best way to proceed is by sending a deceptive Dream to Agamemnon. Disguised as Nestor, a wise counselor, the Dream says that the gods are united in support of the Greeks, and that Troy can be taken immediately.
 
@@ -82,7 +82,7 @@ In another moment of cosmic intervention, Hera sends Athena to intervene. Odysse
 > one king, to whom the son of devious-devising Kronos
 >
 > gives the sceptre and right of judgment, to watch over his people.
-{: .verse style="counter-reset: line 203;"}
+{: .verse cite="II" start-line="203"}
 
 In the restored assembly, Thersites, an ordinary soldier known for his unhinged speech, attacks Agamemnon. He accuses the king of greed and recalls his mistreatment of Achilles.
 
@@ -95,7 +95,7 @@ In the restored assembly, Thersites, an ordinary soldier known for his unhinged 
 > let us go back home in our ships, and leave this man here
 >
 > by himself in Troy to mull his prizes of honor.
-{: .verse style="counter-reset: line 233;"}
+{: .verse cite="II" start-line="233"}
 
 While he repeats many of the criticisms that Achilles raised, Thersite does not enjoy the same status in the army, and his speech is seen as unacceptable in the aristocratic order. Odysseus insults Thersites, threatens to strip his clothing and whip him, and strikes him with Agamemnon's sceptre as the other soldiers laugh.
 
@@ -106,7 +106,7 @@ While he repeats many of the criticisms that Achilles raised, Thersite does not 
 > out of assembly. Never again will his proud heart stir him
 >
 >up, to wrangle with the princes in words of revilement.
-{: .verse style="counter-reset: line 274;"}
+{: .verse cite="II" start-line="274"}
 
 The book continues with Odysseus rallying the troops, recalling a prophecy that the Greeks will take Troy in the tenth year. Nestor advises Agamemnon to organize the army by tribes and clans, and the army breaks to eat and ready themselves for battle. Agamemnon, meanwhile, prays that he will capture Troy and kill Hector before sunset, but Zeus does not grant the prayer.
 
@@ -123,7 +123,7 @@ A messenger brings Achilles the news that he most fears: his friend Patroklos is
 > Patroklos, whom I loved beyond all other companions,
 >
 > as well as my own life.
-{: .verse style="counter-reset: line 79;"}
+{: .verse cite="XVIII" start-line="79"}
 
 Achilles declares that he will kill Hector, though he knows that he is to die soon thereafter. He regrets his withdrawal from the Greek army, since he "was no light of safety to Patroklos, nor to [his] other companions, who in their numbers went down before glorious Hektor" (XVIII.102-103). He decides to let his anger with Agamemnon "be a thing of the past" (112), redirecting his anger toward Hector and the Trojans. Thetis supports Achilles's decision, but warns him not to re-enter battle until she returns with new armor made by Hephaestus.
 
@@ -143,17 +143,58 @@ The city at war features scenes of armies, ambushes, violence, and ultimately de
 > Both then made for an arbitrator, to have a decision;
 >
 > and people were speaking up on either side, to help both men.
-{: .verse style="counter-reset: line 499;"}
+{: .verse cite="XVIII" start-line="499"}
 
 The shield also contains scenes of ploughing, harvesting, grape gathering, cattle herding, sheep pastures, music, and dance. And its outermost rim is formed by the river Ocean. As such, the shield is an entire human world, with the juxtapositions of peace and war, justice and violence, nature and society. As Achilles is about to reenter battle in this pivotal moment, he will carry an image of a complete life that he is abandoning in the pursuit of vengeance.
 
 ## Methods
 
-What does it mean to read poetry as political theory?
+What does it mean to read poetry as political theory? Specifically, what does it mean for poetry to be doing political work? As Ryan Balot writes:
 
-[TO DO, FROM BALOT]
+> All of Greek political literature is *normative*.[^1]
+
+As part of the oral tradition, *The Iliad* served a didactic function, imparting moral and political wisdom to its audiences. Thus, even if the epic does not concern itself with formal political institutions, its reflections on justice and leadership are presented through the form of dramatic conflicts.
 
 ## Analysis
 
+The world of *The Iliad* is a heroic political order.[^2] Homeric society is led by elite warriors and kings, and the authority of individuals depends on their rank, reputation, and battlefield status.
+
+### Book I: Justice and Authority
+
+The central problem in Book I is that there is no reliable way to resolve conflict between powerful leaders. Agamemnon has **[[Authority|authority]] without justice,** as he is commander of the forces but uses his power badly and lets his *hubris* get to his head. Achilles, meanwhile, has **justice without authority:** while his grievance is legitimate, he does not have the means to overrule Agamemnon. Their conflict, then, is about both justice and honor, since Achilles objects to (what he perceives) as unfair treatment at the hands of Agamemnon.
+
+Ultimately, Athena intervenes to stop Achilles from killing Agamemnon in his fit of rage. Without proper human institutions to adjudicate between their claims, divine intervention becomes the substitute (as it does many times in *The Iliad*). Meanwhile, Achilles' withdrawal damages the entire Greek army, so this personal dispute between the two turns into a collective political crisis.
+### Book II: The Power to Speak
+
+After receiving Zeus's dream, Agamemnon tests the troops by suggesting that they return home, but the plan nearly backfires when the wider army takes his suggestion too eagerly. This episode may suggest the difficulties of mass cooperation.
+
+Thersites, in the entire assembly, criticizes Agamemnon for greed and irresponsible leadership. While his criticism overlaps with that levied by Achilles before his withdrawal, he is nonetheless mocked and beaten because he lacks heroic status — in fact, Odysseus's status as a hero is *reinforced* because he puts Thersites in his place, so to speak. The political question at stake is: **who can speak?** Evidently, as a "regular soldier," Thersistes' rank matters more than the truth of his criticism.
+
+### Covenants and Oaths
+
+> Where then shall our covenants go, and the oaths we have taken?
+{: .verse cite="II" start-line="339"}
+
+Risk of anarchy in condition in which NO mechanism for making commitments to future courses of action credible in face of partiality and power inequality. Thus need for some other regulatory mechanism, an institution that will allow for credible commitment across differences in power and over time.
+
+The oath, which brings humans into relationship with the divine realm: to swear falsely is to insult the honor of the gods by which one swears, and so incur their mighty wrath. Oath brings in gods as third party enforcer to social agreements, and thus potentially makes possible credible commitment to future line of action in otherwise anarchic world
+
+- **Nestor and covenants**
+    - Nestor asks what will happen to the Greeks’ agreements and oaths.
+    - His concern is that broken promises destroy trust, unity, and military effectiveness.
+
+
+### The City on the Shield
+Example of the city on the shield in Homer:
+
+- Judgment between two men fighting over the blood price for a killing
+- Fairness is not about impartiality, but about finding the right balance among necessarily partial views
+- lots of partiality, reciprocity, networks of kin
+
+
 ## Footnotes
 *N.B. This note uses Lattimore's translation, as found on the [Chicago Homer Project](https://homer.library.northwestern.edu).*
+
+[^1]: Balot, Ryan K. _Greek Political Thought_. 1st ed. Ancient Cultures Series. John Wiley & Sons, Incorporated, 2006. Page 7, emphasis added.
+
+[^2]: To be contrasted with the "middling" tradition in [[Hesiod]].
