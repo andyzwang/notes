@@ -3,7 +3,7 @@ title: The Iliad
 display_title: <em>The Iliad</em>
 author: "[[Homer]]"
 year: 700 BCE
-stage: ⭐️
+stage: ✨
 ---
 
 <div class="note-header" markdown="1">
@@ -175,22 +175,40 @@ Thersites, in the entire assembly, criticizes Agamemnon for greed and irresponsi
 > Where then shall our covenants go, and the oaths we have taken?
 {: .verse cite="II" start-line="339"}
 
-Risk of anarchy in condition in which NO mechanism for making commitments to future courses of action credible in face of partiality and power inequality. Thus need for some other regulatory mechanism, an institution that will allow for credible commitment across differences in power and over time.
+In a condition where there is no mechanism to making commitments to future courses of action credible, there is always the risk of anarchy in a Homeric society. Here, for example, Nestor asks what happens to the Greeks' agreements if the Achaeans are all to renege on their mission to take Troy. Thus, there is a need for some other regulatory mechanism that allows for [[Credible commitment|credible commitment]] across time.
 
-The oath, which brings humans into relationship with the divine realm: to swear falsely is to insult the honor of the gods by which one swears, and so incur their mighty wrath. Oath brings in gods as third party enforcer to social agreements, and thus potentially makes possible credible commitment to future line of action in otherwise anarchic world
-
-- **Nestor and covenants**
-    - Nestor asks what will happen to the Greeks’ agreements and oaths.
-    - His concern is that broken promises destroy trust, unity, and military effectiveness.
-
+The [[Oath|oath]] is the solution for this, since it brings humans into a relationship with the divine realm. A false oath insults the honor of the gods by which one swears, and the events of Book I (Apollo's revenge) indicate that when human justice fails, divine justice can always intervene. Oaths then bring in gods as third-party enforcers to (human) social agreements, making possible some degree of credible commitment to future actions.
 
 ### The City on the Shield
-Example of the city on the shield in Homer:
 
-- Judgment between two men fighting over the blood price for a killing
-- Fairness is not about impartiality, but about finding the right balance among necessarily partial views
-- lots of partiality, reciprocity, networks of kin
+As depicted on the shield made by Hephaestus for Achilles, the "city at peace" is not one without conflict.
 
+> The people were assembled in the market place, where a quarrel
+>
+> had arisen, and two men were disputing over the blood price
+>
+> for a man who had been killed. One man promised full restitution
+>
+> in a public statement, but the other refused and would accept nothing.
+>
+> Both then made for an arbitrator, to have a decision;
+>
+> and people were speaking up on either side, to help both men.
+>
+> But the heralds kept the people in hand, as meanwhile the elders
+>
+> were in session on benches of polished stone in the sacred circle
+>
+> and held in their hands the staves of the heralds who lift their voices.
+>
+> The two men rushed before these, and took turns speaking their cases,
+>
+> and between them lay on the ground two talents of gold, to be given
+>
+> to that judge who in this case spoke the straightest opinion.
+{: .verse cite="XVIII" start-line="497"}
+
+In the city, justice is a public and participatory practice, rather than the private will of an individual (or his rage, even). Political authority is distributed among the litigants, citizens, and elders, with the legitimacy of the scene emerging from its structured deliberation (for example, the elders make sure that the citizens follow protocol). Fairness here is not about impartiality, but about the right balance among necessarily partial views. What keeps this city one at peace is that violent conflict can nonetheless be transformed into civic procedure.
 
 ## Footnotes
 *N.B. This note uses Lattimore's translation, as found on the [Chicago Homer Project](https://homer.library.northwestern.edu).*
