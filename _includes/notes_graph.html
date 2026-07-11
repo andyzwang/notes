@@ -272,6 +272,17 @@
           degree[t] = (degree[t] || 0) + 1;
         });
 
+        // The current page's id and the set of nodes it links to directly.
+        // Used to give the active note extra repulsion (clearing unrelated
+        // nodes out of its neighbourhood) while pulling its own neighbours in
+        // close, so its direct links read cleanly without intruders between.
+        const activeId = (nodesData.find((d) => isCurrentPath(d.path)) || {}).id;
+        const touchesActive = (d) => {
+          const s = d.source.id != null ? d.source.id : d.source;
+          const t = d.target.id != null ? d.target.id : d.target;
+          return s === activeId || t === activeId;
+        };
+
         const simulation = d3
           .forceSimulation(nodesData)
           .force("forceX", forceX)
@@ -284,7 +295,10 @@
             "charge",
             d3.forceManyBody().strength((d) => {
               const individualBoost = (degree[d.id] || 0) <= 1 ? 1.8 : 1;
-              return -130 * nodeSize[d.id] * individualBoost;
+              // The active note pushes much harder so unrelated nodes clear
+              // out of the space around it and its direct links stand alone.
+              const activeBoost = d.id === activeId ? 15 : 1;
+              return -130 * nodeSize[d.id] * individualBoost * activeBoost;
             })
           )
           .force(
@@ -297,7 +311,18 @@
               .distance((d) => {
                 const s = d.source.id != null ? d.source.id : d.source;
                 const t = d.target.id != null ? d.target.id : d.target;
+                // Active note's own links stay short so its neighbours hug in
+                // close against its stronger repulsion.
+                if (touchesActive(d)) return 90;
                 return degree[s] === 1 || degree[t] === 1 ? 190 : 130;
+              })
+              // Hold the active note's links firmly so the short distance wins
+              // out over the boosted repulsion instead of stretching.
+              .strength((d) => {
+                if (touchesActive(d)) return 1;
+                const s = d.source.id != null ? d.source.id : d.source;
+                const t = d.target.id != null ? d.target.id : d.target;
+                return 1 / Math.min(degree[s] || 1, degree[t] || 1);
               })
           )
           .force("center", forceCenter)
