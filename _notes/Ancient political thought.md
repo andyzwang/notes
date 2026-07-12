@@ -76,7 +76,7 @@ In analyzing the contemporary debate between [[Liberalism|liberalism]] and [[Com
 
 [^2]: Ryan, Alan. _On Politics: A History of Political Thought; from Herodotus to the Present_. Liveright, 2012.
 
-[^3]: Balot iix.
+[^3]: Balot viii.
 
 [^4]: Balot 1.
 

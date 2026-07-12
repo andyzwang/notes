@@ -7,7 +7,7 @@ stage: ⚡️
 ---
 
 <div class="note-header" markdown="1">
-<img class="main-image" src="{{ site.baseurl }}/assets/img/the_golden_age.jpg"/>
+<img class="main-image" src="{{ site.baseurl }}/assets/img/the-golden-age.jpg"/>
 <span class="main-image-caption">*The Golden Age*, Lucas Cranach the Elder, c. 1530.<a href = "https://www.sammlung.pinakothek.de/de/artwork/5347RwoG9e"></a></span>
 </div>
 

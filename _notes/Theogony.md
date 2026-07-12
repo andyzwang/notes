@@ -11,7 +11,7 @@ stage: ⚡️
 <span class="main-image-caption">*The Fall of the Titans*, Cornelis van Haarlem, 1590.<a href = "https://en.wikipedia.org/wiki/The_Fall_of_the_Titans#/media/File:Cornelis_Cornelisz._van_Haarlem_-_The_Fall_of_the_Titans_-_Google_Art_Project.jpg"></a></span>
 </div>
 
-***Theogony*** (Θεογονία, literally "the birth of the gods") is a poem by [[Hesiod]] describing the origins of the Greek gods. It was likely composed around 730–800 BCE, with the written form established around the 6th century BCE.
+***Theogony*** (Θεογονία, literally "the birth of the gods") is a poem by [[Hesiod]] describing the origins of the Greek gods. It was likely composed around 730–700 BCE, with the written form established around the 6th century BCE.
 
 *N.B. I have only read the following excerpt.*
 
