@@ -65,6 +65,14 @@
     transition: all 0.15s ease-out;
   }
 
+  /* Ghost nodes/labels have their own higher-specificity opacity rules above,
+     so spell out the dimmed state for them too — otherwise uncreated-page
+     nodes stay bright when an unrelated node is hovered. */
+  .nodes [ghost].inactive,
+  .text [ghost].inactive {
+    opacity: 0.1;
+  }
+
   #graph-wrapper {
     position: relative;
     background: var(--color-bg-soft);
@@ -144,12 +152,7 @@
 
         const updateNodeSize = () => {
           nodesData.forEach((el) => {
-            let weight =
-              3 *
-              Math.sqrt(
-                linksData.filter((l) => l.source.id === el.id || l.target.id === el.id)
-                  .length + 1
-              );
+            let weight = 3 * Math.sqrt((degree[el.id] || 0) + 1);
             if (weight < MINIMAL_NODE_SIZE) {
               weight = MINIMAL_NODE_SIZE;
             } else if (weight > MAX_NODE_SIZE) {
@@ -217,10 +220,13 @@
           });
 
           // Make the hovered label black and paint it above any overlapping
-          // labels (SVG paint order = document order, so move it last).
+          // labels (SVG paint order = document order, so move it last). Force
+          // it visible too, so a label hidden by the zoomed-out level-of-detail
+          // rule (About overview) still shows while hovered.
           text
             .filter((text_d) => text_d.id === d.id)
             .classed("hovered", true)
+            .style("display", null)
             .raise();
         };
 
@@ -238,7 +244,19 @@
         const onMouseout = function (d) {
           node.attr("class", "");
           text.attr("class", "");
+          // Re-hide labels that the zoomed-out level-of-detail rule had hidden
+          // before this node was hovered.
+          applyLabelLOD();
           applyDefaultLinkState();
+        };
+
+        // Level-of-detail label visibility for the About overview: only nodes
+        // that are well-connected relative to the zoom level keep their label,
+        // so a zoomed-out graph stays readable. A no-op off the About page.
+        const applyLabelLOD = () => {
+          if (!ABOUT_MODE) return;
+          const labelVisible = (d) => (degree[d.id] || 0) * zoomLevel >= LOD_CONSTANT;
+          text.style("display", (d) => (labelVisible(d) ? null : "none"));
         };
 
         const graphWrapper = document.getElementById('graph-wrapper')
@@ -260,7 +278,6 @@
         const centeringStrength = (d) => (isCurrentPath(d.path) ? 0.12 : 0.05);
         const forceX = d3.forceX().x(width / 2).strength(centeringStrength);
         const forceY = d3.forceY().y(height / 2).strength(centeringStrength);
-        const forceCenter = d3.forceCenter(width / 2, height / 2);
 
         // Degree per node id (source/target may be ids or resolved node objects
         // depending on when this runs, so accept either).
@@ -277,6 +294,15 @@
         // nodes out of its neighbourhood) while pulling its own neighbours in
         // close, so its direct links read cleanly without intruders between.
         const activeId = (nodesData.find((d) => isCurrentPath(d.path)) || {}).id;
+        // The active note's repulsion scales with how many links it has, so a
+        // page with many outgoing links clears extra room for them all to be
+        // read. A floor keeps sparsely-linked pages from feeling cramped —
+        // below ~6 links this stays at the baseline boost.
+        const ACTIVE_BOOST_FLOOR = 15;
+        const activeRepulsionBoost = Math.max(
+          ACTIVE_BOOST_FLOOR,
+          (degree[activeId] || 0) * 2.5
+        );
         const touchesActive = (d) => {
           const s = d.source.id != null ? d.source.id : d.source;
           const t = d.target.id != null ? d.target.id : d.target;
@@ -296,8 +322,9 @@
             d3.forceManyBody().strength((d) => {
               const individualBoost = (degree[d.id] || 0) <= 1 ? 1.8 : 1;
               // The active note pushes much harder so unrelated nodes clear
-              // out of the space around it and its direct links stand alone.
-              const activeBoost = d.id === activeId ? 15 : 1;
+              // out of the space around it and its direct links stand alone;
+              // the push grows with its link count (floored for small pages).
+              const activeBoost = d.id === activeId ? activeRepulsionBoost : 1;
               return -130 * nodeSize[d.id] * individualBoost * activeBoost;
             })
           )
@@ -325,7 +352,6 @@
                 return 1 / Math.min(degree[s] || 1, degree[t] || 1);
               })
           )
-          .force("center", forceCenter)
           // Collision as a minimum-gap floor — repulsion still does the real
           // spacing. Kept soft (low strength) to preserve the organic look, but
           // with extra iterations so the odd exact-overlap still resolves.
@@ -368,13 +394,10 @@
             .filter((_d, i, nodes) => d3.select(nodes[i]).attr("active"))
             .attr("r", (d) => zoomOrKeep(ACTIVE_RADIUS_FACTOR * nodeSize[d.id]));
 
-          if (ABOUT_MODE) {
-            // Level of detail: nodes and links always show (a "cloud" around the
-            // hubs), but only well-connected nodes are labelled when zoomed out —
-            // smaller nodes' titles appear as you zoom in.
-            const labelVisible = (d) => (degree[d.id] || 0) * zoomLevel >= LOD_CONSTANT;
-            text.style("display", (d) => (labelVisible(d) ? null : "none"));
-          }
+          // Level of detail: nodes and links always show (a "cloud" around the
+          // hubs), but only well-connected nodes are labelled when zoomed out —
+          // smaller nodes' titles appear as you zoom in.
+          applyLabelLOD();
         };
 
         const ticked = () => {
@@ -521,7 +544,6 @@
 
           forceX.x(width / 2);
           forceY.y(height / 2);
-          forceCenter.x(width / 2).y(height / 2);
 
           restart();
 
