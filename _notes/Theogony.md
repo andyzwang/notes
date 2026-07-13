@@ -22,6 +22,4 @@ stage: ⚡️
 
 Here, Strife is the mother of a whole family of human evils. Oath (Horkos) is one of the divine enforcers of oaths, cursing any human who swears a false [[Oath|oath]].
 
-*⚡️ Spark note: This note is preliminary and will likely be expanded later.*
-
 [^1]: Hesiod. *Homeric Hymns, Epic Cycle, Homerica.* Translated by Hugh G. Evelyn-White. The Loeb Classical Library 57. Harvard university press W. Heinemann, 1914.

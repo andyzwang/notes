@@ -18,7 +18,7 @@ permalink: /
 
 This site is an [[about|experiment]] in thinking.
 
-I use this public notebook to gather fragments, concepts, readings, and questions into shifting *constellations*, borrowing Walter Benjamin's metaphor. By linking texts across time and space — political theory, philosophy, literature, and beyond — I hope to trace connections between ideas and invite you to think alongside me as they take shape.
+I use this public notebook to gather fragments, concepts, readings, and questions into shifting *constellations*, borrowing [[Walter Benjamin|Walter Benjamin's]] metaphor. By linking texts across time and space — political theory, philosophy, literature, and beyond — I hope to trace connections between ideas and invite you to think alongside me as they take shape.
 
 Explore recently updated notes below, start with [[the canon]], or jump <a href="#" id="random-note-link" class="internal-link">somewhere unexpected</a>.
 
