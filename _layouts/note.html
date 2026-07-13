@@ -69,7 +69,7 @@ layout: default
         {% for backlink in shown_backlinks %}
           <div class="backlink-box">
           <a class="internal-link" href="{{ site.baseurl }}{{ backlink.url }}{%- if site.use_html_extension -%}.html{%- endif -%}">{{ backlink.title }}</a><br>
-          <div style="font-size: 0.88em">{{ backlink.excerpt | strip_note_header | strip_footnotes | strip_wikilinks | strip_html_keep_em | truncatewords: 20 }}</div>
+          <div style="font-size: 0.88em">{{ backlink.excerpt | strip_note_header | strip_images | strip_footnotes | strip_wikilinks | strip_html_keep_em | truncatewords: 20 }}</div>
           </div>
         {% endfor %}
         {% assign remaining_backlinks = page.backlinks.size | minus: 3 %}

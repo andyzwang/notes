@@ -3,12 +3,7 @@ title: Ethics
 stage: ⭐️
 ---
 
-<div class="note-header" markdown="1">
-<img class = "main-image" src="{{ site.baseurl }}/assets/img/ethics.jpg"/>
-<span class="main-image-caption">
-*The Blind Leading the Blind*, Pieter Bruegel the Elder, 1568.<a href = "https://en.wikipedia.org/wiki/The_Blind_Leading_the_Blind#/media/File:%D0%9F%D1%80%D0%B8%D1%82%D1%87%D0%B0_%D0%BE_%D1%81%D0%BB%D0%B5%D0%BF%D1%8B%D1%85.jpeg"></a>
-</span>
-</div>
+![](/assets/img/ethics.jpg "*The Blind Leading the Blind*, Pieter Bruegel the Elder, 1568."){: .main link="https://en.wikipedia.org/wiki/The_Blind_Leading_the_Blind#/media/File:%D0%9F%D1%80%D0%B8%D1%82%D1%87%D0%B0_%D0%BE_%D1%81%D0%BB%D0%B5%D0%BF%D1%8B%D1%85.jpeg"}
 
 ## Etymology
 

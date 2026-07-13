@@ -3,12 +3,7 @@ title: Homer
 stage: ⚡️
 ---
 
-<div class="note-header" markdown="1">
-<img class = "main-image" src="{{ site.baseurl }}/assets/img/homer.jpg"/>
-<span class="main-image-caption">
-*A Reading from Homer,* Lawrence Alma-Tadema, 1885.<a href = "https://www.philamuseum.org/objects/102964"></a>
-</span>
-</div>
+![](/assets/img/homer.jpg "*A Reading from Homer,* Lawrence Alma-Tadema, 1885."){: .main link="https://www.philamuseum.org/objects/102964"}
 
 **Homer** (c. 8th century BCE) was an ancient Greek poet who is credited as the author of *[[The Iliad]]* and *[[The Odyssey]]*. However, modern scholars do not believe that there was a single author behind the two works.
 

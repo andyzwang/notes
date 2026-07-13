@@ -4,10 +4,7 @@ display_title: <em>Polis</em>
 stage: ⭐️
 ---
 
-<div class="note-header" markdown="1">
-<img class="main-image" src="{{ site.baseurl }}/assets/img/polis.jpg"/>
-<span class="main-image-caption">*Piazza San Marco*, Canaletto, c. 1720s.<a href = "https://www.metmuseum.org/art/collection/search/435839"></a></span>
-</div>
+![](/assets/img/polis.jpg "*Piazza San Marco*, Canaletto, c. 1720s."){: .main link="https://www.metmuseum.org/art/collection/search/435839"}
 
 **The *polis*** — plural *poleis* — is a central unit of political analysis with origins in ancient Greece.[^1] It also gives its name to the Greek *ta politika* — "the things of the polis" — from which the English terms "[[The political]]" and "[[politics]]" derive.
 ## In ancient thought

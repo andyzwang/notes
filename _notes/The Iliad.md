@@ -6,10 +6,7 @@ year: c. 800–750 BCE
 stage: 🌌
 ---
 
-<div class="note-header" markdown="1">
-<img class="main-image" src="{{ site.baseurl }}/assets/img/iliad.jpg"/>
-<span class="main-image-caption">*The Iliad of Homer, Translated by Mr. Pope.* Vol. 4, Page 15.<a href = "https://commons.wikimedia.org/wiki/File:THE_ILLIAD_OF_HOMER_(translated_by_POPE)_p4.015_13th_Book_Page_957.jpg"></a></span>
-</div>
+![](/assets/img/iliad.jpg "*The Iliad of Homer, Translated by Mr. Pope.* Vol. 4, Page 15."){: .main link="https://commons.wikimedia.org/wiki/File:THE_ILLIAD_OF_HOMER_(translated_by_POPE)_p4.015_13th_Book_Page_957.jpg"}
 
 ***The Iliad*** is an epic [[Poetry|poem]] from the 8th century BCE, attributed to [[Homer]]. As one of the oldest surviving pieces of literature, it is a foundational text for [[Ancient political thought|ancient political thought]].
 
@@ -129,8 +126,7 @@ Achilles declares that he will kill Hector, though he knows that he is to die so
 
 In the meantime, Achilles, surrounded by Athena's aegis and covered by a blazing cloud, shouts thrice at the Trojans. They recoil in terror, and the Greeks recover Patroklos's body. Achilles places his hands on his friend's chest "with outbursts of incessant grief" (318). He promises that he will not bury him until he has killed Hector and returned with both his armor and his head.
 
-<img class="main-image" src="{{ site.baseurl }}/assets/img/achilles-shield.jpg"/>
-<span class="main-image-caption">*The Iliad of Homer, Translated by Mr. Pope.* Vol. 5, Page 171.<a href = "https://commons.wikimedia.org/wiki/File:THE_ILLIAD_OF_HOMER_(translated_by_POPE)_p5.171_The_Shield_of_Achilles.jpg"></a></span>
+![](/assets/img/achilles-shield.jpg "*The Iliad of Homer, Translated by Mr. Pope.* Vol. 5, Page 171."){: .main link="https://commons.wikimedia.org/wiki/File:THE_ILLIAD_OF_HOMER_(translated_by_POPE)_p5.171_The_Shield_of_Achilles.jpg"}
 
 Hephaestus forges a shield for Achilles, since he owes a favor to Thetis, who rescued him after he was cast from Olympus. At its center are the earth, sea, sky, sun, moon, and stars. Around them are two cities, one at peace, and one at war.
 
