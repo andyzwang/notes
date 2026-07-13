@@ -17,5 +17,10 @@ Jekyll::Hooks.register [:pages], :pre_render do |doc|
 end
 
 def replace(doc)
+  # ==+  … ==+  are the surrounding markers (one or more `=` each side). The
+  # captured group is the highlighted text: it must start with a non-space and
+  # end with a char that isn't a space, `.`, or `=`. Forbidding the boundary
+  # chars keeps the closing `==` markers and any trailing punctuation outside
+  # the <mark>, and stops `== spaced ==` (padded) from matching.
   doc.content.gsub!(/==+([^ ](.*?)?[^ .=])==+/, "<mark>\\1</mark>")
 end

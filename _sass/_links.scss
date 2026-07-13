@@ -11,6 +11,7 @@ a {
     color: var(--color-yellow) !important;
   }
 
+  // Mark outbound links with a small superscript ↗ glyph after the text.
   &:after {
     position: relative;
     top: -0.5em;
@@ -19,6 +20,8 @@ a {
     color: var(--color-subtext);
   }
 
+  // ...but not internal links or footnote jumps — those stay within the site,
+  // so blank out the glyph for them.
   &.internal-link:after,
   &.footnote:after,
   &.reversefootnote:after {

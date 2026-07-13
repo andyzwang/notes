@@ -19,8 +19,11 @@
 </nav>
 
 <script>
+  // Dark-mode toggle. Runs inline (not deferred) so the theme class is applied
+  // as early as possible, minimising a flash of the wrong theme (FOUC).
   (function () {
     var bodyClassList = document.body.classList;
+    // Prefer the saved choice; otherwise fall back to the OS colour scheme.
     var theme = localStorage.theme || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
     bodyClassList.toggle('theme-dark', theme === 'dark');
 
@@ -39,6 +42,8 @@
 
     darkModeToggle.addEventListener('click', toggleTheme);
 
+    // Keyboard shortcut: press "d" to toggle the theme, but ignore it while
+    // typing in a field or when it's part of a browser/OS chord (Ctrl/Cmd+D).
     window.addEventListener('keydown', function (e) {
       if (!['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName) && e.key.toLowerCase() === 'd' && !e.ctrlKey && !e.metaKey) {
         toggleTheme();

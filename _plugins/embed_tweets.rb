@@ -12,6 +12,12 @@ class TweetEmbedGenerator < Jekyll::Generator
     all_docs = all_notes + all_pages
 
     all_docs.each do |current_note|
+      # Match a bare tweet URL sitting alone on its own line (anchored ^...$):
+      # optional #!/ fragment, the @handle, status or statuses, then the id.
+      # Replace it with Twitter's standard embed markup. widgets.js turns the
+      # <blockquote> into a rendered tweet; the "could not be embedded" text and
+      # link are the fallback shown if that script fails to load. `\0` is the
+      # whole matched URL, reused as the fallback link's href.
       current_note.content.gsub!(
         /^https?:\/\/twitter\.com\/(?:#!\/)?(\w+)\/status(es)?\/(\d+)$/i,
         <<~HTML

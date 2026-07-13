@@ -1,10 +1,20 @@
+<!--
+  Hover previews for internal links: on mouseenter of a same-site link we load
+  that page into a hidden iframe, scrape its rendered content out, and show it
+  in a floating tooltip. `include.wrapperQuerySelector` scopes which links get
+  previews. External links are skipped (they'd be blocked by cross-origin
+  anyway). Fetched HTML is cached in `linkHistories` so re-hovering is instant.
+-->
 <div style="opacity: 0; display: none;" id='tooltip-wrapper'><div id='tooltip-content'></div></div>
 <iframe style="display: none; height: 0; width: 0;" id='link-preview-iframe' src=""></iframe>
 <script>
+  // opacity/content timeouts stagger the fade-out (opacity first, then wipe the
+  // content once transparent) so it animates instead of vanishing abruptly.
   var opacityTimeout, contentTimeout, transitionDurationMs = 100;
   var iframe = document.getElementById('link-preview-iframe');
   var tooltipWrapper = document.getElementById('tooltip-wrapper');
   var tooltipContent = document.getElementById('tooltip-content');
+  // href -> already-scraped tooltip HTML, so a link is only fetched once.
   var linkHistories = {};
 
   function hideTooltip() {
@@ -17,6 +27,9 @@
     }, transitionDurationMs);
   }
 
+  // Centre the tooltip under the link, then correct for viewport edges: flip
+  // above the link when there isn't room below, and clamp against the left/right
+  // walls (with a small margin) so it never overflows the window.
   function positionTooltip(elemProps, top) {
     tooltipWrapper.style.left = elemProps.left - (tooltipWrapper.offsetWidth / 2) + (elemProps.width / 2) + "px";
     if ((window.innerHeight - elemProps.top) < tooltipWrapper.offsetHeight) {
@@ -37,28 +50,37 @@
   }
 
   function showTooltip(event) {
+    // Use the last client rect so a link wrapped across lines anchors to its
+    // final fragment (where the cursor entered).
     var elemProps = event.target.getClientRects()[event.target.getClientRects().length - 1];
     var top = window.pageYOffset || document.documentElement.scrollTop;
+    // Only preview same-site links; cross-origin pages can't be scraped.
     if (event.target.host !== window.location.host) return;
 
     if (linkHistories[event.target.href]) {
+      // Seen before — reuse the cached HTML, no iframe round-trip.
       tooltipContent.innerHTML = linkHistories[event.target.href];
       revealTooltip();
     } else {
+      // Load the target page hidden, then pull its rendered note body out.
       iframe.src = event.target.href;
       iframe.onload = function() {
         var doc = iframe.contentWindow.document;
         var contentEl = doc.querySelector('content');
+        // Promote the page's <h1> to the tooltip title and drop it from the
+        // body so it isn't shown twice.
         var titleEl = contentEl.querySelector('h1') || doc.querySelector('h1');
         var titleHtml = titleEl ? titleEl.innerHTML : '';
         if (titleEl && contentEl.contains(titleEl)) {
           titleEl.remove();
         }
+        // Strip note-page chrome and neuter footnote anchors so nothing inside
+        // the preview is interactive/navigable.
         contentEl.querySelectorAll('.note-header').forEach(function(el) { el.remove(); });
         contentEl.querySelectorAll('a.footnote, a.reversefootnote').forEach(function(el) { el.removeAttribute('href'); });
         var html = '<div class="tooltip-title">' + titleHtml + '</div>' + contentEl.innerHTML;
         tooltipContent.innerHTML = html;
-        linkHistories[event.target.href] = html;
+        linkHistories[event.target.href] = html; // cache for next hover
         revealTooltip();
       };
     }
