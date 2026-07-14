@@ -75,8 +75,10 @@
           titleEl.remove();
         }
         // Strip note-page chrome and neuter footnote anchors so nothing inside
-        // the preview is interactive/navigable.
-        contentEl.querySelectorAll('.note-header').forEach(function(el) { el.remove(); });
+        // the preview is interactive/navigable. Images (their wrapper carries
+        // the caption too) are dropped so previews stay compact and textual;
+        // the stray-img catch covers any image not in a wrapper.
+        contentEl.querySelectorAll('.note-header, .image-wrapper, img').forEach(function(el) { el.remove(); });
         contentEl.querySelectorAll('a.footnote, a.reversefootnote').forEach(function(el) { el.removeAttribute('href'); });
         var html = '<div class="tooltip-title">' + titleHtml + '</div>' + contentEl.innerHTML;
         tooltipContent.innerHTML = html;
