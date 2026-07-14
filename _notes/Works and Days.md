@@ -91,7 +91,7 @@ When the personified [[Justice]] is mistreated, for example by judges who "devou
 
 > Neither famine nor disaster ever haunt men who do true justice; but light-heartedly they tend the fields which are all their care. The earth bears them victual in plenty, and on the mountains the oak bears acorns upon the top and bees in the midst. Their woolly sheep are laden with fleeces; their women bear children like their parents. They flourish continually with good things.[^27]
 
-Men are distinguished from animals in that animals devour one each other for lack of justice, but Zeus has given humanity the capacity to ordain right and wrong. Thus, "for whoever knows the right and is ready to speak it, far-seeing Zeus gives him prosperity."[^28]
+Men are distinguished from animals in that animals devour one each other for lack of justice, but Zeus has given humanity the capacity to ordain right and wrong. Thus, "for whoever knows the right and is ready to speak it, far-seeing Zeus gives him prosperity." On the other hand, as to "whoever deliberately lies in his witness and foreswears himself," he is "harmed beyond repair."[^28]
 
 ### On work
 
