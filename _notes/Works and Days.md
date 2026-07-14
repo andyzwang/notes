@@ -107,7 +107,7 @@ The remainder of the poem is a collection of household, religious, and social ru
 
 ## Footnotes
 
-*N.B. Our class reading was only through line 382 of the poem. Line numbers below follow the [Perseus Scaife Viewer edition](https://scaife.perseus.org/library/urn:cts:greekLit:tlg0020.tlg002.perseus-eng2:1-380/) of Evelyn-White's translation, bounded to the nearest line markers that edition provides.*
+*N.B. Our class reading was only through line 382 of the poem. Line numbers below follow the [Perseus Scaife Viewer edition](https://scaife.perseus.org/library/urn:cts:greekLit:tlg0020.tlg002.perseus-eng2:1-380/) of Evelyn-White's translation.*
 
 [^1]: Hesiod. *Homeric Hymns, Epic Cycle, Homerica.* Translated by Hugh G. Evelyn-White. The Loeb Classical Library 57. Harvard University Press W. Heinemann, 1914. Lines 1–5.
 
