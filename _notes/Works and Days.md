@@ -44,22 +44,27 @@ Perhaps as a note to his brother, Hesiod concludes that "there is no way to esca
 ### Myth of the ages
 
 Next, Hesiod tells the Myth of the Ages, a story of the progression of humans from near-divine existence to the current period, which is beset by trouble and toil.
+
 #### Golden age
 
 > And they lived like gods without sorrow of heart, remote and free from toil and grief: miserable age rested not on them; but with legs and arms never failing they made merry with feasting beyond the reach of all evils.[^7]
 
 The golden age dates to the time of [[Cronos]]. Humans had a near-godly existence, and the plentiful resources of the earth meant peace among all men. When humans died, it was as though they went to sleep; after this age came to a close, the golden men became "pure spirits dwelling on the earth," protecting mankind from evils and granting them wealth.[^8]
+
 #### Silver age
 
 This generation was "less noble by far," as they were "like the golden race neither in body nor in spirit."[^8] As "utter simpletons," Men lived with their mothers for a hundred years; afterwards, they would live but short lives "because of their foolishness." Silver men could "not keep from sinning and from wronging one another," and they refused to honor and obey the gods. Thus, Zeus destroyed the race, and they became spirits of the underworld.
+
 #### Bronze age
 
 > They loved the lamentable works of Ares and deeds of violence; they ate no bread, but were hard of heart like adamant, fearful men. Great was their strength and unconquerable the arms which grew from their shoulders on their strong limbs.
 
 The men of the Bronze Age were "terrible and strong," with bronze armor, houses, and weapons. Their warlike disposition meant that they destroyed each other, leaving no legacy.  
+
 #### Heroic age
 
 The race of heroes — the only without a metal in its name — was "nobler and more righteous." It is also the only age that improves on its preceding one. Although the men of this age were demi-gods, they fell in war, such as at [[Thebes]] and [[The Iliad|Troy]]. After their deaths, they live in the islands of the blessed, where "the grain-giving earth bears honey-sweet fruit flourishing thrice a year."[^9]
+
 #### Iron age
 
 > For now truly is a race of iron, and men never rest from labour and sorrow by day, and from perishing by night; and the gods shall lay sore trouble upon them.[^10]
