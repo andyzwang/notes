@@ -31,6 +31,15 @@ excerpt_separator: "<!--excerpt-end-->"
 plugins:
   - jekyll-last-modified-at
 
+# Commits ignored when computing a note's "Last updated on" date (see
+# _plugins/last_modified_at_generator.rb). Tag new bulk edits with the
+# marker token in the message; list pre-convention commits by SHA.
+last-modified-at:
+  ignore-commits-matching: "[structure]"
+  ignore-commits:
+    - bb2d80a   # Make stages consistent
+    - 31eac38   # Create stage injector
+
 sass:
   sass_dir:          _sass
   style:            :compressed

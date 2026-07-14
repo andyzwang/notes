@@ -9,12 +9,17 @@ module Recents
   # ourselves so we can IGNORE structural commits — bulk edits (e.g. a link-
   # syntax migration) that touch every note but aren't real content changes.
   #
-  # Mark such a commit by putting a token in its message (default
-  # "[structure]"); the date then reflects the most recent commit that
-  # touched the file and is NOT so tagged. Configure the token in _config.yml:
+  # A commit is ignored if EITHER:
+  #   * its message contains the marker token (default "[structure]"), or
+  #   * its SHA is listed in ignore-commits (for pre-convention commits that
+  #     can't be re-tagged without rewriting history).
+  # The date then reflects the most recent commit touching the file that is
+  # NOT ignored. Configure both in _config.yml:
   #
   #   last-modified-at:
   #     ignore-commits-matching: "[structure]"
+  #     ignore-commits:
+  #       - bb2d80a
   #
   # Requires full git history at build time (the CI checkout uses
   # fetch-depth: 0, so this holds).
@@ -22,10 +27,12 @@ module Recents
     priority :low
 
     def generate(site)
-      marker = site.config.dig('last-modified-at', 'ignore-commits-matching') || '[structure]'
+      cfg = site.config['last-modified-at'] || {}
+      marker = cfg['ignore-commits-matching'] || '[structure]'
+      ignored = Array(cfg['ignore-commits']).map { |s| s.to_s.strip }.reject(&:empty?)
 
       site.collections['notes'].docs.each do |page|
-        time = last_modified_time(site.source, page.path, marker)
+        time = last_modified_time(site.source, page.path, marker, ignored)
         next unless time
 
         # `last_modified_at` (a Time) drives the displayed date; the ISO
@@ -38,32 +45,42 @@ module Recents
 
     private
 
-    # Most recent commit touching `rel_path` whose message does NOT contain
-    # `marker`. Falls back to the latest commit of any kind, then to the file's
-    # mtime, so a never-committed or only-structurally-touched file still dates.
-    def last_modified_time(source, rel_path, marker)
-      unix = git_log_unix(source, rel_path, marker) || git_log_unix(source, rel_path, nil)
-      return Time.at(unix.to_i) if unix
+    # Most recent commit touching `rel_path` that is neither message-marked nor
+    # SHA-ignored. Falls back to the latest commit of any kind, then to the
+    # file's mtime, so a never-committed or wholly-ignored file still dates.
+    def last_modified_time(source, rel_path, marker, ignored)
+      commits = git_log_commits(source, rel_path, marker)
+                .reject { |sha, _| ignored_sha?(sha, ignored) }
+      commits = git_log_commits(source, rel_path, nil) if commits.empty?
+
+      return Time.at(commits.first[1].to_i) unless commits.empty?
 
       abs = File.join(source, rel_path)
       File.exist?(abs) ? File.mtime(abs) : nil
     end
 
-    # Returns the committer unix timestamp of the newest matching commit, or
-    # nil if there is none / git is unavailable. When `marker` is given, the
-    # match is inverted: commits whose message contains it are skipped.
-    def git_log_unix(source, rel_path, marker)
-      args = ['git', 'log', '-n', '1', '--format=%ct']
+    def ignored_sha?(sha, ignored)
+      ignored.any? { |prefix| sha.start_with?(prefix) }
+    end
+
+    # [[sha, unix_committer_date], ...] for commits touching rel_path, newest
+    # first. When `marker` is given, commits whose message contains it are
+    # skipped by git itself. Empty on error / no git.
+    def git_log_commits(source, rel_path, marker)
+      args = ['git', 'log', '--format=%H %ct']
       args += ['--fixed-strings', '--invert-grep', "--grep=#{marker}"] if marker
       args += ['--', rel_path]
 
       out, status = Open3.capture2(*args, chdir: source)
-      return nil unless status.success?
+      return [] unless status.success?
 
-      stamp = out[/\d+/]
-      stamp&.empty? ? nil : stamp
+      out.lines.filter_map do |line|
+        sha, ct = line.split(' ', 2)
+        ct = ct.to_s.strip
+        [sha, ct] unless sha.to_s.empty? || ct.empty?
+      end
     rescue StandardError
-      nil
+      []
     end
   end
 end
