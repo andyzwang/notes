@@ -26,7 +26,13 @@ module Recents
 
       site.collections['notes'].docs.each do |page|
         time = last_modified_time(site.source, page.path, marker)
-        page.data['last_modified_at'] = time if time
+        next unless time
+
+        # `last_modified_at` (a Time) drives the displayed date; the ISO
+        # string in `last_modified_at_timestamp` is the sort key used by the
+        # "Recent Notes" list on the home page (lexical sort == chronological).
+        page.data['last_modified_at'] = time
+        page.data['last_modified_at_timestamp'] = time.strftime('%FT%T%:z')
       end
     end
 
