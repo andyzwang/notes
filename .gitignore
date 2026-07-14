@@ -6,7 +6,7 @@ _site/
 
 # Jekyll cache & metadata
 .jekyll-cache/
-.jekyll-metadata
+.jekyll-metadata*
 
 # Notes graph metadata
 _includes/notes_graph.json
