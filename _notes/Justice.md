@@ -14,6 +14,10 @@ The term "justice" entered English through Ango-Norman and Old French *justice,*
 
 ## In Ancient Thought
 
+Ancient Greek thinkers understood the concept of justice as distinctive to [[Humanity|humanity]]. [[Hesiod]], for example, points out in *[[Works and Days]]* that the rule of force is characteristic of animals, while humans uniquely understand justice:
+
+> For the son of Cronos has ordained this law for men, that fishes and beasts and winged fowls should devour one another, for right is not in them; but to mankind he gave right which proves far the best. For whoever knows the right and is ready to speak it, far-seeing Zeus gives him prosperity; but whoever deliberately lies in his witness and forswears himself, and so hurts Justice and sins beyond repair, that man's generation is left obscure thereafter. But the generation of the man who swears truly is better thenceforward.[^3]
+
 
 ## In Contemporary Thought
 
@@ -26,3 +30,5 @@ To be expanded later!
 [^1]: Miller, David. “Justice.” In *The Stanford Encyclopedia of Philosophy*, Spring 2026, edited by Edward N. Zalta and Uri Nodelman. Metaphysics Research Lab, Stanford University, 2026. https://plato.stanford.edu/archives/spr2026/entries/justice/.
 
 [^2]: *Oxford English Dictionary*, “justice (n.),” June 2026, https://doi.org/10.1093/OED/1055369584.
+
+[^3]: Hesiod. *Homeric Hymns, Epic Cycle, Homerica.* Translated by Hugh G. Evelyn-White. The Loeb Classical Library 57. Harvard University Press W. Heinemann, 1914. Lines 276–285.
