@@ -3,7 +3,7 @@ title: Works and Days
 display_title: <em>Works and Days</em>
 author: "[[Hesiod]]"
 year: c. 700 BCE
-stage: ⚡️
+stage: 🌌
 ---
 
 ![](/assets/img/the-golden-age.jpg "*The Golden Age*, Lucas Cranach the Elder, c. 1530."){: .main link="https://www.sammlung.pinakothek.de/de/artwork/5347RwoG9e"}
@@ -77,12 +77,38 @@ Finally, Hesiod laments that he is alive during the so-called Iron Age (wishing 
 
 ![](/assets/img/hawk-nightingale.jpg "*Fables de La Fontaine*, J.J. Grandville, c. 1838."){: link="https://commons.wikimedia.org/wiki/File:Grandville_-_Fables_de_La_Fontaine_-_09-18_._Le_Milan_et_le_Rossignol.jpg"}
 
+Hesiod then addresses the prices directly. A hawk flies high in the air, with a nightingale in its talons. The smaller bird "cries pitifully," to which the hawk responds:[^11]
 
+> Miserable thing, why do you cry out? One far stronger than you now holds you fast, and you must go wherever I take you, strongstress as you are. And if I please I will make my meal of you, or let you go. He is a fool who tries to withstand the stronger, for he does not get the mastery and suffers pain besides his shame. 
+
+### On justice
+
+Hesiod then addresses his brother directly: violence and injustice will destroy a man, even a powerful or prosperous one, "for Justice beats Outrage when she comes at length to the end of the race."[^12] 
+
+Moreover, entire cities answer for the deeds of a single "bad man who sins and devises presumptuous deeds." — in these cases, Zeus brings "great trouble upon the people."  Speaking to the princes, Hesiod warns that Zeus's eye — "seeing all and understanding all" — takes note of "what sort of justice is this that the city keeps within it."[^14]
+
+When the personified [[Justice]] is mistreated, for example by judges who "devour bribes" and issue "crooked judgments" as in the current dispute, she follows a city "weeping" and bringing punishment upon it. On the other hand, cities with rulers who give "straight judgments" to foreigners and citizens alike flourish and their people proper. 
+
+> Neither famine nor disaster ever haunt men who do true justice; but light-heartedly they tend the fields which are all their care. The earth bears them victual in plenty, and on the mountains the oak bears acorns upon the top and bees in the midst. Their woolly sheep are laden with fleeces; their women bear children like their parents. They flourish continually with good things.[^13]
+
+Men are distinguished from animals in that animals devour one each other for lack of justice, but Zeus has given humanity the capacity to ordain right and wrong. Thus, "for whoever knows the right and is ready to speak it, far-seeing Zeus gives him prosperity."[^15]
+
+### On work
+
+Hesiod finally turns to the difficulty of living well:
+
+> To you, foolish Perses, I will speak good sense. Badness can be got easily and in shoals: the road to her is smooth, and she lives very near us. But between us and Goodness the gods have placed the sweat of our brows: long and steep is the path that leads to her, and it is rough at the first.[^16]
+
+Work, Hesiod tries to convince his brother, is both morally good and materially necessary. Gods and men alike dislike idle men, "for in nature he is like the stingless drones who waste the labor of the bees." And, work ensures that one will not starve. Thus, "work is no disgrace: it is idleness which is a disgrace."[^17] Finally, recalling the opening of the poem, Hesiod advises his brother to stop coveting other people's property: instead, he should "attend to your livelihood as I bid you." 
+
+The remainder of the poem is a collection of household, religious, and social rules. Hesiod advises honoring the gods[^19], respecting guests and parents[^20], maintaining good relations with neighbors[^21], repaying fairly[^22],  gradual savings[^24], and bearing sons.[^26] He also advises against dishonest profit[^18], greediness[^23], and, in a reflection of the patriarchal nature of the poem, trusting "flaunting women."[^25]
 ## Analysis
 
 ## Footnotes
 
-[^1]:Hesiod. *Homeric Hymns, Epic Cycle, Homerica.* Translated by Hugh G. Evelyn-White. The Loeb Classical Library 57. Harvard University Press W. Heinemann, 1914. Lines 1-10.
+*N.B. Our class reading was only through line 382 of the poem.*
+
+[^1]: Hesiod. *Homeric Hymns, Epic Cycle, Homerica.* Translated by Hugh G. Evelyn-White. The Loeb Classical Library 57. Harvard University Press W. Heinemann, 1914. Lines 1-10.
 
 [^2]: 11–24.
 
@@ -101,3 +127,35 @@ Finally, Hesiod laments that he is alive during the so-called Iron Age (wishing 
 [^9]: 156-159b.
 
 [^10]: 170-201.
+
+[^11]: 202–211. Note that the hawk is referred to as "he" and the nightingale as "she."
+
+[^12]: 212-224.
+
+[^13]: 225-237.
+
+[^14]: 267.
+
+[^15]: 274-285.
+
+[^16]: 286–292.
+
+[^17]: 293-319.
+
+[^18]: "Wealth should not be seized: god-given wealth is much better; for if a man take great wealth violently and perforce, or if he steal it through his tongue...the gods soon blot him out."
+
+[^19]: "As far as you are able, sacrifice to the deathless gods purely and cleanly, and burn rich meats also, and at other times propitiate them with libations and incense."
+
+[^20]: "Alike with him who does wrong to a suppliant or a guest"
+
+[^21]: "He who enjoys a good neighbor has a precious possession."
+
+[^22]: "Take fair measure from your neighbor and pay him back fairly with the same measure, or better, if you can."
+
+[^23]: "Give is a good girl, but Take is bad and she brings death"
+
+[^24]: "He who adds to what he has, will keep off bright-eyed hunger; for if you add only a little to a little and do this often, soon that little will become great."
+
+[^25]: "Do not let a flaunting women coax and cozen and deceive you: she is after your barn. The man who trusts womankind trust deceivers."
+
+[^26]: "Yet Zeus can easily give great wealth to a greater number. More hands mean more work and more increase."
