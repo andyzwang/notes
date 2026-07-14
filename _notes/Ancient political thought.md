@@ -66,9 +66,6 @@ For Balot, our chief difference with the Greeks — and accordingly, the chief v
 
 In analyzing the contemporary debate between [[Liberalism|liberalism]] and [[Communitarianism|communitarianism]], Balot argues that Greek thought "provides a genuine *tertium quid*."[^10] Like liberalism, Greek political thought approved of individual autonomy, private freedom, and equality of opportunity: beyond this, it also provided virtues that could support these "liberal" values. Similarly, like communitarians, Greek political thinkers rejected the "thin" (as Balot writes) conception of individualism, instead analyzing individuals through their attachments to families, religions, communities, and ultimately, poleis.
 
-
-
-
 [^1]: Balot, Ryan K. _Greek Political Thought_. 1st ed. Ancient Cultures Series. John Wiley & Sons, Incorporated, 2006.
 
 [^2]: Ryan, Alan. _On Politics: A History of Political Thought; from Herodotus to the Present_. Liveright, 2012.

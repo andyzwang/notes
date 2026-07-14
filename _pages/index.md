@@ -7,14 +7,12 @@ permalink: /
 
 # Welcome! 🌌
 
-<blockquote class="main-quote">
-  <p>
-    A historian who takes [causation] as his point of departure stops telling
-    the sequence of events like the beads of a rosary. Instead, he grasps the
-    <em>constellation</em> which his own era has formed with a definite earlier one.
-  </p>
-  <cite>— Walter Benjamin, <em>Theses on the Philosophy of History</em></cite>
-</blockquote>
+> A historian who takes \[causation\] as his point of departure stops telling
+> the sequence of events like the beads of a rosary. Instead, he grasps the
+> *constellation* which his own era has formed with a definite earlier one.
+>
+> <cite>— Walter Benjamin, *Theses on the Philosophy of History*</cite>
+{: .main-quote}
 
 This site is an [[about|experiment]] in thinking.
 

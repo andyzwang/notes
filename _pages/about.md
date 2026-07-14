@@ -7,12 +7,10 @@ permalink: /about/
 
 # About this site
 
-<blockquote class="main-quote">
-  <p>
-    I really do think with my pen, because my head often knows nothing about what my hand is writing.
-  </p>
-  <cite>— Ludwig Wittgenstein, <em>Culture and Value</em>, 17c</cite>
-</blockquote>
+> I really do think with my pen, because my head often knows nothing about what my hand is writing.
+>
+> <cite>— Ludwig Wittgenstein, *Culture and Value*, 17c</cite>
+{: .main-quote}
 
 Hi! I'm Andy.
 
