@@ -162,12 +162,19 @@
           });
         };
 
+        // Bidirectional links (A links to B and B links to A) are drawn a
+        // little thicker than one-way links.
+        const BIDIRECTIONAL_WIDTH_FACTOR = 1.5;
+
         // Link thickness scales with the nodes it connects — averaging the two
-        // endpoint sizes so a link is thicker when either end is a bigger hub.
+        // endpoint sizes so a link is thicker when either end is a bigger hub —
+        // then bumped up for bidirectional links.
         const endpointSize = (endpoint) =>
           nodeSize[endpoint && endpoint.id != null ? endpoint.id : endpoint];
         const linkWidth = (d) =>
-          STROKE * ((endpointSize(d.source) + endpointSize(d.target)) / 2 / MINIMAL_NODE_SIZE);
+          STROKE *
+          ((endpointSize(d.source) + endpointSize(d.target)) / 2 / MINIMAL_NODE_SIZE) *
+          (d.bidirectional ? BIDIRECTIONAL_WIDTH_FACTOR : 1);
 
         const onClick = (d) => {
           if (!d.path) return;
@@ -281,12 +288,16 @@
 
         // Degree per node id (source/target may be ids or resolved node objects
         // depending on when this runs, so accept either).
+        // A bidirectional edge counts as 2 (it stands in for the two directed
+        // edges it was collapsed from), so node sizes match the pre-collapse
+        // graph.
         const degree = {};
         linksData.forEach((l) => {
           const s = l.source.id != null ? l.source.id : l.source;
           const t = l.target.id != null ? l.target.id : l.target;
-          degree[s] = (degree[s] || 0) + 1;
-          degree[t] = (degree[t] || 0) + 1;
+          const inc = l.bidirectional ? 2 : 1;
+          degree[s] = (degree[s] || 0) + inc;
+          degree[t] = (degree[t] || 0) + inc;
         });
 
         // The current page's id and the set of nodes it links to directly.

@@ -130,9 +130,33 @@ class BidirectionalLinksGenerator < Jekyll::Generator
       end
 
     File.write('_includes/notes-graph.json', JSON.dump({
-      edges: @graph_edges,
+      edges: dedupe_edges(@graph_edges),
       nodes: graph_nodes + @ghost_nodes.values,
     }))
+  end
+
+  # Collapse the directed link list into one edge per unordered pair. A pair
+  # linked from both sides (A links to B *and* B links to A) is flagged
+  # bidirectional so the graph can draw it with a thicker line; without this
+  # such pairs would otherwise render as two overlapping lines. Ghost links
+  # are one-directional by nature and are never bidirectional.
+  def dedupe_edges(edges)
+    directed = {}
+    edges.each { |e| directed["#{e[:source]}\x00#{e[:target]}"] = true }
+
+    collapsed = {}
+    edges.each do |e|
+      key = [e[:source], e[:target]].minmax
+      next if collapsed.key?(key)
+
+      reverse = directed["#{e[:target]}\x00#{e[:source]}"]
+      collapsed[key] = {
+        source: e[:source],
+        target: e[:target],
+        bidirectional: !reverse.nil?,
+      }
+    end
+    collapsed.values
   end
 
   def note_id_from_note(note)
