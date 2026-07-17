@@ -7,14 +7,30 @@
       <b>{{ site.title }}</b>
     </a>
 
-    <div class="nav-links">
-      <a class="internal-link nav-faded" href="{{ site.baseurl }}/the-canon/">The Canon</a>
-      <a class="internal-link nav-faded" href="{{ site.baseurl }}/about/">About</a>
-      <span id="theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode" role="switch" aria-checked="false">
-        <div class="theme-toggle-slide"></div>
-        <div class="theme-toggle-switch"></div>
-      </span>
+    <div class="nav-links" id="nav-links">
+      <div class="nav-links-inner">
+        <a class="internal-link nav-faded" href="{{ site.baseurl }}/the-canon/">The Canon</a>
+        <a class="internal-link nav-faded" href="{{ site.baseurl }}/passages/">Passages</a>
+        <a class="internal-link nav-faded" href="{{ site.baseurl }}/about/">About</a>
+      </div>
     </div>
+
+    <span id="theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode" role="switch" aria-checked="false">
+      <div class="theme-toggle-slide"></div>
+      <div class="theme-toggle-switch"></div>
+    </span>
+
+    <button
+      id="nav-toggle"
+      class="nav-toggle"
+      aria-label="Menu"
+      aria-controls="nav-links"
+      aria-expanded="false"
+    >
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+    </button>
   </div>
 </nav>
 
@@ -51,5 +67,18 @@
     });
 
     darkModeToggle.setAttribute('aria-checked', bodyClassList.contains('theme-dark').toString());
+  })();
+
+  // Mobile hamburger: toggle the links panel open/closed. The .open class is
+  // only acted on inside the mobile breakpoint, so this is a no-op on desktop.
+  (function () {
+    var navToggle = document.getElementById('nav-toggle');
+    var navLinks = document.getElementById('nav-links');
+    if (!navToggle || !navLinks) return;
+
+    navToggle.addEventListener('click', function () {
+      var open = navLinks.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', open.toString());
+    });
   })();
 </script>

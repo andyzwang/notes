@@ -5,8 +5,17 @@ nav {
 .nav-bar {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: .75em;
+  flex-wrap: wrap;
+  // Zero row-gap so the collapsed mobile menu (a wrapped, 0-height second row)
+  // adds no phantom space; column-gap still spaces items along the bar.
+  column-gap: 0.75em;
+  row-gap: 0;
+}
+
+// Pushes the links + toggle + hamburger to the right of the bar, and keeps
+// them there when the menu wraps to a second row on mobile.
+.site-title {
+  margin-right: auto;
 }
 
 .nav-links {
@@ -15,14 +24,91 @@ nav {
   gap: 0.75em;
 }
 
-@media (max-width: 600px) {
-  .nav-bar {
-    align-items: baseline;
+// On desktop the wrapper is transparent to layout, so the links lay out as
+// direct flex children of .nav-links. On mobile it becomes the real box that
+// the grid-rows reveal animates and clips.
+.nav-links-inner {
+  display: contents;
+}
+
+// Hamburger button — hidden on desktop, revealed at the mobile breakpoint.
+// Sized to match the theme toggle's height (20px) so they sit level.
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 20px; // matches the theme toggle's height
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.nav-toggle-bar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--color-subtext);
+  transition: transform 150ms ease, opacity 150ms ease;
+}
+
+// Animate the three bars into an X while the menu is open. The 9px shift is
+// half the span between the outer bars (button 20px tall, bars 2px), so they
+// meet in the middle.
+.nav-toggle[aria-expanded="true"] {
+  .nav-toggle-bar:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
   }
 
+  .nav-toggle-bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .nav-toggle-bar:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+  }
+}
+
+@media (max-width: 600px) {
+  .nav-toggle {
+    display: flex;
+  }
+
+  // The links drop to their own full-width row below the bar (order pushes it
+  // past the toggle + hamburger, which stay up top) and stay in normal flow so
+  // opening pushes the page content down. The reveal animates grid-template-rows
+  // 0fr -> 1fr, which eases to the content's exact height (no fixed max needed).
   .nav-links {
-    flex-wrap: wrap;
-    justify-content: flex-end;
+    order: 1;
+    width: 100%;
+    display: grid;
+    grid-template-rows: 0fr;
+    overflow: hidden;
+    margin-top: 0;
+    opacity: 0;
+    transition: grid-template-rows 220ms ease, margin-top 220ms ease, opacity 160ms ease;
+  }
+
+  .nav-links.open {
+    grid-template-rows: 1fr;
+    // Matches the 0.9em gap between links so title -> first link is even with
+    // link -> link.
+    margin-top: 0.9em;
+    opacity: 1;
+  }
+
+  // The grid child: min-height:0 + overflow:hidden let it collapse to nothing
+  // when the row is 0fr. The bottom rule separates the open menu from the page.
+  .nav-links-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.9em;
+    min-height: 0;
+    overflow: hidden;
+    padding-bottom: 1em;
+    border-bottom: 1px solid var(--color-border);
   }
 }
 

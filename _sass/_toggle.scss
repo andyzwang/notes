@@ -10,6 +10,9 @@
 }
 
 .theme-toggle-slide {
+  // border-box so the 1px border is included in the 20px — otherwise the pill
+  // renders 22px tall and sits taller than the hamburger beside it.
+  box-sizing: border-box;
   height: 20px;
   border: 1px solid var(--color-border);
   border-radius: 24px;
