@@ -1,0 +1,30 @@
+# Favorite passages, rendered on /passages/.
+#
+# Each entry needs `author`. Then EITHER a single quote:
+#   quote  – the quotation
+#   source – the work it's from        (optional)
+#   year   – shown after the source    (optional, e.g. 1940, "c. 700 BCE")
+# OR, for several quotes from one author (grouped under one heading), a
+# `quotes:` list where each item has its own text/source/year:
+#   quotes:
+#     - text: "…"
+#       source: …
+#       year: …
+#     - text: "…"
+#
+# `note` (optional) links the author name to that note (matched by exact
+# title) if it exists; otherwise the name renders as plain text.
+
+- author: Walter Benjamin
+  sort: Benjamin
+  quote: "“There is no document of civilization which is not at the same time a document of barbarism.”"
+  source: On the Concept of History
+  year: 1940
+  note: Walter Benjamin
+
+- author: Hesiod
+  note: Hesiod
+  quotes:
+    - text: "“Fools! They know not how much more the half is than the whole.”"
+      source: Works and Days
+      year: c. 700 BCE
