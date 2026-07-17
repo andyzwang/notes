@@ -23,7 +23,7 @@ Ancient Greek thinkers understood the concept of justice as distinctive to [[Hum
 
 > Justice is the first virtue of social institutions, as truth is of systems of thought.
 >
-> <cite>— John Rawls, *A Theory of Justice*</cite>
+> <cite>— John Rawls, *[[A Theory of Justice]]*</cite>
 
 To be expanded later!
 
