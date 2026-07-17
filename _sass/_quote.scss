@@ -3,9 +3,10 @@
 blockquote {
   padding: 1.5em;
   margin: 0;
-  font-size: 0.88em;
+  font-size: 1em;
   background: var(--color-bg-soft);
   border-radius: $border-radius;
+  font-family: $font-heading;
 
   p {
     margin: 0;
@@ -17,6 +18,7 @@ blockquote {
     font-size: 0.88em;
     font-style: normal;
     color: var(--color-subtext);
+    font-family: $font-body;
   }
 }
 
@@ -35,6 +37,7 @@ blockquote.verse {
       font-size: 0.75rem;
       color: var(--color-subtext);
       font-variant-numeric: tabular-nums;
+      font-family: $font-body;
     }
   }
 
