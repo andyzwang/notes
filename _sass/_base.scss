@@ -3,6 +3,8 @@
 // Base elements
 html {
   scroll-behavior: smooth;
+  scrollbar-gutter: stable;
+  overflow-x: clip;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -11,12 +13,12 @@ html {
   }
 }
 
+
 body {
   font-family: $font-body;
   margin: 0 auto;
   line-height: 1.5;
   padding: 4vh 6vw;
-  overflow-x: hidden;
   background: var(--color-bg);
   color: var(--color-text);
   font-size: clamp(1rem, 0.95rem + 0.3vw, 1.2rem);
@@ -38,6 +40,10 @@ hr {
   height: 1px;
   margin: 1.5em 0;
   background: var(--color-border);
+}
+
+tt {
+  font-family: $font-mono;
 }
 
 code {

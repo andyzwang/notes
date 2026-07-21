@@ -1,10 +1,13 @@
 ---
 title: Ancient political thought
 stage: 🌌
+image: /assets/img/caryatid.jpg
+image_title: Caryatid porch of the Erechtheion, Athens
+image_link: https://www.pexels.com/photo/the-erechtheion-temple-of-athena-polias-acropolis-athens-greece-14375261/
+image_author: Wendy Wei
 ---
 
 <div class="note-header">
-![](/assets/img/caryatid.jpg "Caryatid porch of the Erechtheion, Athens."){: .main link="https://www.pexels.com/photo/the-erechtheion-temple-of-athena-polias-acropolis-athens-greece-14375261/"}
 
 *Most of this note draws on materials prepared by [Josh Ober](https://politicalscience.stanford.edu/people/josiah-ober) and [Sal Salamanca](https://emilysal.neocities.org/) for POLISCI 330A: "Origins of Political Thought". I also draw on surveys by Balot[^1], the course textbook, and Ryan[^2].*
 

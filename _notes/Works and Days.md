@@ -4,9 +4,12 @@ display_title: <em>Works and Days</em>
 author: "[[Hesiod]]"
 year: c. 700 BCE
 stage: 🌌
+image: /assets/img/the-golden-age.jpg
+image_title: The Golden Age
+image_author: Lucas Cranach the Elder
+image_date: c. 1530
+image_link: https://www.sammlung.pinakothek.de/de/artwork/5347RwoG9e
 ---
-
-![](/assets/img/the-golden-age.jpg "*The Golden Age*, Lucas Cranach the Elder, c. 1530."){: .main link="https://www.sammlung.pinakothek.de/de/artwork/5347RwoG9e"}
 
 ***Works and Days*** (Ἔργα καὶ Ἡμέραι) is a poem by [[Hesiod]], written around 700 BCE. In the poem — part farmer's almanac, part mythology, and part moral education — Hesiod instructs his brother Perses on how he should live his life.
 
@@ -105,6 +108,8 @@ The remainder of the poem is a collection of household, religious, and social ru
 
 ## Analysis
 
+Hesiod concerns himself with matters of justice, which is facilitated through the gods, who are "ultimately responsible for rewarding the upright and punishing wrongdoers."[^41]
+
 ## Footnotes
 
 *N.B. Our class reading was only through line 382 of the poem. Line numbers below follow the [Perseus Scaife Viewer edition](https://scaife.perseus.org/library/urn:cts:greekLit:tlg0020.tlg002.perseus-eng2:1-380/) of Evelyn-White's translation.*
@@ -188,3 +193,5 @@ The remainder of the poem is a collection of household, religious, and social ru
 [^39]: Lines 355–356. "Give is a good girl, but Take is bad and she brings death."
 
 [^40]: Lines 372–374. "Do not let a flaunting women coax and cozen and deceive you: she is after your barn. The man who trusts womankind trust deceivers."
+
+[^41]: Balot, Ryan K. _Greek Political Thought_. 1st ed. Ancient Cultures Series. John Wiley & Sons, Incorporated, 2006. Page 21. Also note the beginning of Hesiod's invocation to Zeus.

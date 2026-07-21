@@ -47,6 +47,15 @@ h4 {
 }
 
 article {
+  // Article reading copy uses PP Neue Montreal's text optical size at
+  // its Book weight (375). This targets the <content> element, so
+  // headings and bold — which set their own family/weight — are
+  // unaffected.
+  content {
+    font-family: $font-body-text;
+    font-weight: 375;
+  }
+
   h2 {
     margin-top: 2em;
   }
@@ -76,4 +85,9 @@ text-align: right;
 .left-align {
 display: block;
 text-align: left;
+}
+
+b, strong{
+  font-family: $font-body;
+  font-weight: 600;
 }

@@ -1,9 +1,12 @@
 ---
 title: Justice
 stage: ⚡️
+image: /assets/img/justice-with-mercy.jpg
+image_title: Justice Tempered with Mercy
+image_author: Emil Bisttram
+image_date: c. 1936
+image_link: https://americanart.si.edu/artwork/justice-tempered-mercy-mural-study-roswell-new-mexico-courthouse-2129
 ---
-
-![](/assets/img/justice-with-mercy.jpg "*Justice Tempered with Mercy*, Emil Bisttram, ca. 1936."){: .main link="https://americanart.si.edu/artwork/justice-tempered-mercy-mural-study-roswell-new-mexico-courthouse-2129"}
 
 **Justice**, in its broadest sense, is the *fair* treatment of individuals. David Miller, writing in the SEP, proposes a core definition from the *Institutes of Justinian*, where justice is defined as "the constant and perpetual will to render to each his due."[^1]
 

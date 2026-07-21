@@ -1,9 +1,12 @@
 ---
 title: The political
 stage: ⭐️
+image: /assets/img/the-political.jpg
+image_title: The Harvesters
+image_link: https://www.metmuseum.org/art/collection/search/435809
+image_author: Pieter Bruegel the Elder
+image_date: 1565
 ---
-
-![](/assets/img/the-political.jpg "*The Harvesters,* Pieter Bruegel the Elder, 1565."){: .main link="https://www.metmuseum.org/art/collection/search/435809"}
 
 ## In Contemporary Thought
 

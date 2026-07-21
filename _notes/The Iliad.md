@@ -4,9 +4,12 @@ display_title: <em>The Iliad</em>
 author: "[[Homer]]"
 year: c. 800–750 BCE
 stage: 🌌
+image: /assets/img/iliad.jpg
+image_title: Battle Before a Walled City
+image_author: artist unknown
+image_date: c. 1450
+image_link: https://www.getty.edu/art/collection/object/103RAK
 ---
-
-![](/assets/img/iliad.jpg "*The Iliad of Homer, Translated by Mr. Pope.* Vol. 4, Page 15."){: .main link="https://commons.wikimedia.org/wiki/File:THE_ILLIAD_OF_HOMER_(translated_by_POPE)_p4.015_13th_Book_Page_957.jpg"}
 
 ***The Iliad*** is an epic [[Poetry|poem]] from the 8th century BCE, attributed to [[Homer]]. As one of the oldest surviving pieces of literature, it is a foundational text for [[Ancient political thought|ancient political thought]].
 

@@ -4,9 +4,12 @@ blockquote {
   padding: 1.5em;
   margin: 0;
   font-size: 1em;
+  // Pin the weight so quotes inside article content don't inherit the
+  // reading-copy Book weight (375) and render lighter than elsewhere.
+  font-weight: 375;
   background: var(--color-bg-soft);
   border-radius: $border-radius;
-  font-family: $font-heading;
+  font-family: $font-quote;
 
   p {
     margin: 0;
@@ -15,7 +18,7 @@ blockquote {
   cite {
     display: block;
     margin-top: 1rem;
-    font-size: 0.88em;
+    font-size: 0.8em;
     font-style: normal;
     color: var(--color-subtext);
     font-family: $font-body;
