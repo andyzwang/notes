@@ -1,10 +1,11 @@
 ---
 title: "Ancient political thought"
 stage: 🌌
-image: /assets/img/caryatid.jpg
-image_title: Caryatid porch of the Erechtheion, Athens
-image_link: https://www.pexels.com/photo/the-erechtheion-temple-of-athena-polias-acropolis-athens-greece-14375261/
-image_author: Wendy Wei
+image: /assets/img/the-concert-of-the-angels.jpg
+image_title: The Concert of the Angels
+image_link: https://www.nationalgallery.gr/en/artwork/the-concert-of-the-angels/
+image_date: c. 1608-1614
+image_author: El Greco
 ---
 
 <div class="note-header">

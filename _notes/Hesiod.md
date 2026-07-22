@@ -1,9 +1,12 @@
 ---
 title: Hesiod
 stage: ⚡️
+image: /assets/img/hesiod.jpg
+image_title: The Voices
+image_author: Gustave Moreau
+image_date: c. 1880
+image_link: https://www.museothyssen.org/en/collection/artists/moreau-gustave/voices#tab-pane-2
 ---
-
-![](/assets/img/hesiod.jpg "*Die Musen reichen Hesiod ein Lorbeerreis,* John Flaxman, 1910."){: .main link="https://commons.wikimedia.org/wiki/File:Flaxman%27s_Zeichnungen_1910_021.jpg"}
 
 **Hesiod** (c. 8th century BCE) was an ancient Greek poet, thought to have been active around the same time as [[Homer]]. He is the author of *[[Theogony]]*, which tells the origins of the gods, and *[[Works and Days]]*, a poem that describes the five Ages of Man.
 
