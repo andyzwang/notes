@@ -25,6 +25,7 @@ last-modified-at:
   ignore-commits:
     - bb2d80a # Make stages consistent
     - 31eac38 # Create stage injector
+    - c56d6cb #file structure reform
 
 sass:
   sass_dir:                     _sass
