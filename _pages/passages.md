@@ -2,7 +2,7 @@
 layout: page-hero
 title: A collection of passages
 permalink: /passages/
-image: /assets/img/passages.jpg
+image: /assets/img/galerie-dorleans.jpg
 image_title: Galerie d'Orléans, au Palais Royal
 image_author: Philippe Benoist
 image_date: n.d
