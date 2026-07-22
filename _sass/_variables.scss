@@ -6,12 +6,15 @@
 $body-width: 60em;    // max reading measure
 $border-radius: 4px;
 
-// Hero heading offset (top of content column → first hero line). Split into two
-// parts so the home page — which has no hero — can reuse the sum and start its
-// heading at the same height. Used by _note-splash.scss and _home.scss.
+// Top-of-page hero offset, split so the heroless home page can sum the parts.
 $hero-top: 6rem;                               // .note-splash top margin
 $hero-top-sm: 3.5rem;                          // …stepped down ≤900px
 $hero-headline-gap: clamp(1.5rem, 4vh, 3rem);  // .note-splash-headline top margin
+
+// Fluid display-title ceiling. Steps down on small screens.
+$title-max: clamp(4rem, 18vw - 6rem, 10rem);
+$title-max-sm: 6rem;                           // ≤900px
+$title-max-xs: 3rem;                           // ≤600px
 
 // --- Type families ---------------------------------------------------
 // Sans (display optical size) — UI, nav, subheads

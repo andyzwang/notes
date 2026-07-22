@@ -1,9 +1,7 @@
 @use "variables" as *;
-
 // Hanging indent: pulls the opening quote mark into the margin so the quote's
 // first glyph lines up with the source line beneath it.
 $quote-hang: 0.45em;
-
 // Two columns: the sticky A–Z rail beside the stack of passages.
 .passages-layout {
   display: flex;
@@ -35,27 +33,23 @@ $quote-hang: 0.45em;
     // Every letter is light grey by default; only the active one stands out.
     color: var(--color-border);
     transition: color 120ms;
-
     // No outbound "↗" glyph on the rail's same-page jump links.
     &::after {
       content: "";
     }
   }
-
   // Hovering a present letter previews the active look.
   a:hover {
     color: var(--color-text);
   }
-
   // Letters with no author: inert (still light grey via the rule above).
   .passages-index-empty {
     pointer-events: none;
   }
-
   // The author currently scrolled into view.
   .current {
     color: var(--color-text);
-    font-weight: $weight-bold;
+    font-weight: $weight-semibold;
   }
 }
 
@@ -67,7 +61,6 @@ $quote-hang: 0.45em;
   gap: 3.25rem;
   margin-top: 0;
 }
-
 // The rail needs horizontal room it doesn't have on phones; drop it there and
 // let the passages span full width.
 @media (max-width: 600px) {
@@ -100,9 +93,9 @@ $quote-hang: 0.45em;
     opacity: 0.55;
   }
 }
-
 // Each quote + its source. The first sits 18px below the author; additional
 // quotes from the same author get a larger gap between them.
+
 .passage-body {
   margin-top: 1.125rem;
 }

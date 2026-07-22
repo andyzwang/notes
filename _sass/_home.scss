@@ -25,14 +25,31 @@
   width: fit-content;
   font-family: $font-body !important;
 }
+// The home page has no hero, so give its heading the same top offset and
+// fluid display size as the hero title on other pages.
 
-// The home page has no hero; lift its first heading to the same top offset the
-// hero (.note-splash + .note-splash-headline) gives other pages, so both page
-// types start their first line at the same height.
 .page-home > :first-child {
   margin-top: calc(#{$hero-top} + #{$hero-headline-gap});
-
+  font-size: $title-max;
+  line-height: 1;
+  letter-spacing: -0.045em;
   @media (max-width: 900px) {
     margin-top: calc(#{$hero-top-sm} + #{$hero-headline-gap});
+    font-size: $title-max-sm;
   }
+  @media (max-width: 600px) {
+    font-size: $title-max-xs;
+  }
+}
+
+.home-emoji {
+  font-size: 1rem;
+  line-height: 1;
+  color: var(--color-subtext);
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+}
+
+#welcome {
+  text-box: trim-end cap alphabetic;
 }

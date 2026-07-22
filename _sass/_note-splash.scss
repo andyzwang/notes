@@ -1,25 +1,31 @@
 // Note hero (splash) — the header block on note pages.
 // Markup: _includes/note-hero.html. Same design at every width; a few
 // sizes step down on small screens (see the media queries at the foot).
-
 @use "variables" as *;
 
 .note-splash {
   // --- tweak knobs ---------------------------------------------------
-  --title-min: 2.75rem;                          // title floor
-  --title-max: clamp(4rem, 18vw - 6rem, 10rem);  // title ceiling; scales with viewport (tablet → wide)
-  --title-k: 0.8;                                // raise to shrink long titles sooner
-  --title-lines: 2;                              // lines a long title may fill before it shrinks
-  --title-leading: 1;                          // title line-height (matters once a title wraps)
-  --title-meta-gap: 0.2;                         // title baseline → meta gap, as a fraction of title size (~0.3 ≈ descender depth)
-  --author-title-gap: 0.318;                     // author baseline → title gap, as a fraction of title size
-  --focal: 50% 50%;                              // image crop focus (per-note: image_focal frontmatter)
+  --title-min: 2.75rem;
+  // title floor
+  --title-max: #{$title-max};
+  // title ceiling; scales with viewport (tablet → wide)
+  --title-k: 0.8;
+  // raise to shrink long titles sooner
+  --title-lines: 2;
+  // lines a long title may fill before it shrinks
+  --title-leading: 1;
+  // title line-height (matters once a title wraps)
+  --title-meta-gap: 0.2;
+  // title baseline → meta gap, as a fraction of title size (~0.3 ≈ descender depth)
+  --author-title-gap: 0.318;
+  // author baseline → title gap, as a fraction of title size
+  --focal: 50% 50%;
+  // image crop focus (per-note: image_focal frontmatter)
   // -------------------------------------------------------------------
-
   // Title size: fills the hero, shrinking as the title gets longer.
   --title-fluid: calc(100cqi * var(--title-lines) / (var(--length, 12) * var(--title-k)));
-
-  container-type: inline-size;                   // enables the cqi unit above
+  container-type: inline-size;
+  // enables the cqi unit above
   margin-top: $hero-top;
 }
 
@@ -27,7 +33,6 @@
   display: flex;
   flex-direction: column;
 }
-
 // Headline — author lead-in ("Hesiod/") stacked above the title.
 .note-splash-headline {
   margin-top: $hero-headline-gap;
@@ -37,16 +42,17 @@
 }
 
 .note-splash-title {
-  margin: 0 0 calc(var(--title-meta-gap) * 1em);   // bottom gap scales with the title's own size
+  margin: 0 0 calc(var(--title-meta-gap) * 1em);
+  // bottom gap scales with the title's own size
   font-family: $font-heading;
   font-weight: $weight-regular;
   font-size: clamp(var(--title-min), var(--title-fluid), var(--title-max));
   line-height: var(--title-leading);
   letter-spacing: -0.045em;
   overflow-wrap: normal;
-  text-box: trim-end cap alphabetic;   // trim box to the baseline → meta gap is baseline-relative
+  text-box: trim-end cap alphabetic;
+  // trim box to the baseline → meta gap is baseline-relative
 }
-
 // Author — grey, smaller; tracks the title's fluid size. Not part of the <h1>.
 .note-splash-title-author {
   font-family: $font-heading;
@@ -55,14 +61,15 @@
   letter-spacing: -0.025em;
   color: var(--color-yellow);
   text-box: trim-end cap alphabetic;
-  margin: 0 0 calc(var(--author-title-gap) * 1em);   // bottom gap scales with the title's own size
+  margin: 0 0 calc(var(--author-title-gap) * 1em);
+  // bottom gap scales with the title's own size
 }
 // The "/" after the author
+
 .note-splash-title-slash {
   color: var(--color-subtext);
   margin-left: 0.04em;
 }
-
 // Meta row — work's date · rule · last-updated, the line filling the gap between them.
 .note-splash-eyebrow {
   display: flex;
@@ -83,17 +90,19 @@
   color: var(--color-subtext);
   margin: 0;
 }
-
 // Rule — the line between the two date stamps (or to the right of a lone one),
 // flexing to fill the gap. The 1px line comes from the global hr; we only stretch it.
+
 .note-splash-rule {
   flex: 1 1 0;
   min-width: 1.5rem;
   margin: 0;
 }
-
 // Image — strict 3:2 crop. max-height / border-radius / margin reset the global img.
-.note-splash-media { display: contents; }
+.note-splash-media {
+  display: contents;
+}
+
 .note-splash-image {
   display: block;
   width: 100%;
@@ -108,7 +117,6 @@
   object-position: var(--focal, 50% 50%);
   background: var(--color-bg-soft);
 }
-
 // Credit — two lines, flush-right: title, then "Author, Year." (date carries the source ↗).
 .note-splash-caption {
   margin: 0.88rem 0 2rem;
@@ -116,30 +124,35 @@
   line-height: 1.5;
   text-align: right;
 }
-.note-splash-caption-title,
-.note-splash-caption-meta {
+
+.note-splash-caption-meta,
+.note-splash-caption-title {
   display: block;
   font-family: $font-mono;
   color: var(--color-subtext);
+  font-weight: $weight-book;
 }
-.note-splash-caption-title { font-style: italic; }
+
+.note-splash-caption-title {
+  font-style: italic;
+  font-weight: $weight-regular;
+}
+
 .note-splash-caption-source {
   font-family: $font-mono;
   color: var(--color-subtext);
   text-decoration: none;
 }
-
 // No-image notes — a quiet title band only.
 .note-splash--no-image .note-splash-title {
   font-size: clamp(3rem, 5vw + 1.5rem, var(--title-max));
   line-height: 1.02;
 }
-
 // --- smaller screens: step the title cap (and a couple of sizes) down ---
 @media (max-width: 900px) {
   .note-splash {
     --title-min: 2.5rem;
-    --title-max: 6rem;
+    --title-max: #{$title-max-sm};
     margin-top: $hero-top-sm;
   }
 
@@ -149,13 +162,14 @@
     font-size: 0.8rem;
   }
 
-  .note-splash-title-author { font-size: 4rem; }
+  .note-splash-title-author {
+    font-size: 4rem;
+  }
 }
-
 @media (max-width: 600px) {
   .note-splash {
     --title-min: 2rem;
-    --title-max: 3rem;
+    --title-max: #{$title-max-xs};
   }
 
   .note-splash-caption,
@@ -164,5 +178,7 @@
     font-size: 0.75rem;
   }
 
-  .note-splash-title-author { font-size: 2rem; }
+  .note-splash-title-author {
+    font-size: 2rem;
+  }
 }
