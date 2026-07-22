@@ -1,48 +1,34 @@
-### SITE INFO
-
-title:               Constellations
-timezone:            America/Los_Angeles
-include:             ['_pages']
-exclude:             ['_includes/notes-graph.json', '_notes/drafts']
-url:                 'https://notes.andyzwang.com'
-baseurl:             ''
-
-# If you are using a host that cannot resolve URLs that do
-# not end with .html (such as Neocities), set this to 'true'.
-use_html_extension:  false
-
-# Set to `true` to open non-internal links in new tabs, or
-# set to `false` to open non-internal links in current tab.
-open_external_links_in_new_tab: true
-
-# Set to `true` to replace tweet URLs with Twitter embeds.
-# Note that doing so will negatively the reader's privacy
-# as their browser will communicate with Twitter's servers.
-embed_tweets: false
-
-permalink:           pretty
+# Site info
+title: Constellations
+timezone: America/Los_Angeles
+include: ['_pages']
+exclude: ['_includes/notes-graph.json', '_notes/drafts']
+url: 'https://notes.andyzwang.com'
+baseurl: ''
+permalink: pretty
 relative_permalinks: false
+use_html_extension: false
+open_external_links_in_new_tab: true
+embed_tweets: false # embeds call out to Twitter's servers; costs reader privacy
 
-# Sentinel that won't appear in note bodies, so Jekyll never finds a
-# match and `.excerpt` falls back to the full (safely pre-rendered)
-# content instead of just the first paragraph (which is often a
-# leading image).
+# Sentinel absent from note bodies, so `.excerpt` always falls back to the
+# full (pre-rendered) content instead of just the first paragraph.
 excerpt_separator: "<!--excerpt-end-->"
 
 plugins:
   - jekyll-last-modified-at
 
-# Commits ignored when computing a note's "Last updated on" date (see
-# _plugins/last_modified_at_generator.rb).
+# Commits ignored when computing a note's "Last updated on" date
+# (see _plugins/last_modified_at_generator.rb).
 last-modified-at:
   ignore-commits-matching: "[structure]"
   ignore-commits:
-    - bb2d80a   # Make stages consistent
-    - 31eac38   # Create stage injector
+    - bb2d80a # Make stages consistent
+    - 31eac38 # Create stage injector
 
 sass:
-  sass_dir:          _sass
-  style:            :compressed
+  sass_dir: _sass
+  style: :compressed
 
 collections:
   notes:
