@@ -31,7 +31,10 @@ module Recents
       marker = cfg['ignore-commits-matching'] || '[structure]'
       ignored = Array(cfg['ignore-commits']).map { |s| s.to_s.strip }.reject(&:empty?)
 
-      site.collections['notes'].docs.each do |page|
+      # Notes, plus the standalone hero pages (about / passages / the-canon)
+      # that share the note hero and so display the same "Updated on" date.
+      hero_pages = site.pages.select { |p| p.data['layout'] == 'page-hero' }
+      (site.collections['notes'].docs + hero_pages).each do |page|
         time = last_modified_time(site.source, page.path, marker, ignored)
         next unless time
 
