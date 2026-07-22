@@ -1,3 +1,5 @@
+@use "variables" as *;
+
 .recent-notes {
   display: flex;
   flex-direction: column;
@@ -7,17 +9,30 @@
 
 .recent-note {
   display: grid;
-  grid-template-columns: 8em auto;
+  grid-template-columns: 9em auto;
   align-items: baseline;
 }
 
 .recent-note-date {
   font-size: 0.95em;
   color: var(--color-subtext);
-  letter-spacing: 0.02em;
+  letter-spacing: -0.05em;
+  font-family: $font-mono !important;
 }
 
 .recent-note a {
   justify-self: start;
   width: fit-content;
+  font-family: $font-body !important;
+}
+
+// The home page has no hero; lift its first heading to the same top offset the
+// hero (.note-splash + .note-splash-headline) gives other pages, so both page
+// types start their first line at the same height.
+.page-home > :first-child {
+  margin-top: calc(#{$hero-top} + #{$hero-headline-gap});
+
+  @media (max-width: 900px) {
+    margin-top: calc(#{$hero-top-sm} + #{$hero-headline-gap});
+  }
 }
