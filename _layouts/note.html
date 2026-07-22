@@ -3,64 +3,7 @@ layout: default
 ---
 
 <article>
-  {% capture note_header %}
-  <div class="note-splash-header">
-    <h1 class="note-splash-title">{{ page.display_title | default: page.title }}</h1>
-    <div class="note-meta">
-      <time datetime="{{ page.last_modified_at | date_to_xmlschema }}">{% if page.type != 'pages' %}Last updated on {{ page.last_modified_at | date: "%B %-d, %Y" }}{% endif %}</time>
-    </div>
-  </div>
-  {% endcapture %}
-
-  {% if page.image %}
-  <section class="note-splash">
-    <div class="note-splash-hero">
-      <div class="note-splash-header">
-        <h1 class="note-splash-title">{{ page.display_title | default: page.title }}</h1>
-        {% if page.type != 'pages' %}
-        <div class="note-meta"><time datetime="{{ page.last_modified_at | date_to_xmlschema }}">Updated {{ page.last_modified_at | date: "%-d.%m.%Y" }}</time></div>
-        {% endif %}
-      </div>
-      <figure class="note-splash-media">
-        <div class="note-splash-imgwrap">
-          <img class="note-splash-image" src="{{ site.baseurl }}{{ page.image }}" alt="{{ page.title | strip_html }}" fetchpriority="high"/>
-        </div>
-        {% if page.image_title %}
-        <figcaption class="note-splash-caption">
-          <span class="note-splash-caption-title">{{ page.image_title }}</span> <br>
-          {% if page.image_author %}<span class="note-splash-caption-author">{{ page.image_author }}</span>{% endif %}{% if page.image_date %}<span class="note-splash-caption-date">, {% if page.image_link %}{{ page.image_date }}<a href="{{ page.image_link }}" target="_blank" rel="noopener"></a>{% else %}{{ page.image_date }}{% endif %}</span>{% endif %}
-        </figcaption>
-        {% elsif page.image_caption %}
-        <figcaption class="note-splash-caption note-meta-caption">{{ page.image_caption | markdownify | remove: '<p>' | remove: '</p>' | strip_newlines }}{% if page.image_link %}<a class="note-source-link" href="{{ page.image_link }}" target="_blank" rel="noopener" aria-label="Open image source"></a>{% endif %}</figcaption>
-        {% endif %}
-      </figure>
-    </div>
-  </section>
-  <script>
-    (function () {
-      var splash = document.querySelector('.note-splash');
-      var img = document.querySelector('.note-splash-image');
-      if (!splash || !img) return;
-      function sync() {
-        if (!img.naturalWidth || !img.naturalHeight) return;
-        // Portrait = taller than it is wide.
-        img.classList.toggle('splash-portrait', img.naturalHeight > img.naturalWidth);
-        // Publish the image's rendered width so the caption can match it and
-        // align its right edge to the image's right edge.
-        splash.style.setProperty('--splash-img-width', img.getBoundingClientRect().width + 'px');
-      }
-      if (img.complete && img.naturalWidth) sync();
-      else img.addEventListener('load', sync, { once: true });
-      window.addEventListener('resize', sync);
-    })();
-  </script>
-  {% else %}
-  <div class="note-landing">
-    <hr class="note-splash-rule">
-    {{ note_header }}
-    <hr class="note-splash-rule note-splash-rule--foot">
-  </div>
-  {% endif %}
+  {% include note-hero.html %}
 
   <div id="notes-entry-container">
     <content>
