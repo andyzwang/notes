@@ -15,24 +15,18 @@ image_link: https://www.parismuseescollections.paris.fr/fr/musee-carnavalet/oeuv
   <nav class="passages-index" aria-label="Jump to author by letter"></nav>
   <div class="passages">
 {% for passage in site.data.passages %}
-    {% assign note = nil %}
-    {% if passage.note %}{% assign note = site.notes | where: "title", passage.note | first %}{% endif %}
     {% assign filed = passage.sort | default: passage.author %}
     {% assign letter = filed | upcase | slice: 0 %}
     <section class="passage">
       <h2 class="passage-author" id="author-{{ passage.author | slugify }}" data-letter="{{ letter }}">
-        {%- if note -%}
-          <a class="internal-link" href="{{ site.baseurl }}{{ note.url }}{% if site.use_html_extension %}.html{% endif %}">{{ passage.author }}</a>
-        {%- else -%}
-          {{ passage.author }}
-        {%- endif -%}
+        {{ passage.author_link }}
       </h2>
       {%- if passage.quotes -%}
         {%- for q in passage.quotes -%}
           <div class="passage-body">
             <p class="passage-quote">{{ q.text }}</p>
             {%- if q.source -%}
-              <p class="passage-source">{{ q.source }}{% if q.year %} · {{ q.year }}{% endif %}</p>
+              <p class="passage-source">{{ q.source_link }}{% if q.year %} · {{ q.year }}{% endif %}</p>
             {%- endif -%}
           </div>
         {%- endfor -%}
@@ -40,7 +34,7 @@ image_link: https://www.parismuseescollections.paris.fr/fr/musee-carnavalet/oeuv
         <div class="passage-body">
           <p class="passage-quote">{{ passage.quote }}</p>
           {%- if passage.source -%}
-            <p class="passage-source">{{ passage.source }}{% if passage.year %} · {{ passage.year }}{% endif %}</p>
+            <p class="passage-source">{{ passage.source_link }}{% if passage.year %} · {{ passage.year }}{% endif %}</p>
           {%- endif -%}
         </div>
       {%- endif -%}

@@ -1,7 +1,4 @@
 @use "variables" as *;
-// Hanging indent: pulls the opening quote mark into the margin so the quote's
-// first glyph lines up with the source line beneath it.
-$quote-hang: 0.45em;
 // Two columns: the sticky A–Z rail beside the stack of passages.
 .passages-layout {
   display: flex;
@@ -31,7 +28,7 @@ $quote-hang: 0.45em;
     text-align: center;
     text-decoration: none;
     // Every letter is light grey by default; only the active one stands out.
-    color: var(--color-border);
+    color: var(--color-text);
     transition: color 120ms;
     // No outbound "↗" glyph on the rail's same-page jump links.
     &::after {
@@ -40,15 +37,16 @@ $quote-hang: 0.45em;
   }
   // Hovering a present letter previews the active look.
   a:hover {
-    color: var(--color-text);
+    color: var(--color-yellow);
   }
   // Letters with no author: inert (still light grey via the rule above).
   .passages-index-empty {
     pointer-events: none;
+    color: var(--color-border);
   }
   // The author currently scrolled into view.
   .current {
-    color: var(--color-text);
+    color: var(--color-yellow);
     font-weight: $weight-semibold;
   }
 }
@@ -109,16 +107,26 @@ $quote-hang: 0.45em;
   margin: 0;
   font-family: $font-quote-display;
   font-size: clamp(1.5rem, 1.35rem + 0.55vw, 1.7rem);
-  line-height: 1.35;
+  line-height: 1.25;
   color: var(--color-text);
-  text-indent: -$quote-hang;
-  padding-left: $quote-hang;
+  // Reserves room for the 2-line drop cap even when the quote itself wraps to
+  // only one line, so its sunk half doesn't spill into the source line below.
+  min-height: 2.5em;
+  text-wrap: pretty;
+
+  // Drop cap: top-aligned with the first line, sinking two lines down —
+  // unlike the blockquote's raised initial (see _quote.scss), which floats up.
+  &::first-letter {
+    -webkit-initial-letter: 2;
+    initial-letter: 2;
+    font-weight: $weight-regular;
+    margin-inline-end: 0.12em;
+  }
 }
 
 .passage-source {
   max-width: 48ch;
   margin: 0.6rem 0 0;
-  padding-left: $quote-hang;
   font-family: $font-body;
   font-size: 0.88rem;
   color: var(--color-subtext);

@@ -32,6 +32,7 @@ class BidirectionalLinksGenerator < Jekyll::Generator
     @backlinks = Hash.new { |h, k| h[k] = [] }
 
     @all_docs.each { |doc| resolve_links_in_doc(doc) }
+    resolve_passages_links(site.data['passages'])
 
     assign_backlinks
     write_graph_data
@@ -70,6 +71,34 @@ class BidirectionalLinksGenerator < Jekyll::Generator
 
       doc.data[field] = value.gsub(WIKILINK_REGEX) { replace_wikilink(doc, Regexp.last_match(1)) }
     end
+  end
+
+  # /passages/ shows an author + source per entry. Both get an `_link` field
+  # alongside the original (which stays plain text — it still feeds `slugify`
+  # for the anchor id and the A-Z rail's letter grouping, so it can't become
+  # HTML). [[Target|Display]] overrides the match, same syntax as note bodies;
+  # otherwise plain text auto-links if it matches a note by title.
+  def resolve_passages_links(passages)
+    return unless passages.is_a?(Array)
+
+    passages.each do |passage|
+      passage['author_link'] = resolve_maybe_wikilink(passage['author'])
+      passage['source_link'] = resolve_maybe_wikilink(passage['source'])
+
+      next unless passage['quotes'].is_a?(Array)
+
+      passage['quotes'].each { |q| q['source_link'] = resolve_maybe_wikilink(q['source']) }
+    end
+  end
+
+  def resolve_maybe_wikilink(value)
+    return value unless value.is_a?(String)
+    return value.gsub(WIKILINK_REGEX) { replace_wikilink(nil, Regexp.last_match(1)) } if value.match?(WIKILINK_REGEX)
+
+    target = @lookup[normalize(value)]
+    return value unless target
+
+    "<a class='internal-link' href='#{@site.baseurl}#{target.url}#{@link_extension}'>#{value}</a>"
   end
 
   # `inner` is whatever was inside the double brackets, e.g. "Homer" or
