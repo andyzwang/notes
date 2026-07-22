@@ -33,10 +33,9 @@ blockquote {
   }
 
   p:first-of-type::first-letter {
-    font-size: 2.55em;
-    line-height: 0.82;
-    margin-block-start: 0.08em;
-    margin-inline-end: 0.07em;
+    -webkit-initial-letter: 2;
+    initial-letter: 2;
+    margin-inline-end: 0.15em;
     font-family: $font-quote-display;
     font-weight: $weight-regular;
   }
