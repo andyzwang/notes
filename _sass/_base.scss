@@ -17,7 +17,7 @@ html {
 body {
   font-family: $font-body;
   margin: 0 auto;
-  line-height: 1.5;
+  line-height: 1.55;
   padding: 4vh 6vw;
   background: var(--color-bg);
   color: var(--color-text);
@@ -52,7 +52,7 @@ code {
   background: var(--color-bg-soft);
   border: 1px solid var(--color-border);
   padding: 0.1em 0.2em;
-  border-radius: 4px;
+  border-radius: $border-radius;
 }
 
 mark {
@@ -80,10 +80,10 @@ mark {
   overflow-wrap: anywhere;
 }
 
-.only-desktop{
+.only-desktop {
   @media (max-width: 600px) {
-      display:none !important
-}
+    display: none !important;
+  }
 }
 
 .only-mobile {

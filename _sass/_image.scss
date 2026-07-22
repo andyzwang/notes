@@ -1,3 +1,5 @@
+@use "variables" as *;
+
 // note-header is the "exclude from word count + preview" wrapper (see
 // excerpt_filters.rb) — it may hold pre-note prose, a caption, or both.
 // Shrinks to its content's rendered width so a caption below wraps
@@ -22,7 +24,7 @@
   max-height: 50vh;
   height: auto;
   border: 1px solid var(--color-border);
-  border-radius: var(--border-radius);
+  border-radius: $border-radius;
 
   // A main image gets more vertical room.
   &.main {
