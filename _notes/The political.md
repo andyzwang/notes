@@ -1,7 +1,7 @@
 ---
 title: The political
 stage: ⭐️
-image: /assets/img/the-political.jpg
+image: /assets/img/the-harvesters.jpg
 image_title: The Harvesters
 image_link: https://www.metmuseum.org/art/collection/search/435809
 image_author: Pieter Bruegel the Elder

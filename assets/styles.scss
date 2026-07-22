@@ -1,31 +1,25 @@
----
----
-
+--- ---
 // Foundation — variables, @font-face declarations, CSS reset, color tokens.
 // Load first: everything below depends on these.
 @use "variables" as *;
 @use "fonts";
 @use "normalize";
 @use "colors";
-
 // Global element defaults — apply site-wide, to bare tags.
 @use "base";
 @use "typography";
 @use "links";
 @use "code";
-
 // Content-area components — used within note/article body copy.
 @use "quote";
 @use "image";
 @use "reading-list";
 @use "passages";
-
 // Page chrome & layouts — nav/footer, and each page type's structure.
 @use "nav";
 @use "home";
 @use "note-splash";
 @use "note-page";
-
 // Small interactive widgets.
 @use "toggle";
 @use "tooltip";

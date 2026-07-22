@@ -32,7 +32,7 @@ end
 Jekyll::Hooks.register [:pages], :pre_render do |doc|
   # jekyll considers anything at the root as a page,
   # we only want to consider actual pages
-  next unless doc.path.start_with?('_pages/')
+  next unless doc.path.start_with?("_pages/")
   transform(doc)
 end
 
@@ -68,13 +68,13 @@ def expand_images(doc)
     is_main = ial =~ /(?:\A|\s)\.main(?:\s|\z)/
     link = ial[/link="([^"]*)"/, 1]
 
-    src = "{{ site.baseurl }}#{src}" if src.start_with?('/')
-    img_class = is_main ? 'content-image main' : 'content-image'
+    src = "{{ site.baseurl }}#{src}" if src.start_with?("/")
+    img_class = is_main ? "content-image main" : "content-image"
 
     html = +%(<div class="image-wrapper" markdown="1">\n)
     html << %(<img class="#{img_class}" src="#{src}" alt="#{alt}"/>\n)
     if caption && !caption.strip.empty?
-      anchor = link ? %(<a href="#{link}"></a>) : ''
+      anchor = link ? %(<a href="#{link}"></a>) : ""
       html << %(<span class="image-caption">#{caption.strip}#{anchor}</span>\n)
     end
     html << %(</div>)

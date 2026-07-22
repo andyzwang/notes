@@ -1,19 +1,19 @@
 # Site info
-title: Constellations
-timezone: America/Los_Angeles
-include: ['_pages']
-exclude: ['_includes/notes-graph.json', '_notes/drafts']
-url: 'https://notes.andyzwang.com'
-baseurl: ''
-permalink: pretty
-relative_permalinks: false
-use_html_extension: false
+title:                          Constellations
+timezone:                       America/Los_Angeles
+include:                        ['_pages']
+exclude:                        ['_includes/notes-graph.json', '_notes/drafts']
+url:                            'https://notes.andyzwang.com'
+baseurl:                        ''
+permalink:                      pretty
+relative_permalinks:            false
+use_html_extension:             false
 open_external_links_in_new_tab: true
-embed_tweets: false # embeds call out to Twitter's servers; costs reader privacy
+embed_tweets:                   false # embeds call out to Twitter's servers; costs reader privacy
 
 # Sentinel absent from note bodies, so `.excerpt` always falls back to the
 # full (pre-rendered) content instead of just the first paragraph.
-excerpt_separator: "<!--excerpt-end-->"
+excerpt_separator:              "<!--excerpt-end-->"
 
 plugins:
   - jekyll-last-modified-at
@@ -21,26 +21,26 @@ plugins:
 # Commits ignored when computing a note's "Last updated on" date
 # (see _plugins/last_modified_at_generator.rb).
 last-modified-at:
-  ignore-commits-matching: "[structure]"
+  ignore-commits-matching:      "[structure]"
   ignore-commits:
     - bb2d80a # Make stages consistent
     - 31eac38 # Create stage injector
 
 sass:
-  sass_dir: _sass
-  style: :compressed
+  sass_dir:                     _sass
+  style:                        :compressed
 
 collections:
   notes:
-    output: true
-    permalink: /:slug
+    output:                     true
+    permalink:                  /:slug
 
 defaults:
   - scope:
-      path: "**/*"
+      path:                     "**/*"
     values:
-      layout: "default"
+      layout:                   "default"
   - scope:
-      path: "_notes/**/*.md"
+      path:                     "_notes/**/*.md"
     values:
-      layout: "note"
+      layout:                   "note"

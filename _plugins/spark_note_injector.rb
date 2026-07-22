@@ -10,7 +10,7 @@ Jekyll::Hooks.register [:notes], :pre_render do |doc|
   # `stage` holds the thoroughness emoji (⚡️ spark / ⭐️ star / 🌌 constellation).
   # Match the bolt itself (U+26A1) so it works with or without the trailing
   # emoji variation selector.
-  next unless doc.data['stage'].to_s.include?("⚡")
+  next unless doc.data["stage"].to_s.include?("⚡")
 
   doc.content = doc.content.rstrip + SPARK_NOTICE
 end
