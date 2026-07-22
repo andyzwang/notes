@@ -1,0 +1,19 @@
+<script>
+  (function () {
+    var STAR_GLYPHS = ['⭑', '⭒', '★', '☆', '⁕', '✦', '✧', '✩', '✫', '✬', '✭', '✮', '✯', '✰', '✴', '✵', '✶', '✺', '☀', '☼'];
+
+    // Role layout mirrors the original hand-picked motif (✦·☆·★·⋆·☆·✦·★·☆·✦):
+    // a spacer every 3rd slot, a primary bookending the ends, a secondary twice,
+    // and one rare accent — indices into a 4-glyph draw, not the 21-glyph pool.
+    var LAYOUT = [0, 1, 2, 3, 1, 0, 2, 1, 0];
+
+    document.querySelectorAll('.eyebrow-stars').forEach(function (el) {
+      var pool = STAR_GLYPHS.slice();
+      var roles = [];
+      for (var i = 0; i < 4; i++) {
+        roles.push(pool.splice(Math.floor(Math.random() * pool.length), 1)[0]);
+      }
+      el.textContent = LAYOUT.map(function (role) { return roles[role]; }).join(' · ');
+    });
+  })();
+</script>

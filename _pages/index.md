@@ -7,10 +7,9 @@ permalink: /
 
 # Welcome!
 
-<div class="note-splash-eyebrow home-eyebrow" aria-hidden="true">
-        <span class="home-emoji">✦  ·  ☆  ·  ★  ·  ⋆  ·  ☆  ·  ✦  ·  ★  ·  ☆  ·  ✦</span>
-    <hr class="note-splash-rule">
-
+<div class="note-splash-eyebrow" aria-hidden="true">
+  <span class="eyebrow-stars">✦ · ☆ · ★ · ⋆ · ☆ · ✦ · ★ · ☆ · ✦</span>
+  <hr class="note-splash-rule">
 </div>
 
 > A historian who takes \[causation\] as his point of departure stops telling

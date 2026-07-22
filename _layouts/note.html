@@ -8,23 +8,6 @@ layout: default
   <div id="notes-entry-container">
     <content>
       {{ content }}
-
-      {% assign has_metadata = false %}
-      {% if page.stage %}{% assign has_metadata = true %}{% endif %}
-      {% if page.type != 'pages' and page.path %}{% assign has_metadata = true %}{% endif %}
-      {% if has_metadata %}
-      <footer class="note-footer">
-        {% if page.type != 'pages' and page.path %}
-        <span class="note-footer-words">{{ page.content | note_word_count }} Words</span>
-        {% endif %}
-        {% if page.stage %}
-        <span class="note-footer-stage" title="Thoroughness of content, from ⚡️ spark to ⭐️ star to 🌌 constellation">{% case page.stage %}{% when '⚡️' %}⚡️ Spark{% when '⭐️' %}⭐️ Star{% when '🌌' %}🌌 Constellation{% else %}{{ page.stage }}{% endcase %}</span>
-        {% endif %}
-        {% if page.type != 'pages' and page.path %}
-        <a class="note-footer-editlog" href="https://github.com/andyzwang/notes/commits/main/{{ page.path }}">Edit Log</a>
-        {% endif %}
-      </footer>
-      {% endif %}
     </content>
 
     <side style="font-size: 0.88em">
@@ -196,6 +179,27 @@ layout: default
   })();
 </script>
 
-<hr>
+{% assign has_metadata = false %}
+{% if page.stage %}{% assign has_metadata = true %}{% endif %}
+{% if page.type != 'pages' and page.path %}{% assign has_metadata = true %}{% endif %}
+{% if has_metadata %}
+<footer class="note-footer">
+  {% if page.type != 'pages' and page.path %}
+  <span class="note-footer-words">{{ page.content | note_word_count }} Words</span>
+  {% endif %}
+  {% if page.stage %}
+  <span class="note-footer-stage" title="Thoroughness of content, from ⚡️ spark to ⭐️ star to 🌌 constellation">{% case page.stage %}{% when '⚡️' %}⚡️ Spark{% when '⭐️' %}⭐️ Star{% when '🌌' %}🌌 Constellation{% else %}{{ page.stage }}{% endcase %}</span>
+  {% endif %}
+  {% if page.type != 'pages' and page.path %}
+  <a class="note-footer-editlog" href="https://github.com/andyzwang/notes/commits/main/{{ page.path }}">Edit Log</a>
+  {% endif %}
+</footer>
+{% endif %}
+
+<div class="note-splash-eyebrow" aria-hidden="true">
+  <hr class="note-splash-rule">
+  <span class="eyebrow-stars">✦ · ☆ · ★ · ⋆ · ☆ · ✦ · ★ · ☆ · ✦</span>
+  <hr class="note-splash-rule">
+</div>
 
 {% include notes-graph.html %}
