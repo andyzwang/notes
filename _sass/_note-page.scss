@@ -38,6 +38,26 @@
   gap: 0.5em;
 }
 
+// Note footer — colophon at the foot of the article: word count (left),
+// stage (centred), edit-log link (right). Fixed 3-column grid so the stage
+// stays truly centred even when an outer item is absent.
+.note-footer {
+  margin: 2em 0 0;
+  padding-top: 1.5em;
+  border-top: 1px solid var(--color-border);
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: baseline;
+  gap: 0.75em 1em;
+  font-family: $font-mono;
+  font-size: 0.8em;
+  color: var(--color-subtext);
+}
+
+.note-footer-words  { grid-column: 1; justify-self: start; }
+.note-footer-stage  { grid-column: 2; justify-self: center; }
+.note-footer-editlog { grid-column: 3; justify-self: end; }
+
 .metadata-row {
   display: flex;
   justify-content: space-between;

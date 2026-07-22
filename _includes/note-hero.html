@@ -38,9 +38,8 @@
       <figcaption class="note-splash-caption">
         {%- if page.image_title -%}
         <span class="note-splash-caption-title">{{ page.image_title }}</span>
-        {%- if page.image_author -%}<span class="note-splash-caption-author">{{ page.image_author }}</span>{%- endif -%}
-        {%- comment -%} empty source <a> renders as a trailing "↗" via the global a::after {%- endcomment -%}
-        {%- if page.image_date -%}<span class="note-splash-caption-date">{{ page.image_date }}{%- if page.image_link -%}<a class="note-splash-caption-source" href="{{ page.image_link }}" target="_blank" rel="noopener"></a>{%- endif -%}</span>{%- endif -%}
+        {%- comment -%} author + date on one line: "Author, Year." — empty source <a> renders a trailing "↗" via the global a::after {%- endcomment -%}
+        {%- if page.image_author or page.image_date -%}<span class="note-splash-caption-meta">{% if page.image_author %}{{ page.image_author }}{% endif %}{% if page.image_author and page.image_date %}, {% endif %}{% if page.image_date %}{{ page.image_date }}.{% endif %}{% if page.image_link %}<a class="note-splash-caption-source" href="{{ page.image_link }}" target="_blank" rel="noopener"></a>{% endif %}</span>{%- endif -%}
         {%- else -%}
         <span class="note-splash-caption-title">{{ page.image_caption | markdownify | remove: '<p>' | remove: '</p>' | strip_newlines }}{%- if page.image_link -%}<a class="note-splash-caption-source" href="{{ page.image_link }}" target="_blank" rel="noopener"></a>{%- endif -%}</span>
         {%- endif -%}

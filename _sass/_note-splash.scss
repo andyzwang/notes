@@ -106,7 +106,7 @@ margin-left: 0.04em;}   // the "/" after the author
   background: var(--color-bg-soft);
 }
 
-// Credit — title / artist / date stacked, flush-right (date carries the source ↗).
+// Credit — two lines, flush-right: title, then "Author, Year." (date carries the source ↗).
 .note-splash-caption {
   margin: 0.88rem 0 2rem;
   font-size: 0.88rem;
@@ -114,8 +114,7 @@ margin-left: 0.04em;}   // the "/" after the author
   text-align: right;
 }
 .note-splash-caption-title,
-.note-splash-caption-author,
-.note-splash-caption-date {
+.note-splash-caption-meta {
   display: block;
   font-family: $font-mono;
   color: var(--color-subtext);

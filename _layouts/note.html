@@ -8,53 +8,26 @@ layout: default
   <div id="notes-entry-container">
     <content>
       {{ content }}
-    </content>
 
-    <side style="font-size: 0.88em">
-      {% assign metadata_fields = "author,year" | split: "," %}
-      {% assign metadata_labels = "Author,Date" | split: "," %}
       {% assign has_metadata = false %}
-      {% for field in metadata_fields %}
-        {% if page[field] %}{% assign has_metadata = true %}{% endif %}
-      {% endfor %}
       {% if page.stage %}{% assign has_metadata = true %}{% endif %}
       {% if page.type != 'pages' and page.path %}{% assign has_metadata = true %}{% endif %}
       {% if has_metadata %}
-      <div id="metadata-container">
-        <h3 style="margin-top: 0; margin-bottom: 1em">Metadata</h3>
-        <dl class="metadata-list">
-          {% for field in metadata_fields %}
-            {% if page[field] %}
-            <div class="metadata-row">
-              <dt>{{ metadata_labels[forloop.index0] }}</dt>
-              <dd>{{ page[field] }}</dd>
-            </div>
-            {% endif %}
-          {% endfor %}
-          {% if page.type != 'pages' and page.path %}
-          <div class="metadata-row">
-            <dt>Word Count</dt>
-            <dd>{{ page.content | note_word_count }}</dd>
-          </div>
-          {% endif %}
-          {% if page.stage %}
-          <div class="metadata-row">
-            <dt>Stage</dt>
-            <dd title="Thoroughness of content, from ⚡️ spark to ⭐️ star to 🌌 constellation">{{ page.stage }}</dd>
-          </div>
-          {% endif %}
-          {% if page.type != 'pages' and page.path %}
-          <div class="metadata-row">
-            <dt>Edit Log</dt>
-            <dd><tt><a href="https://github.com/andyzwang/notes/commits/main/{{ page.path }}">GitHub</a></tt></dd>
-          </div>
-          {% endif %}
-        </dl>
-      </div>
-
-      <hr>
+      <footer class="note-footer">
+        {% if page.type != 'pages' and page.path %}
+        <span class="note-footer-words">{{ page.content | note_word_count }} Words</span>
+        {% endif %}
+        {% if page.stage %}
+        <span class="note-footer-stage" title="Thoroughness of content, from ⚡️ spark to ⭐️ star to 🌌 constellation">{% case page.stage %}{% when '⚡️' %}⚡️ Spark{% when '⭐️' %}⭐️ Star{% when '🌌' %}🌌 Constellation{% else %}{{ page.stage }}{% endcase %}</span>
+        {% endif %}
+        {% if page.type != 'pages' and page.path %}
+        <a class="note-footer-editlog" href="https://github.com/andyzwang/notes/commits/main/{{ page.path }}">Edit Log</a>
+        {% endif %}
+      </footer>
       {% endif %}
+    </content>
 
+    <side style="font-size: 0.88em">
       {% if page.backlinks.size > 0 %}
       <div id="backlinks-container">
         <h3 style="margin-top: 0; margin-bottom: 1em">Mentioned in</h3>
