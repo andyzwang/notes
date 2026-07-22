@@ -9,6 +9,7 @@ blockquote {
   font-family: $font-quote;
   background: var(--color-bg-soft);
   border-inline-start: 2px solid var(--color-yellow);
+  min-height: 2.5em;
 
   p {
     margin: 0;
