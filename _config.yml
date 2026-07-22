@@ -1,8 +1,9 @@
+### SITE INFO
+
 title:               Constellations
 timezone:            America/Los_Angeles
 include:             ['_pages']
 exclude:             ['_includes/notes-graph.json', '_notes/drafts']
-# You may need to change the base URL depending on your deploy configuration.
 url:                 'https://notes.andyzwang.com'
 baseurl:             ''
 
@@ -32,8 +33,7 @@ plugins:
   - jekyll-last-modified-at
 
 # Commits ignored when computing a note's "Last updated on" date (see
-# _plugins/last_modified_at_generator.rb). Tag new bulk edits with the
-# marker token in the message; list pre-convention commits by SHA.
+# _plugins/last_modified_at_generator.rb).
 last-modified-at:
   ignore-commits-matching: "[structure]"
   ignore-commits:
