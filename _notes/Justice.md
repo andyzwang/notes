@@ -30,7 +30,7 @@ Ancient Greek thinkers understood the concept of justice as distinctive to [[Hum
 
 To be expanded later!
 
-[^1]: Miller, David. “Justice.” In *The Stanford Encyclopedia of Philosophy*, Spring 2026, edited by Edward N. Zalta and Uri Nodelman. Metaphysics Research Lab, Stanford University, 2026. https://plato.stanford.edu/archives/spr2026/entries/justice/.
+[^1]: Miller, David. “Justice.” In *The Stanford Encyclopedia of Philosophy*, Spring 2026, edited by Edward N. Zalta and Uri Nodelman. Metaphysics Research Lab, Stanford University, 2026.
 
 [^2]: *Oxford English Dictionary*, “justice (n.),” June 2026, https://doi.org/10.1093/OED/1055369584.
 
