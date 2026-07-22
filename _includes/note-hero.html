@@ -18,12 +18,18 @@
       <h1 class="note-splash-title">{{ _title }}</h1>
     </div>
 
-    <div class="note-splash-eyebrow">
-      {%- if page.year -%}<span class="note-splash-date">{{ page.year }}</span>{%- endif -%}
-      {%- if page.type != 'pages' -%}<time class="note-splash-updated" datetime="{{ page.last_modified_at | date_to_xmlschema }}">Updated {{ page.last_modified_at | date: "%-d.%m.%Y" }}</time>{%- endif -%}
-    </div>
 
-    <hr class="note-splash-rule" aria-hidden="true">
+
+    <div class="note-splash-eyebrow">
+      {%- if page.year -%}
+        <span class="note-splash-date">{{ page.year }}</span>
+        <hr class="note-splash-rule" aria-hidden="true">
+        {%- if page.type != 'pages' -%}<time class="note-splash-updated" datetime="{{ page.last_modified_at | date_to_xmlschema }}">Updated {{ page.last_modified_at | date: "%-d.%m.%Y" }}</time>{%- endif -%}
+      {%- else -%}
+        {%- if page.type != 'pages' -%}<time class="note-splash-updated" datetime="{{ page.last_modified_at | date_to_xmlschema }}">Updated {{ page.last_modified_at | date: "%-d.%m.%Y" }}</time>{%- endif -%}
+        <hr class="note-splash-rule" aria-hidden="true">
+      {%- endif -%}
+    </div>
 
     {%- if page.image -%}
     <figure class="note-splash-media">

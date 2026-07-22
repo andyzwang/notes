@@ -10,7 +10,9 @@
   --title-max: clamp(4rem, 18vw - 6rem, 10rem);  // title ceiling; scales with viewport (tablet → wide)
   --title-k: 0.8;                                // raise to shrink long titles sooner
   --title-lines: 2;                              // lines a long title may fill before it shrinks
-  --title-leading: 1.2;                          // title line-height (matters once a title wraps)
+  --title-leading: 1;                          // title line-height (matters once a title wraps)
+  --title-meta-gap: 0.2;                         // title baseline → meta gap, as a fraction of title size (~0.3 ≈ descender depth)
+  --author-title-gap: 0.318;                         // title baseline → meta gap, as a fraction of title size (~0.3 ≈ descender depth)
   --focal: 50% 50%;                              // image crop focus (per-note: image_focal frontmatter)
   // -------------------------------------------------------------------
 
@@ -18,7 +20,7 @@
   --title-fluid: calc(100cqi * var(--title-lines) / (var(--length, 12) * var(--title-k)));
 
   container-type: inline-size;                   // enables the cqi unit above
-  margin-top: 7.5rem;
+  margin-top: 6rem;
 }
 
 .note-splash-hero {
@@ -35,13 +37,14 @@
 }
 
 .note-splash-title {
-  margin: 0;
+  margin: 0 0 calc(var(--title-meta-gap) * 1em);   // bottom gap scales with the title's own size
   font-family: $font-heading;
   font-weight: 400;
   font-size: clamp(var(--title-min), var(--title-fluid), var(--title-max));
   line-height: var(--title-leading);
   letter-spacing: -0.045em;
   overflow-wrap: normal;
+  text-box: trim-end cap alphabetic;   // trim box to the baseline → meta gap is baseline-relative
 }
 
 // Author — grey, smaller; tracks the title's fluid size. Not part of the <h1>.
@@ -49,33 +52,41 @@
   font-family: $font-heading;
   font-weight: 100;
   font-size: clamp(3rem, calc(var(--title-fluid) * 0.24), 5rem);
-  line-height: 0.88;
   letter-spacing: -0.025em;
   color: var(--color-yellow);
+  text-box: trim-end cap alphabetic;
+  margin: 0 0 calc(var(--author-title-gap) * 1em);   // bottom gap scales with the title's own size
 }
-.note-splash-title-slash { color: var(--color-subtext); }   // the "/" after the author
+.note-splash-title-slash { color: var(--color-subtext);
+margin-left: 0.04em;}   // the "/" after the author
 
-// Meta row — work's date (left) · last-updated (right), one shared stamp.
+// Meta row — work's date · rule · last-updated, the line filling the gap between them.
 .note-splash-eyebrow {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: baseline;
-  gap: 0.35rem 1.25rem;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: clamp(0.75rem, 3vw, 1.25rem);
+  margin: clamp(0.75rem, 3vw, 1.25rem) 0 clamp(1.25rem, 5vw, 2rem);
 }
+
 .note-splash-date,
 .note-splash-updated {
+  flex: 0 0 auto;
   font-family: $font-mono;
   font-size: 0.88rem;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
   font-variant-numeric: tabular-nums;
   color: var(--color-subtext);
+  margin:0;
 }
 
-// Rule — a plain <hr>; the 1px line comes from the global hr, we set only rhythm.
+// Rule — the line between the two date stamps (or to the right of a lone one),
+// flexing to fill the gap. The 1px line comes from the global hr; we only stretch it.
 .note-splash-rule {
-  margin: clamp(1rem, 2.5vh, 2rem) 0 clamp(1.75rem, 4vh, 3rem);
+  flex: 1 1 0;
+  min-width: 1.5rem;
+  margin: 0;
 }
 
 // Image — strict 3:2 crop. max-height / border-radius / margin reset the global img.
@@ -123,20 +134,33 @@
 }
 
 // --- smaller screens: step the title cap (and a couple of sizes) down ---
-@media (max-width: 900px) {                      // tablets
+@media (max-width: 900px) {
   .note-splash {
     --title-min: 2.5rem;
     --title-max: 6rem;
     margin-top: 3.5rem;
   }
-  .note-splash-caption { font-size: 0.8rem; }
+
+  .note-splash-caption,
+  .note-splash-date,
+  .note-splash-updated {
+    font-size: 0.8rem;
+  }
+
   .note-splash-title-author { font-size: 4rem; }
 }
-@media (max-width: 600px) {                      // phones
+
+@media (max-width: 600px) {
   .note-splash {
     --title-min: 2rem;
     --title-max: 3rem;
   }
-  .note-splash-caption { font-size: 0.75rem; }
+
+  .note-splash-caption,
+  .note-splash-date,
+  .note-splash-updated {
+    font-size: 0.75rem;
+  }
+
   .note-splash-title-author { font-size: 2rem; }
 }
