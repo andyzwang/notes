@@ -1,15 +1,15 @@
 @use "variables" as *;
 
 blockquote {
-  padding: 1.5em;
-  margin: 0;
-  font-size: 1em;
-  // Pin the weight so quotes inside article content don't inherit the
-  // reading-copy Book weight (375) and render lighter than elsewhere.
-  font-weight: 375;
-  background: var(--color-bg-soft);
-  border-radius: $border-radius;
+  position: relative;
+  padding: 1.5em 1.75em;
+  margin: 2rem 0;
+  font-size: .92em;
+  font-weight: $weight-book;
   font-family: $font-quote;
+
+  background: var(--color-bg-soft);
+  border-inline-start: 2px solid var(--color-yellow);
 
   p {
     margin: 0;
@@ -18,10 +18,28 @@ blockquote {
   cite {
     display: block;
     margin-top: 1rem;
-    font-size: 0.8em;
+    font-size: 0.88em;
     font-style: normal;
+    letter-spacing: 0.02em;
     color: var(--color-subtext);
-    font-family: $font-body;
+    font-family: $font-body-text;
+  }
+
+  cite::before {
+    content: "\2014\00a0";
+  }
+
+  a {
+    padding:0 !important;
+  }
+
+  p:first-of-type::first-letter {
+    font-size: 2.55em;
+    line-height: 0.82;
+    margin-block-start: 0.08em;
+    margin-inline-end: 0.07em;
+    font-family: $font-quote-display;
+    font-weight: $weight-regular;
   }
 }
 
@@ -29,13 +47,16 @@ blockquote.verse {
   padding-right: 3.5rem;
   counter-reset: line 1;
 
+  // Line numbers sit in the right margin, forming a quiet reference column.
+  // (A ruled divider was tried but collides with the wide book-numeral labels
+  // on the first line, e.g. "XVIII.499", so the numbers stand on their own.)
   p {
     position: relative;
 
     &::after {
       content: counter(line);
       position: absolute;
-      top: 0;
+      bottom: 0;
       right: -2.25rem;
       font-size: 0.75rem;
       color: var(--color-subtext);
@@ -53,10 +74,10 @@ blockquote.verse {
   }
 }
 
+// Epigraph pull-quote — shares the base treatment (warm wash, ochre rule,
+// quotation mark), just a touch roomier and with tighter vertical margins.
 .main-quote {
   margin-top: 1rem;
   margin-bottom: 1rem;
   padding: 1.5rem 2rem;
-  background: var(--color-bg-soft);
-  border-radius: $border-radius;
 }
