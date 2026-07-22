@@ -4,10 +4,9 @@ blockquote {
   position: relative;
   padding: 1.5em 1.75em;
   margin: 2rem 0;
-  font-size: .92em;
+  font-size: 0.92em;
   font-weight: $weight-book;
   font-family: $font-quote;
-
   background: var(--color-bg-soft);
   border-inline-start: 2px solid var(--color-yellow);
 
@@ -30,7 +29,7 @@ blockquote {
   }
 
   a {
-    padding:0 !important;
+    padding: 0 !important;
   }
 
   p:first-of-type::first-letter {
@@ -46,7 +45,6 @@ blockquote {
 blockquote.verse {
   padding-right: 3.5rem;
   counter-reset: line 1;
-
   // Line numbers sit in the right margin, forming a quiet reference column.
   // (A ruled divider was tried but collides with the wide book-numeral labels
   // on the first line, e.g. "XVIII.499", so the numbers stand on their own.)
@@ -73,9 +71,9 @@ blockquote.verse {
     content: var(--verse-cite) "." counter(line);
   }
 }
-
 // Epigraph pull-quote — shares the base treatment (warm wash, ochre rule,
 // quotation mark), just a touch roomier and with tighter vertical margins.
+
 .main-quote {
   margin-top: 1rem;
   margin-bottom: 1rem;

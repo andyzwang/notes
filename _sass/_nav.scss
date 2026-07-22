@@ -13,9 +13,9 @@ nav {
   column-gap: 0.75em;
   row-gap: 0;
 }
-
 // Pushes the links + toggle + hamburger to the right of the bar, and keeps
 // them there when the menu wraps to a second row on mobile.
+
 .site-title {
   margin-right: auto;
 }
@@ -26,16 +26,16 @@ nav {
   gap: 0.75em;
   font-weight: $weight-book;
 }
-
 // On desktop the wrapper is transparent to layout, so the links lay out as
 // direct flex children of .nav-links. On mobile it becomes the real box that
 // the grid-rows reveal animates and clips.
+
 .nav-links-inner {
   display: contents;
 }
-
 // Hamburger button — hidden on desktop, revealed at the mobile breakpoint.
 // Sized to match the theme toggle's height (20px) so they sit level.
+
 .nav-toggle {
   display: none;
   flex-direction: column;
@@ -55,10 +55,10 @@ nav {
   background: var(--color-subtext);
   transition: transform 150ms ease, opacity 150ms ease;
 }
-
 // Animate the three bars into an X while the menu is open. The 9px shift is
 // half the span between the outer bars (button 20px tall, bars 2px), so they
 // meet in the middle.
+
 .nav-toggle[aria-expanded="true"] {
   .nav-toggle-bar:nth-child(1) {
     transform: translateY(9px) rotate(45deg);
@@ -72,12 +72,10 @@ nav {
     transform: translateY(-9px) rotate(-45deg);
   }
 }
-
 @media (max-width: 600px) {
   .nav-toggle {
     display: flex;
   }
-
   // The links drop to their own full-width row below the bar (order pushes it
   // past the toggle + hamburger, which stay up top) and stay in normal flow so
   // opening pushes the page content down. The reveal animates grid-template-rows
@@ -86,7 +84,7 @@ nav {
     order: 1;
     width: 100%;
     display: grid;
-    grid-template-rows: 0fr;
+    grid-template-rows: 0;
     overflow: hidden;
     margin-top: 0;
     opacity: 0;
@@ -100,7 +98,6 @@ nav {
     margin-top: 0.9em;
     opacity: 1;
   }
-
   // The grid child: min-height:0 + overflow:hidden let it collapse to nothing
   // when the row is 0fr. The bottom rule separates the open menu from the page.
   .nav-links-inner {

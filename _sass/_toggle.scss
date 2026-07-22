@@ -19,11 +19,11 @@
   width: 100%;
   position: absolute;
 }
-
 // The sliding knob. Its icon is a solid background-color revealed through an
 // SVG mask (inline data URI) rather than an <img>, so the same element recolors
 // via `background-color` on hover/theme. Light theme = sun (below); the knob
 // slides right and swaps to a moon mask under .theme-dark (further down).
+
 .theme-toggle-switch {
   position: absolute;
   z-index: 9;
@@ -47,7 +47,6 @@ body:not(.theme-dark) #theme-toggle:hover .theme-toggle-switch {
 body.theme-dark #theme-toggle:hover .theme-toggle-switch {
   background-color: var(--color-yellow);
 }
-
 // Dark theme: knob slides to the right edge and its mask becomes the moon.
 body.theme-dark .theme-toggle-switch {
   left: auto;

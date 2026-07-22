@@ -1,18 +1,13 @@
-@use "variables" as *;
+@use "variables" as *; // Base elements
 
-// Base elements
 html {
   scroll-behavior: smooth;
   scrollbar-gutter: stable;
   overflow-x: clip;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  html {
+  @media (prefers-reduced-motion: reduce) {
     scroll-behavior: auto;
   }
 }
-
 
 body {
   font-family: $font-body;
@@ -75,8 +70,7 @@ mark {
 .footnotes {
   color: var(--color-subtext);
   font-size: 0.88em;
-  // Long URLs are single unbreakable tokens; let them wrap mid-string so a
-  // footnote can't stretch the page wider than its container (esp. on mobile).
+  // let long urls wrap mid-string 
   overflow-wrap: anywhere;
 }
 

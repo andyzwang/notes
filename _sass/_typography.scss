@@ -68,17 +68,19 @@ time {
   text-align: left;
 }
 
-b, strong {
+b,
+strong {
   font-weight: $weight-semibold;
 }
-
 // Long-form reading copy: text-optical-size sans at Book weight. Applies to
 // every layout's <content>; headings and bold set their own family + weight.
+
 content {
   font-family: $font-body-text;
   font-weight: $weight-book;
 
-  b, strong {
+  b,
+  strong {
     font-family: $font-body;
     font-weight: $weight-semibold;
   }

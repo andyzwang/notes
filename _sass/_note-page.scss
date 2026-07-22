@@ -1,15 +1,12 @@
 @use "variables" as *;
-
 // Below-the-fold note layout: the content + sidebar grid and the sidebar
 // widgets (metadata, backlinks, outline). The hero/splash lives in its own
 // partial, _note-splash.scss.
+
 #notes-entry-container {
   display: grid;
   grid-gap: 2em;
-  grid-template-areas:
-    "content"
-    "side";
-
+  grid-template-areas: "content" "side";
   @media (min-width: 700px) {
     grid-gap: 1.5em;
     grid-template-columns: 3fr 1fr;
@@ -39,10 +36,10 @@
   display: grid;
   gap: 0.5em;
 }
-
 // Note footer — colophon at the foot of the article: word count (left),
 // stage (centred), edit-log link (right). Fixed 3-column grid so the stage
 // stays truly centred even when an outer item is absent.
+
 .note-footer {
   margin: 2em 0 0;
   padding-top: 1.5em;
@@ -56,9 +53,20 @@
   color: var(--color-subtext);
 }
 
-.note-footer-words  { grid-column: 1; justify-self: start; }
-.note-footer-stage  { grid-column: 2; justify-self: center; }
-.note-footer-editlog { grid-column: 3; justify-self: end; }
+.note-footer-words {
+  grid-column: 1;
+  justify-self: start;
+}
+
+.note-footer-stage {
+  grid-column: 2;
+  justify-self: center;
+}
+
+.note-footer-editlog {
+  grid-column: 3;
+  justify-self: end;
+}
 
 .metadata-row {
   display: flex;
@@ -118,11 +126,11 @@
     padding-left: 1em;
   }
 }
-
 // Sub-items collapse/expand as the active H2 section changes (see the
 // outline script in note.html) — max-height is kept close to the
 // actual content height so the transition doesn't visually "finish
 // early" once the real content stops growing.
+
 .outline-list .outline-sub-item {
   max-height: 0;
   margin-bottom: 0;

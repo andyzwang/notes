@@ -5,11 +5,9 @@
   --date-col: 6em;
   --author-col: 12em;
   --col-gap: 0.5em;
-
   --bar-width: 2px;
   --bar-gap: 0.5em;
   --row-gap: 0.1em;
-
   display: flex;
   flex-direction: column;
   gap: 0.75em;
@@ -21,13 +19,12 @@
   grid-template-columns: var(--date-col) var(--author-col) auto;
   align-items: baseline;
   column-gap: var(--col-gap);
-
   @media (max-width: 600px) {
     grid-template-columns: 1fr;
     gap: 0.1em;
 
-    .reading-list-date:empty,
-    .reading-list-author:empty {
+    .reading-list-author:empty,
+    .reading-list-date:empty {
       display: none;
     }
   }
@@ -53,18 +50,11 @@
   display: flex;
   flex-direction: column;
   gap: var(--row-gap);
-
   // The works column starts after:
   // date column + gap + author column + gap
-  --works-start: calc(
-    var(--date-col) + var(--col-gap) + var(--author-col) + var(--col-gap)
-  );
-
+  --works-start: calc(var(--date-col) + var(--col-gap) + var(--author-col) + var(--col-gap));
   // Put the bar a fixed distance to the left of the works text.
-  --bar-left: calc(
-    var(--works-start) - var(--bar-gap) - var(--bar-width)
-  );
-
+  --bar-left: calc(var(--works-start) - var(--bar-gap) - var(--bar-width));
   @media (max-width: 600px) {
     padding-left: 0;
   }
@@ -75,23 +65,18 @@
     left: var(--bar-left);
     width: var(--bar-width);
     background: var(--color-border);
-
     // Align bar with visible text rather than full line box.
     top: calc((1lh - 1em) / 2);
     bottom: calc((1lh - 1em) / 2);
-
     @supports not (top: 1lh) {
       top: 0.25em;
       bottom: 0.25em;
     }
-
     @media (max-width: 600px) {
       left: 0;
-
       // For normal grouped works:
       // skip date + author, start beside first work.
       top: calc(2lh + 0.35em);
-
       // End with final work.
       bottom: calc((1lh - 1em) / 2);
     }
@@ -100,11 +85,7 @@
   &.reading-list-group--by-authors {
     // Desktop: bar sits before the author column.
     --author-start: calc(var(--date-col) + var(--col-gap));
-
-    --bar-left: calc(
-      var(--author-start) - var(--bar-gap) - var(--bar-width)
-    );
-
+    --bar-left: calc(var(--author-start) - var(--bar-gap) - var(--bar-width));
     @media (max-width: 600px) {
       // Mobile: bar sits just left of Hamilton/Madison/Jay.
       --bar-left: 0;
@@ -112,24 +93,21 @@
 
       &::before {
         left: var(--bar-left);
-
         // Skip date, start beside Hamilton.
         top: calc(1lh + 0.35em);
-
         // Stop before The Federalist.
         bottom: calc(1lh + 0.35em);
       }
     }
   }
 }
-
 @media (max-width: 600px) {
   .reading-list-group .reading-list-entry {
     gap: 0.1em;
   }
 
-  .reading-list-group .reading-list-date,
-  .reading-list-group .reading-list-author {
+  .reading-list-group .reading-list-author,
+  .reading-list-group .reading-list-date {
     margin-left: 0;
   }
 

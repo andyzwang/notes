@@ -10,7 +10,6 @@ a {
   &:hover {
     color: var(--color-yellow) !important;
   }
-
   // Mark outbound links with a small superscript ↗ glyph after the text.
   &:after {
     position: relative;
@@ -19,11 +18,10 @@ a {
     content: "↗";
     color: var(--color-subtext);
   }
-
   // ...but not internal links or footnote jumps — those stay within the site,
   // so blank out the glyph for them.
-  &.internal-link:after,
   &.footnote:after,
+  &.internal-link:after,
   &.reversefootnote:after {
     content: "";
   }
@@ -47,12 +45,12 @@ a {
     padding: 0;
   }
 
-  &.footnote{
+  &.footnote {
     color: var(--color-subtext);
-    font-size: .88em;
+    font-size: 0.88em;
   }
 }
 
-.backlink-box a{
+.backlink-box a {
   padding: 0;
 }

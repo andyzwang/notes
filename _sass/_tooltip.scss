@@ -22,10 +22,11 @@
   transition: opacity 100ms;
   font-family: $font-body-text;
 
-b, strong{
-  font-family: $font-body;
-  font-weight: $weight-semibold;
-}
+  b,
+  strong {
+    font-family: $font-body;
+    font-weight: $weight-semibold;
+  }
 }
 
 #tooltip-wrapper:after {
