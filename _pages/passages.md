@@ -1,13 +1,15 @@
 ---
-layout: page
-title: Passages
+layout: page-hero
+title: A collection of passages
 permalink: /passages/
+image: /assets/img/passages.jpg
+image_title: Galerie d'Orléans, au Palais Royal
+image_author: Philippe Benoist
+image_date: n.d
+image_link: https://www.parismuseescollections.paris.fr/fr/musee-carnavalet/oeuvres/vues-de-paris-galerie-d-orleans-au-palais-royal#infos-principales
 ---
 
-# Passages
-
-Lines that are always worth returning to.
-{: .passages-intro}
+**These are some lines I always find myself returning to.**
 
 <div class="passages-layout">
   <nav class="passages-index" aria-label="Jump to author by letter"></nav>
