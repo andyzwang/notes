@@ -1,5 +1,19 @@
-// Variables
+// =====================================================================
+// Global variables — available in every partial via `@use "variables" as *`
+// =====================================================================
+
+// --- Layout ----------------------------------------------------------
+$body-width: 60em;    // max reading measure
 $border-radius: 4px;
+
+// Hero heading offset (top of content column → first hero line). Split into two
+// parts so the home page — which has no hero — can reuse the sum and start its
+// heading at the same height. Used by _note-splash.scss and _home.scss.
+$hero-top: 6rem;                               // .note-splash top margin
+$hero-top-sm: 3.5rem;                          // …stepped down ≤900px
+$hero-headline-gap: clamp(1.5rem, 4vh, 3rem);  // .note-splash-headline top margin
+
+// --- Type families ---------------------------------------------------
 // Sans (display optical size) — UI, nav, subheads
 $font-body: "PP Neue Montreal", "Inter", "IBM Plex Sans", -apple-system, BlinkMacSystemFont,
   "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -12,7 +26,16 @@ $font-heading: "PP Editorial New", "Iowan Old Style", "Palatino Linotype", Palat
 // Text serif — block quotes
 $font-quote: "PP Writer Text", "PP Writer", "Iowan Old Style", "Palatino Linotype",
   Palatino, "Book Antiqua", Georgia, "Times New Roman", serif;
+// Display serif (PP Writer's display cut) — drop caps and other display glyphs
+$font-quote-display: "PP Writer", "Iowan Old Style", "Palatino Linotype", Palatino,
+  "Book Antiqua", Georgia, "Times New Roman", serif;
 // Monospace — code
 $font-mono: "PP Neue Montreal Mono", ui-monospace, SFMono-Regular, "Cascadia Code",
   Consolas, Monaco, monospace;
-$body-width: 60em;
+
+// --- Font weights — named to match the loaded cuts (see _fonts.scss) --
+$weight-hairline: 100;
+$weight-book: 375;    // "Book" — reading copy & lighter UI text
+$weight-regular: 400;
+$weight-semibold: 600;
+$weight-bold: 700;
