@@ -1,11 +1,6 @@
-<!--
-  Hover previews for internal links: on mouseenter of a same-site link we load
-  that page into a hidden iframe, scrape its rendered content out, and show it
-  in a floating tooltip. `include.wrapperQuerySelector` scopes which links get
-  previews. External links are skipped (they'd be blocked by cross-origin
-  anyway). Fetched HTML is cached in `linkHistories` so re-hovering is instant.
--->
-<div style="opacity: 0; display: none;" id='tooltip-wrapper'><div id='tooltip-content'></div></div>
+<div style="opacity: 0; display: none;" id='tooltip-wrapper'>
+  <div id='tooltip-content'></div>
+</div>
 <iframe style="display: none; height: 0; width: 0;" id='link-preview-iframe' src=""></iframe>
 <script>
   // opacity/content timeouts stagger the fade-out (opacity first, then wipe the
@@ -46,7 +41,9 @@
 
   function revealTooltip() {
     tooltipWrapper.style.display = 'block';
-    setTimeout(function() { tooltipWrapper.style.opacity = 1; }, 1);
+    setTimeout(function() {
+      tooltipWrapper.style.opacity = 1;
+    }, 1);
   }
 
   function showTooltip(event) {
@@ -78,8 +75,12 @@
         // the preview is interactive/navigable. Images (their wrapper carries
         // the caption too) are dropped so previews stay compact and textual;
         // the stray-img catch covers any image not in a wrapper.
-        contentEl.querySelectorAll('.note-header, .image-wrapper, img').forEach(function(el) { el.remove(); });
-        contentEl.querySelectorAll('a.footnote, a.reversefootnote').forEach(function(el) { el.removeAttribute('href'); });
+        contentEl.querySelectorAll('.note-header, .image-wrapper, img').forEach(function(el) {
+          el.remove();
+        });
+        contentEl.querySelectorAll('a.footnote, a.reversefootnote').forEach(function(el) {
+          el.removeAttribute('href');
+        });
         var html = '<div class="tooltip-title">' + titleHtml + '</div>' + contentEl.innerHTML;
         tooltipContent.innerHTML = html;
         linkHistories[event.target.href] = html; // cache for next hover

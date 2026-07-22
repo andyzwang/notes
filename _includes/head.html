@@ -12,15 +12,15 @@
   <link rel="icon" type="image/png" href="{{ site.baseurl }}/assets/img/favicon-azw.ico">
 
   {%- comment -%}
-    Cache-bust the stylesheet with the build timestamp so a fresh build's CSS
-    isn't served from a stale browser cache.
+  Cache-bust the stylesheet with the build timestamp so a fresh build's CSS
+  isn't served from a stale browser cache.
   {%- endcomment -%}
   <link rel="stylesheet" href="{{ site.baseurl }}/assets/styles.css?v={{ site.time | date: '%s' }}">
 
   {% if page.excerpt %}
-  <meta property="og:description" content="{{ page.excerpt | strip_images | strip_html | strip_newlines | truncate: 160 }}"/>
+  <meta property="og:description" content="{{ page.excerpt | strip_images | strip_html | strip_newlines | truncate: 160 }}" />
   {% else %}
-  <meta property="og:description" content="{{ site.title | strip_html | strip_newlines | truncate: 160 }}"/>
+  <meta property="og:description" content="{{ site.title | strip_html | strip_newlines | truncate: 160 }}" />
   {% endif %}
 
   {% if page.title %}
@@ -44,9 +44,9 @@
 
   <title>
     {% if page.id == "home" %}
-      {{ site.title }}
+    {{ site.title }}
     {% else %}
-      {{ page.title | strip_html | escape }} &mdash; {{ site.title }}
+    {{ page.title | strip_html | escape }} &mdash; {{ site.title }}
     {% endif %}
   </title>
 </head>

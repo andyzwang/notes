@@ -80,7 +80,7 @@
     height: auto;
   }
 
-  #graph-wrapper > svg {
+  #graph-wrapper>svg {
     max-width: 100%;
     display: block;
   }
@@ -138,13 +138,25 @@
 
         // The About page shows a whole-graph overview: fit every node in the
         // window, and reveal nodes by degree as you zoom in (biggest first).
-        const ABOUT_MODE = {% if page.id == 'about' %}true{% else %}false{% endif %};
+        const ABOUT_MODE = {
+          %
+          if page.id == 'about' %
+        }
+        true {
+          %
+          else %
+        }
+        false {
+          % endif %
+        };
         // A node is shown once degree * zoom >= this; smaller/less-connected
         // nodes appear as you zoom in. Higher = fewer nodes visible when zoomed
         // out.
         const LOD_CONSTANT = 2.2;
 
-        const graphData = {% include notes-graph.json %}
+        const graphData = {
+          % include notes - graph.json %
+        }
         let nodesData = graphData.nodes;
         let linksData = graphData.edges;
 
@@ -181,7 +193,7 @@
           window.location = d.path
         };
 
-        const onMouseover = function (d) {
+        const onMouseover = function(d) {
           const relatedNodesSet = new Set();
           linksData
             .filter((n) => n.target.id == d.id || n.source.id == d.id)
@@ -241,14 +253,14 @@
         // active note's connections read at a glance without hovering.
         const applyDefaultLinkState = () => {
           link.attr("class", (link_d) =>
-            isCurrentPath(link_d.source.path) || isCurrentPath(link_d.target.path)
-              ? "link-highlight-yellow"
-              : ""
+            isCurrentPath(link_d.source.path) || isCurrentPath(link_d.target.path) ?
+            "link-highlight-yellow" :
+            ""
           );
           link.attr("stroke-width", linkWidth);
         };
 
-        const onMouseout = function (d) {
+        const onMouseout = function(d) {
           node.attr("class", "");
           text.attr("class", "");
           // Re-hide labels that the zoomed-out level-of-detail rule had hidden
@@ -342,26 +354,26 @@
           .force(
             "link",
             d3
-              .forceLink(linksData)
-              .id((d) => d.id)
-              // Leaf nodes (single link) sit farther out so they float clear of
-              // the clusters; densely-linked nodes stay closer in.
-              .distance((d) => {
-                const s = d.source.id != null ? d.source.id : d.source;
-                const t = d.target.id != null ? d.target.id : d.target;
-                // Active note's own links stay short so its neighbours hug in
-                // close against its stronger repulsion.
-                if (touchesActive(d)) return 90;
-                return degree[s] === 1 || degree[t] === 1 ? 190 : 130;
-              })
-              // Hold the active note's links firmly so the short distance wins
-              // out over the boosted repulsion instead of stretching.
-              .strength((d) => {
-                if (touchesActive(d)) return 1;
-                const s = d.source.id != null ? d.source.id : d.source;
-                const t = d.target.id != null ? d.target.id : d.target;
-                return 1 / Math.min(degree[s] || 1, degree[t] || 1);
-              })
+            .forceLink(linksData)
+            .id((d) => d.id)
+            // Leaf nodes (single link) sit farther out so they float clear of
+            // the clusters; densely-linked nodes stay closer in.
+            .distance((d) => {
+              const s = d.source.id != null ? d.source.id : d.source;
+              const t = d.target.id != null ? d.target.id : d.target;
+              // Active note's own links stay short so its neighbours hug in
+              // close against its stronger repulsion.
+              if (touchesActive(d)) return 90;
+              return degree[s] === 1 || degree[t] === 1 ? 190 : 130;
+            })
+            // Hold the active note's links firmly so the short distance wins
+            // out over the boosted repulsion instead of stretching.
+            .strength((d) => {
+              if (touchesActive(d)) return 1;
+              const s = d.source.id != null ? d.source.id : d.source;
+              const t = d.target.id != null ? d.target.id : d.target;
+              return 1 / Math.min(degree[s] || 1, degree[t] || 1);
+            })
           )
           // Collision as a minimum-gap floor — repulsion still does the real
           // spacing. Kept soft (low strength) to preserve the organic look, but
@@ -455,7 +467,7 @@
             .on("mouseout", onMouseout)
             .merge(text);
 
-          text.each(function (d) {
+          text.each(function(d) {
             renderLabel(d3.select(this), d.label.replace(/_*/g, ""), MAX_LABEL_LENGTH);
           });
 
@@ -465,7 +477,7 @@
           text.attr("ghost", (d) => d.ghost ? true : null);
 
           [node, text].forEach((selection) => {
-            selection.each(function (d) {
+            selection.each(function(d) {
               let title = this.querySelector('title');
               if (!title) {
                 title = document.createElementNS('http://www.w3.org/2000/svg', 'title');
@@ -507,7 +519,10 @@
         // and adapts to whatever the viewport dimensions are (desktop/mobile).
         const fitToBounds = () => {
           const PADDING = 70; // room for node radii + labels near the edges
-          let minX = Infinity, minY = Infinity, maxX = -Infinity, maxY = -Infinity;
+          let minX = Infinity,
+            minY = Infinity,
+            maxX = -Infinity,
+            maxY = -Infinity;
           nodesData.forEach((d) => {
             if (d.x < minX) minX = d.x;
             if (d.y < minY) minY = d.y;
