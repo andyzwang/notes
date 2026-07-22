@@ -4,7 +4,7 @@ display_title: <em>Theogony</em>
 author: "[[Hesiod]]"
 year: c. 730–700 BCE
 stage: ⚡️
-image: /assets/img/theogony.jpg
+image: /assets/img/fall-of-the-titans.jpg
 image_title: The Fall of the Titans
 image_author: Cornelis van Haarlem
 image_date: 1590

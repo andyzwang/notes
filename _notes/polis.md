@@ -2,7 +2,7 @@
 title: Polis
 display_title: <em>Polis</em>
 stage: ⭐️
-image: /assets/img/polis.jpg
+image: /assets/img/piazza-san-marco.jpg
 image_title: Piazza San Marco
 image_author: Canaletto
 image_date: c. 1720

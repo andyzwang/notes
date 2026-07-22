@@ -1,7 +1,7 @@
 ---
 title: Hesiod
 stage: ⚡️
-image: /assets/img/hesiod.jpg
+image: /assets/img/the-voices.jpg
 image_title: The Voices
 image_author: Gustave Moreau
 image_date: c. 1880

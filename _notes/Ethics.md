@@ -1,7 +1,7 @@
 ---
 title: Ethics
 stage: ⚡️
-image: /assets/img/ethics.jpg
+image: /assets/img/blind-leading-blind.jpg
 image_title: The Blind Leading the Blind
 image_author: Pieter Bruegel the Elder
 image_date: 1568

@@ -1,7 +1,7 @@
 ---
 title: Homer
 stage: ⚡️
-image: /assets/img/homer.jpg
+image: /assets/img/reading-from-homer.jpg
 image_title: A Reading from Homer
 image_author: Lawrence Alma-Tadema
 image_date: 1885
