@@ -1,0 +1,17 @@
+---
+layout: default
+---
+
+<article>
+  {% include note-hero.html %}
+
+  <content>
+    {{ content }}
+  </content>
+</article>
+
+<hr>
+
+{% if page.id == 'about' %}
+{% include notes-graph.html %}
+{% endif %}
