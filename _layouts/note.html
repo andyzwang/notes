@@ -18,7 +18,8 @@ layout: default
         <span class="note-footer-words">{{ page.content | note_word_count }} Words</span>
         {% endif %}
         {% if page.stage %}
-        <span class="note-footer-stage" title="Thoroughness of content, from ⚡️ spark to ⭐️ star to 🌌 constellation">{% case page.stage %}{% when '⚡️' %}⚡️ Spark{% when '⭐️' %}⭐️ Star{% when '🌌' %}🌌 Constellation{% else %}{{ page.stage }}{% endcase %}</span>
+        <span class="note-footer-stage" title="Thoroughness of content, from ⚡️ spark to ⭐️ star to 🌌 constellation">{% case page.stage %}{% when '⚡️' %}⚡️ Spark{% when '⭐️' %}⭐️ Star{% when '🌌' %}🌌
+          Constellation{% else %}{{ page.stage }}{% endcase %}</span>
         {% endif %}
         {% if page.type != 'pages' and page.path %}
         <a class="note-footer-editlog" href="https://github.com/andyzwang/notes/commits/main/{{ page.path }}">Edit Log</a>
@@ -32,19 +33,19 @@ layout: default
       <div id="backlinks-container">
         <h3 style="margin-top: 0; margin-bottom: 1em">Mentioned in</h3>
         <div style="display: grid; grid-gap: 1em; grid-template-columns: repeat(1fr);">
-        {% assign shown_backlinks = page.backlinks | sample: 3 %}
-        {% for backlink in shown_backlinks %}
+          {% assign shown_backlinks = page.backlinks | sample: 3 %}
+          {% for backlink in shown_backlinks %}
           <div class="backlink-box">
-          <a class="internal-link" href="{{ site.baseurl }}{{ backlink.url }}{%- if site.use_html_extension -%}.html{%- endif -%}">{{ backlink.title }}</a><br>
-          <div style="font-size: 0.88em">{{ backlink.excerpt | strip_note_header | strip_images | strip_footnotes | strip_wikilinks | strip_html_keep_em | truncatewords: 20 }}</div>
+            <a class="internal-link" href="{{ site.baseurl }}{{ backlink.url }}{%- if site.use_html_extension -%}.html{%- endif -%}">{{ backlink.title }}</a><br>
+            <div style="font-size: 0.88em">{{ backlink.excerpt | strip_note_header | strip_images | strip_footnotes | strip_wikilinks | strip_html_keep_em | truncatewords: 20 }}</div>
           </div>
-        {% endfor %}
-        {% assign remaining_backlinks = page.backlinks.size | minus: 3 %}
-        {% if remaining_backlinks > 0 %}
+          {% endfor %}
+          {% assign remaining_backlinks = page.backlinks.size | minus: 3 %}
+          {% if remaining_backlinks > 0 %}
           <div class="backlink-box">
-          <a class="internal-link" href="#graph-wrapper">+ {{ remaining_backlinks }} more</a>
+            <a class="internal-link" href="#graph-wrapper">+ {{ remaining_backlinks }} more</a>
           </div>
-        {% endif %}
+          {% endif %}
         </div>
       </div>
 
@@ -60,17 +61,17 @@ layout: default
 </article>
 
 <script>
-  document.querySelectorAll('content blockquote.verse[start-line]').forEach(function (verse) {
+  document.querySelectorAll('content blockquote.verse[start-line]').forEach(function(verse) {
     verse.style.counterReset = 'line ' + verse.getAttribute('start-line');
   });
-  document.querySelectorAll('content blockquote.verse[cite]').forEach(function (verse) {
+  document.querySelectorAll('content blockquote.verse[cite]').forEach(function(verse) {
     verse.style.setProperty('--verse-cite', JSON.stringify(verse.getAttribute('cite')));
   });
 </script>
 
 <script>
-  (function () {
-    var heading = Array.prototype.filter.call(document.querySelectorAll('content h2'), function (h) {
+  (function() {
+    var heading = Array.prototype.filter.call(document.querySelectorAll('content h2'), function(h) {
       return h.textContent.trim() === 'Footnotes';
     })[0];
 
@@ -94,7 +95,7 @@ layout: default
 </script>
 
 <script>
-  (function () {
+  (function() {
     var outline = document.getElementById('outline');
     if (!outline) return;
 
@@ -103,7 +104,7 @@ layout: default
     var headingLinks = [];
     var currentH2 = null;
 
-    document.querySelectorAll('content h2, content h3').forEach(function (heading) {
+    document.querySelectorAll('content h2, content h3').forEach(function(heading) {
       var isSub = heading.tagName === 'H3';
       if (!isSub) {
         currentH2 = heading;
@@ -119,12 +120,17 @@ layout: default
         item.className = 'outline-sub-item';
       }
       list.appendChild(item);
-      headingLinks.push({ heading: heading, link: link, item: item, parentH2: isSub ? currentH2 : heading });
+      headingLinks.push({
+        heading: heading,
+        link: link,
+        item: item,
+        parentH2: isSub ? currentH2 : heading
+      });
     });
 
     // Hide the outline entirely when there are no real headings — i.e. nothing
     // but the auto-inserted "Footnotes" heading (or nothing at all).
-    var contentHeadings = headingLinks.filter(function (h) {
+    var contentHeadings = headingLinks.filter(function(h) {
       return h.heading.id !== 'footnotes';
     });
     if (contentHeadings.length === 0) {
@@ -145,26 +151,31 @@ layout: default
     var outlineContainer = document.getElementById('outline-container');
     var outlineHeading = document.getElementById('outline-heading');
     var stickyTop = parseFloat(getComputedStyle(outlineContainer).top) || 0;
-    var stuckHeading = {{ page.display_title | default: page.title | jsonify }};
+    var stuckHeading = {
+      {
+        page.display_title |
+          default: page.title | jsonify
+      }
+    };
     var wasStuck = null;
 
     function updateActiveSection() {
       var scrollPos = window.scrollY + 80;
       var activeIndex = -1;
 
-      headingLinks.forEach(function (pair, i) {
+      headingLinks.forEach(function(pair, i) {
         var top = pair.heading.getBoundingClientRect().top + window.scrollY;
         if (top <= scrollPos) {
           activeIndex = i;
         }
       });
 
-      headingLinks.forEach(function (pair, i) {
+      headingLinks.forEach(function(pair, i) {
         pair.link.classList.toggle('active', i === activeIndex);
       });
 
       var activeH2 = activeIndex >= 0 ? headingLinks[activeIndex].parentH2 : null;
-      headingLinks.forEach(function (pair) {
+      headingLinks.forEach(function(pair) {
         if (pair.heading.tagName === 'H3') {
           pair.item.classList.toggle('visible', pair.parentH2 === activeH2);
         }
@@ -174,7 +185,7 @@ layout: default
       if (isStuck !== wasStuck) {
         wasStuck = isStuck;
         outlineHeading.style.opacity = '0';
-        setTimeout(function () {
+        setTimeout(function() {
           outlineHeading.innerHTML = isStuck ? stuckHeading : 'Outline';
           outlineHeading.style.opacity = '1';
         }, 150);
@@ -190,7 +201,9 @@ layout: default
       }
     }
 
-    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('scroll', onScroll, {
+      passive: true
+    });
     window.addEventListener('resize', onScroll);
     updateActiveSection();
   })();
