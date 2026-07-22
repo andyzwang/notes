@@ -11,10 +11,10 @@ permalink: /
 > the sequence of events like the beads of a rosary. Instead, he grasps the
 > *constellation* which his own era has formed with a definite earlier one.
 >
-> <cite>— Walter Benjamin, *Theses on the Philosophy of History*</cite>
+> <cite>Walter Benjamin, *Theses on the Philosophy of History*</cite>
 {: .main-quote}
 
-This site is an [[about|experiment]] in thinking.
+**This site is an [[about|experiment]] in thinking.**
 
 I use this public notebook to gather fragments, concepts, readings, and questions into shifting *constellations*, borrowing [[Walter Benjamin|Walter Benjamin's]] metaphor. By linking texts across time and space — political theory, philosophy, literature, and beyond — I hope to trace connections between ideas and invite you to think alongside me as they take shape.
 
