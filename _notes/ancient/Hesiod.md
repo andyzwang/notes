@@ -1,5 +1,6 @@
 ---
 title: Hesiod
+lifespan: c. 8th century BCE
 stage: ⚡️
 image: /assets/img/the-voices.jpg
 image_title: The Voices

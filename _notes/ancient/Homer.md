@@ -1,5 +1,6 @@
 ---
 title: Homer
+lifespan: c. 8th century BCE
 stage: ⚡️
 image: /assets/img/reading-from-homer.jpg
 image_title: A Reading from Homer
