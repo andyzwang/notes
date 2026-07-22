@@ -1,25 +1,20 @@
-# Generated website directory
+# Jekyll
 _site/
-
-# Sass cache
-.sass-cache/
-
-# Jekyll cache & metadata
 .jekyll-cache/
 .jekyll-metadata*
+.sass-cache/
 
-# Notes graph metadata
+# Generated metadata
 _includes/notes_graph.json
 
-# Obsidian config
-.obsidian/
+# Drafts
+_notes/drafts/
 
-# macOS
-*/.DS_Store
+# Obsidian
+.obsidian/
 
 # Claude
 .claude/
 
-# Draft folder
-_notes/drafts/*
+# macOS
 .DS_Store
