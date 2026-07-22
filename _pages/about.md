@@ -1,18 +1,16 @@
 ---
-layout: page
-title: About This Site
+layout: page-hero
+title: About this site
 id: about
 permalink: /about/
+image: /assets/img/street-at-schoeneberg.jpg
+image_title: Straße am Stadtpark Schöneberg
+image_author: Ernst Ludwig Kirchner
+image_date: 1912
+image_link: https://collection.mam.org/details.php?id=9013
 ---
 
-# About this site
-
-> I really do think with my pen, because my head often knows nothing about what my hand is writing.
->
-> <cite>— Ludwig Wittgenstein, *Culture and Value*, 17c</cite>
-{: .main-quote}
-
-Hi! I'm Andy.
+**Hi! I'm Andy.**
 
 I'm currently a PhD student in Stanford's [Department of Political Science](https://politicalscience.stanford.edu/people/andy-wang), studying Political Theory and Comparative Politics. You can learn more about me on my [main site](https://andyzwang.com).
 
@@ -26,9 +24,15 @@ Most of these notes draw from lectures, conversations, syllabi, and guidance fro
 
 If anything on this site was helpful to you, or if you just want to chat, please reach out at `hi [at] andyzwang [dot] com`.
 
+
+> I really do think with my pen, because my head often knows nothing about what my hand is writing.
+>
+> <cite>Ludwig Wittgenstein, *Culture and Value*, 17c</cite>
+
+
 ## Colophon
 
-Markdown notes for this site are first written offline in [Obsidian](https://obsidian.md/), while backend editing is done in [Pulsar](https://pulsar-edit.dev/). The site is compiled with [Jekyll](https://jekyllrb.com/) and adapted from Maxime Vaillancourt's terrific [digital garden template](https://github.com/maximevaillancourt/digital-garden-jekyll-template). Its colors are based on Steph Ango's beautiful [Flexoki](https://stephango.com/flexoki) palette. The body text is set in [PP Neue Montreal](https://pangrampangram.com/products/neue-montreal), headings in [PP Editorial New](https://pangrampangram.com/products/editorial-new), quotations in [PP Writer](https://pangrampangram.com/products/writer), and code in [PP Neue Montreal Mono](https://pangrampangram.com/products/neue-montreal-mono). All citations are [Chicago Style](https://www.chicagomanualofstyle.org/home.html). Source code and full version history are available on [GitHub](https://github.com/andyzwang/notes).
+Markdown notes for this site are first written offline in [Obsidian](https://obsidian.md/), while backend editing is done in [Pulsar](https://pulsar-edit.dev/). The site is compiled with [Jekyll](https://jekyllrb.com/) and adapted from Maxime Vaillancourt's terrific [digital garden template](https://github.com/maximevaillancourt/digital-garden-jekyll-template). Its colors are based on Steph Ango's beautiful [Flexoki](https://stephango.com/flexoki) palette. The body text is set in [Neue Montreal](https://pangrampangram.com/products/neue-montreal), headings in [Editorial New](https://pangrampangram.com/products/editorial-new), quotations in [Writer](https://pangrampangram.com/products/writer), and code in [Neue Montreal Mono](https://pangrampangram.com/products/neue-montreal-mono) — all from the beautiful Pangram Pangram Foundry. All citations are [Chicago Style](https://www.chicagomanualofstyle.org/home.html). Source code and full version history are available on [GitHub](https://github.com/andyzwang/notes).
 
 Except where otherwise noted, my writing on this site is licensed under <a class = "external-link" href = "https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. You may share, quote, and adapt it with attribution. This is a working notebook, so I can't promise that everything here is free of errors of fact, interpretation, or judgment. Typos, too, are to be expected.
 
