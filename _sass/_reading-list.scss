@@ -1,4 +1,7 @@
+@use "variables" as *;
+
 .reading-list {
+  font-family: $font-body;
   --date-col: 6em;
   --author-col: 12em;
   --col-gap: 0.5em;
@@ -37,11 +40,12 @@
 }
 
 .reading-list-author {
-  font-weight: bold;
+  font-weight: $weight-semibold;
+  font-family: $font-body;
 }
 
 .minor-author {
-  font-weight: normal !important;
+  font-weight: $weight-book !important;
 }
 
 .reading-list-group {
