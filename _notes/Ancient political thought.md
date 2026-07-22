@@ -1,5 +1,5 @@
 ---
-title: Ancient political thought
+title: "Ancient political thought"
 stage: 🌌
 image: /assets/img/caryatid.jpg
 image_title: Caryatid porch of the Erechtheion, Athens

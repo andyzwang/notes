@@ -1,12 +1,12 @@
 ---
 title: The Iliad
-display_title: <em>The Iliad</em>
+display_title: "<em>The Iliad</em>"
 author: "[[Homer]]"
 year: c. 800–750 BCE
 stage: 🌌
 image: /assets/img/iliad.jpg
 image_title: Battle Before a Walled City
-image_author: artist unknown
+image_author: Unknown artist
 image_date: c. 1450
 image_link: https://www.getty.edu/art/collection/object/103RAK
 ---
