@@ -12,7 +12,7 @@
   --title-lines: 2;                              // lines a long title may fill before it shrinks
   --title-leading: 1;                          // title line-height (matters once a title wraps)
   --title-meta-gap: 0.2;                         // title baseline → meta gap, as a fraction of title size (~0.3 ≈ descender depth)
-  --author-title-gap: 0.318;                         // title baseline → meta gap, as a fraction of title size (~0.3 ≈ descender depth)
+  --author-title-gap: 0.318;                     // author baseline → title gap, as a fraction of title size
   --focal: 50% 50%;                              // image crop focus (per-note: image_focal frontmatter)
   // -------------------------------------------------------------------
 
@@ -20,7 +20,7 @@
   --title-fluid: calc(100cqi * var(--title-lines) / (var(--length, 12) * var(--title-k)));
 
   container-type: inline-size;                   // enables the cqi unit above
-  margin-top: 6rem;
+  margin-top: $hero-top;
 }
 
 .note-splash-hero {
@@ -30,7 +30,7 @@
 
 // Headline — author lead-in ("Hesiod/") stacked above the title.
 .note-splash-headline {
-  margin-top: clamp(1.5rem, 4vh, 3rem);
+  margin-top: $hero-headline-gap;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -39,7 +39,7 @@
 .note-splash-title {
   margin: 0 0 calc(var(--title-meta-gap) * 1em);   // bottom gap scales with the title's own size
   font-family: $font-heading;
-  font-weight: 400;
+  font-weight: $weight-regular;
   font-size: clamp(var(--title-min), var(--title-fluid), var(--title-max));
   line-height: var(--title-leading);
   letter-spacing: -0.045em;
@@ -50,15 +50,18 @@
 // Author — grey, smaller; tracks the title's fluid size. Not part of the <h1>.
 .note-splash-title-author {
   font-family: $font-heading;
-  font-weight: 100;
+  font-weight: $weight-hairline;
   font-size: clamp(3rem, calc(var(--title-fluid) * 0.24), 5rem);
   letter-spacing: -0.025em;
   color: var(--color-yellow);
   text-box: trim-end cap alphabetic;
   margin: 0 0 calc(var(--author-title-gap) * 1em);   // bottom gap scales with the title's own size
 }
-.note-splash-title-slash { color: var(--color-subtext);
-margin-left: 0.04em;}   // the "/" after the author
+// The "/" after the author
+.note-splash-title-slash {
+  color: var(--color-subtext);
+  margin-left: 0.04em;
+}
 
 // Meta row — work's date · rule · last-updated, the line filling the gap between them.
 .note-splash-eyebrow {
@@ -78,7 +81,7 @@ margin-left: 0.04em;}   // the "/" after the author
   text-transform: uppercase;
   font-variant-numeric: tabular-nums;
   color: var(--color-subtext);
-  margin:0;
+  margin: 0;
 }
 
 // Rule — the line between the two date stamps (or to the right of a lone one),
@@ -137,7 +140,7 @@ margin-left: 0.04em;}   // the "/" after the author
   .note-splash {
     --title-min: 2.5rem;
     --title-max: 6rem;
-    margin-top: 3.5rem;
+    margin-top: $hero-top-sm;
   }
 
   .note-splash-caption,

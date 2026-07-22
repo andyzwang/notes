@@ -1,11 +1,8 @@
 @use "variables" as *;
 
-// The note hero / splash now lives in its own partial: _note-splash.scss
-// (three switchable variants over one markup). This file keeps the
-// below-the-fold note layout: the content + sidebar grid and the
-// metadata / backlinks / outline widgets.
-
-// Layout and sidebar widgets specific to the note layout (metadata, backlinks, outline)
+// Below-the-fold note layout: the content + sidebar grid and the sidebar
+// widgets (metadata, backlinks, outline). The hero/splash lives in its own
+// partial, _note-splash.scss.
 #notes-entry-container {
   display: grid;
   grid-gap: 2em;
@@ -29,6 +26,11 @@
   background: var(--color-bg-soft);
   padding: 1em;
   border-radius: $border-radius;
+  font-family: $font-body-text;
+
+  & a {
+    font-family: $font-body;
+  }
 }
 
 .metadata-list {
@@ -107,7 +109,7 @@
 
     &.active {
       color: var(--color-text);
-      font-weight: bold;
+      font-weight: $weight-semibold;
       border-left-color: var(--color-yellow);
     }
   }
