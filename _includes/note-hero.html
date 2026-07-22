@@ -9,6 +9,23 @@ Note hero. The author ("Hesiod/") sits on its own line above the title and is NO
   {%- if page.image_title or page.image_caption -%}{%- assign _has_credit = true -%}{%- endif -%}
   {%- assign _author = "" -%}
   {%- if page.author -%}{%- assign _author = page.author | markdownify | strip_html | strip_newlines -%}{%- endif -%}
+  {%- comment -%}
+  Left-hand eyebrow date. `year` is a work's composition date; `born`/`died`
+  are a thinker's, but not every thinker has clean dates (Homer, say) — use
+  `lifespan` as a freeform override (e.g. "c. 8th century BCE") for those.
+  {%- endcomment -%}
+  {%- assign _left_date = "" -%}
+  {%- if page.lifespan -%}
+    {%- assign _left_date = page.lifespan -%}
+  {%- elsif page.born and page.died -%}
+    {%- capture _left_date -%}{{ page.born }}–{{ page.died }}{%- endcapture -%}
+  {%- elsif page.born -%}
+    {%- capture _left_date -%}b. {{ page.born }}{%- endcapture -%}
+  {%- elsif page.died -%}
+    {%- capture _left_date -%}d. {{ page.died }}{%- endcapture -%}
+  {%- elsif page.year -%}
+    {%- assign _left_date = page.year -%}
+  {%- endif -%}
 
   <section class="note-splash{% unless page.image %} note-splash--no-image{% endunless %}" style="--length: {{ _headline_len }}">
     <div class="note-splash-hero">
@@ -21,8 +38,8 @@ Note hero. The author ("Hesiod/") sits on its own line above the title and is NO
 
 
       <div class="note-splash-eyebrow">
-        {%- if page.year -%}
-        <span class="note-splash-date">{{ page.year }}</span>
+        {%- if _left_date != "" -%}
+        <span class="note-splash-date">{{ _left_date }}</span>
         <hr class="note-splash-rule" aria-hidden="true">
         {%- if page.type != 'pages' -%}<time class="note-splash-updated" datetime="{{ page.last_modified_at | date_to_xmlschema }}">Updated {{ page.last_modified_at | date: "%-d.%m.%Y" }}</time>{%- endif -%}
         {%- else -%}
