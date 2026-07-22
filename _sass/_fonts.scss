@@ -1,483 +1,141 @@
-/* ------------------------------------------------------------------ *
- * PP Editorial New — headings ($font-heading) — high-contrast display serif
- ------------------------------------------------------------------ */
-
-@font-face {
-  font-family: 'PP Editorial New';
-  font-style: italic;
-  font-weight: 100;
-  src: url('/assets/fonts/PPEditorialNew-ThinItalic.woff2') format('woff2');
-}
-
+// @font-face declarations.
+// see _variables.scss for the
+// $font-* / $weight-* names these map to.
+/* PP Editorial New — headings ($font-heading) */
 @font-face {
   font-family: 'PP Editorial New';
   font-style: normal;
   font-weight: 100;
-  src: url('/assets/fonts/PPEditorialNew-Thin.woff2') format('woff2');
+  src: url("/assets/fonts/PPEditorialNew-Thin.woff2") format('woff2');
 }
-
-@font-face {
-  font-family: 'PP Editorial New';
-  font-style: italic;
-  font-weight: 200;
-  src: url('/assets/fonts/PPEditorialNew-UltralightItalic.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'PP Editorial New';
-  font-style: normal;
-  font-weight: 200;
-  src: url('/assets/fonts/PPEditorialNew-Ultralight.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'PP Editorial New';
-  font-style: italic;
-  font-weight: 400;
-  src: url('/assets/fonts/PPEditorialNew-Italic.woff2') format('woff2');
-}
-
 @font-face {
   font-family: 'PP Editorial New';
   font-style: normal;
   font-weight: 400;
-  src: url('/assets/fonts/PPEditorialNew-Regular.woff2') format('woff2');
+  src: url("/assets/fonts/PPEditorialNew-Regular.woff2") format('woff2');
 }
-
 @font-face {
   font-family: 'PP Editorial New';
   font-style: italic;
-  font-weight: 700;
-  src: url('/assets/fonts/PPEditorialNew-BoldItalic.woff2') format('woff2');
+  font-weight: 400;
+  src: url("/assets/fonts/PPEditorialNew-Italic.woff2") format('woff2');
 }
-
-@font-face {
-  font-family: 'PP Editorial New';
-  font-style: normal;
-  font-weight: 700;
-  src: url('/assets/fonts/PPEditorialNew-Bold.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'PP Editorial New';
-  font-style: italic;
-  font-weight: 900;
-  src: url('/assets/fonts/PPEditorialNew-HeavyItalic.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'PP Editorial New';
-  font-style: normal;
-  font-weight: 900;
-  src: url('/assets/fonts/PPEditorialNew-Heavy.woff2') format('woff2');
-}
-
-
-/* ------------------------------------------------------------------ *
- * PP Neue Montreal — body & UI ($font-body) — display optical size
- ------------------------------------------------------------------ */
-
-@font-face {
-  font-family: 'PP Neue Montreal';
-  font-style: italic;
-  font-weight: 100;
-  src: url('/assets/fonts/PPNeueMontreal-HairlineItalic.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'PP Neue Montreal';
-  font-style: normal;
-  font-weight: 100;
-  src: url('/assets/fonts/PPNeueMontreal-Hairline.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'PP Neue Montreal';
-  font-style: italic;
-  font-weight: 300;
-  src: url('/assets/fonts/PPNeueMontreal-LightItalic.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'PP Neue Montreal';
-  font-style: normal;
-  font-weight: 300;
-  src: url('/assets/fonts/PPNeueMontreal-Light.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'PP Neue Montreal';
-  font-style: italic;
-  font-weight: 375;
-  src: url('/assets/fonts/PPNeueMontreal-BookItalic.woff2') format('woff2');
-}
-
+/* PP Neue Montreal — body & UI ($font-body) */
 @font-face {
   font-family: 'PP Neue Montreal';
   font-style: normal;
   font-weight: 375;
-  src: url('/assets/fonts/PPNeueMontreal-Book.woff2') format('woff2');
+  src: url("/assets/fonts/PPNeueMontreal-Book.woff2") format('woff2');
 }
-
 @font-face {
   font-family: 'PP Neue Montreal';
   font-style: italic;
-  font-weight: 400;
-  src: url('/assets/fonts/PPNeueMontreal-Italic.woff2') format('woff2');
+  font-weight: 375;
+  src: url("/assets/fonts/PPNeueMontreal-BookItalic.woff2") format('woff2');
 }
-
 @font-face {
   font-family: 'PP Neue Montreal';
   font-style: normal;
   font-weight: 400;
-  src: url('/assets/fonts/PPNeueMontreal-Regular.woff2') format('woff2');
+  src: url("/assets/fonts/PPNeueMontreal-Regular.woff2") format('woff2');
 }
-
 @font-face {
   font-family: 'PP Neue Montreal';
   font-style: italic;
-  font-weight: 500;
-  src: url('/assets/fonts/PPNeueMontreal-MediumItalic.woff2') format('woff2');
+  font-weight: 400;
+  src: url("/assets/fonts/PPNeueMontreal-Italic.woff2") format('woff2');
 }
-
-@font-face {
-  font-family: 'PP Neue Montreal';
-  font-style: normal;
-  font-weight: 500;
-  src: url('/assets/fonts/PPNeueMontreal-Medium.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'PP Neue Montreal';
-  font-style: italic;
-  font-weight: 600;
-  src: url('/assets/fonts/PPNeueMontreal-SemiboldItalic.woff2') format('woff2');
-}
-
 @font-face {
   font-family: 'PP Neue Montreal';
   font-style: normal;
   font-weight: 600;
-  src: url('/assets/fonts/PPNeueMontreal-Semibold.woff2') format('woff2');
+  src: url("/assets/fonts/PPNeueMontreal-Semibold.woff2") format('woff2');
 }
-
 @font-face {
   font-family: 'PP Neue Montreal';
   font-style: italic;
-  font-weight: 800;
-  src: url('/assets/fonts/PPNeueMontreal-ExtraboldItalic.woff2') format('woff2');
+  font-weight: 600;
+  src: url("/assets/fonts/PPNeueMontreal-SemiboldItalic.woff2") format('woff2');
 }
-
-@font-face {
-  font-family: 'PP Neue Montreal';
-  font-style: normal;
-  font-weight: 800;
-  src: url('/assets/fonts/PPNeueMontreal-Extrabold.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'PP Neue Montreal';
-  font-style: italic;
-  font-weight: 900;
-  src: url('/assets/fonts/PPNeueMontreal-BlackItalic.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'PP Neue Montreal';
-  font-style: normal;
-  font-weight: 900;
-  src: url('/assets/fonts/PPNeueMontreal-Black.woff2') format('woff2');
-}
-
-
-/* ------------------------------------------------------------------ *
- * PP Neue Montreal Text — article reading copy ($font-body-text) — text optical size
- ------------------------------------------------------------------ */
-
-@font-face {
-  font-family: 'PP Neue Montreal Text';
-  font-style: italic;
-  font-weight: 300;
-  src: url('/assets/fonts/PPNeueMontrealText-LightItalic.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'PP Neue Montreal Text';
-  font-style: normal;
-  font-weight: 300;
-  src: url('/assets/fonts/PPNeueMontrealText-Light.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'PP Neue Montreal Text';
-  font-style: italic;
-  font-weight: 375;
-  src: url('/assets/fonts/PPNeueMontrealText-BookItalic.woff2') format('woff2');
-}
-
+/* PP Neue Montreal Text — reading copy ($font-body-text).
+   Bold reading text switches to PP Neue Montreal — see `content b, strong`
+   in _typography.scss. */
 @font-face {
   font-family: 'PP Neue Montreal Text';
   font-style: normal;
   font-weight: 375;
-  src: url('/assets/fonts/PPNeueMontrealText-Book.woff2') format('woff2');
+  src: url("/assets/fonts/PPNeueMontrealText-Book.woff2") format('woff2');
 }
-
 @font-face {
   font-family: 'PP Neue Montreal Text';
   font-style: italic;
-  font-weight: 700;
-  src: url('/assets/fonts/PPNeueMontrealText-BoldItalic.woff2') format('woff2');
+  font-weight: 375;
+  src: url("/assets/fonts/PPNeueMontrealText-BookItalic.woff2") format('woff2');
 }
-
-@font-face {
-  font-family: 'PP Neue Montreal Text';
-  font-style: normal;
-  font-weight: 700;
-  src: url('/assets/fonts/PPNeueMontrealText-Bold.woff2') format('woff2');
-}
-
-
-/* ------------------------------------------------------------------ *
- * PP Neue Montreal Mono — code ($font-mono)
- ------------------------------------------------------------------ */
-
-@font-face {
-  font-family: 'PP Neue Montreal Mono';
-  font-style: italic;
-  font-weight: 100;
-  src: url('/assets/fonts/PPNeueMontrealMono-ThinItalic.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'PP Neue Montreal Mono';
-  font-style: normal;
-  font-weight: 100;
-  src: url('/assets/fonts/PPNeueMontrealMono-Thin.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'PP Neue Montreal Mono';
-  font-style: normal;
-  font-weight: 300;
-  src: url('/assets/fonts/PPNeueMontrealMono-Light.woff2') format('woff2');
-}
-
+/* PP Neue Montreal Mono — code ($font-mono).
+   No 375-italic cut exists, so italic code comments (weight 375) render in
+   100 Thin Italic instead — see .highlight .c in _code.scss. */
 @font-face {
   font-family: 'PP Neue Montreal Mono';
   font-style: normal;
   font-weight: 375;
-  src: url('/assets/fonts/PPNeueMontrealMono-Book.woff2') format('woff2');
+  src: url("/assets/fonts/PPNeueMontrealMono-Book.woff2") format('woff2');
 }
-
-@font-face {
-  font-family: 'PP Neue Montreal Mono';
-  font-style: italic;
-  font-weight: 400;
-  src: url('/assets/fonts/PPNeueMontrealMono-RegularItalic.woff2') format('woff2');
-}
-
 @font-face {
   font-family: 'PP Neue Montreal Mono';
   font-style: normal;
   font-weight: 400;
-  src: url('/assets/fonts/PPNeueMontrealMono-Regular.woff2') format('woff2');
+  src: url("/assets/fonts/PPNeueMontrealMono-Regular.woff2") format('woff2');
 }
-
-@font-face {
-  font-family: 'PP Neue Montreal Mono';
-  font-style: normal;
-  font-weight: 500;
-  src: url('/assets/fonts/PPNeueMontrealMono-Medium.woff2') format('woff2');
-}
-
 @font-face {
   font-family: 'PP Neue Montreal Mono';
   font-style: italic;
-  font-weight: 700;
-  src: url('/assets/fonts/PPNeueMontrealMono-BoldItalic.woff2') format('woff2');
+  font-weight: 400;
+  src: url("/assets/fonts/PPNeueMontrealMono-RegularItalic.woff2") format('woff2');
 }
-
 @font-face {
   font-family: 'PP Neue Montreal Mono';
   font-style: normal;
   font-weight: 700;
-  src: url('/assets/fonts/PPNeueMontrealMono-Bold.woff2') format('woff2');
+  src: url("/assets/fonts/PPNeueMontrealMono-Bold.woff2") format('woff2');
 }
-
-
-/* ------------------------------------------------------------------ *
- * PP Writer — display serif (available to play with)
- ------------------------------------------------------------------ */
-
 @font-face {
-  font-family: 'PP Writer';
+  font-family: 'PP Neue Montreal Mono';
+  font-style: italic;
+  font-weight: 700;
+  src: url("/assets/fonts/PPNeueMontrealMono-BoldItalic.woff2") format('woff2');
+}
+@font-face {
+  font-family: 'PP Neue Montreal Mono';
   font-style: italic;
   font-weight: 100;
-  src: url('/assets/fonts/PPWriter-ThinItalic.woff2') format('woff2');
+  src: url("/assets/fonts/PPNeueMontrealMono-ThinItalic.woff2") format('woff2');
 }
-
-@font-face {
-  font-family: 'PP Writer';
-  font-style: normal;
-  font-weight: 100;
-  src: url('/assets/fonts/PPWriter-Thin.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'PP Writer';
-  font-style: italic;
-  font-weight: 375;
-  src: url('/assets/fonts/PPWriter-BookItalic.woff2') format('woff2');
-}
-
+/* PP Writer — display serif ($font-quote-display) */
 @font-face {
   font-family: 'PP Writer';
   font-style: normal;
   font-weight: 375;
-  src: url('/assets/fonts/PPWriter-Book.woff2') format('woff2');
+  src: url("/assets/fonts/PPWriter-Book.woff2") format('woff2');
 }
-
-@font-face {
-  font-family: 'PP Writer';
-  font-style: italic;
-  font-weight: 400;
-  src: url('/assets/fonts/PPWriter-RegularItalic.woff2') format('woff2');
-}
-
 @font-face {
   font-family: 'PP Writer';
   font-style: normal;
   font-weight: 400;
-  src: url('/assets/fonts/PPWriter-Regular.woff2') format('woff2');
+  src: url("/assets/fonts/PPWriter-Regular.woff2") format('woff2');
 }
-
-@font-face {
-  font-family: 'PP Writer';
-  font-style: italic;
-  font-weight: 700;
-  src: url('/assets/fonts/PPWriter-BoldItalic.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'PP Writer';
-  font-style: normal;
-  font-weight: 700;
-  src: url('/assets/fonts/PPWriter-Bold.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'PP Writer';
-  font-style: italic;
-  font-weight: 800;
-  src: url('/assets/fonts/PPWriter-UltraboldItalic.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'PP Writer';
-  font-style: normal;
-  font-weight: 800;
-  src: url('/assets/fonts/PPWriter-Ultrabold.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'PP Writer';
-  font-style: italic;
-  font-weight: 900;
-  src: url('/assets/fonts/PPWriter-BlackItalic.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'PP Writer';
-  font-style: normal;
-  font-weight: 900;
-  src: url('/assets/fonts/PPWriter-Black.woff2') format('woff2');
-}
-
-
-/* ------------------------------------------------------------------ *
- * PP Writer Text — block quotes ($font-quote) — text optical size; italics borrowed from the display cut
- ------------------------------------------------------------------ */
-
-@font-face {
-  font-family: 'PP Writer Text';
-  font-style: italic;
-  font-weight: 100;
-  src: url('/assets/fonts/PPWriter-ThinItalic.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'PP Writer Text';
-  font-style: normal;
-  font-weight: 100;
-  src: url('/assets/fonts/PPWriter-ThinText.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'PP Writer Text';
-  font-style: normal;
-  font-weight: 200;
-  src: url('/assets/fonts/PPWriter-UltralightText.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'PP Writer Text';
-  font-style: italic;
-  font-weight: 375;
-  src: url('/assets/fonts/PPWriter-BookItalic.woff2') format('woff2');
-}
-
+/* PP Writer Text — block-quote body ($font-quote).
+   Bold quote text switches to PP Neue Montreal — see `content b, strong`
+   in _typography.scss. */
 @font-face {
   font-family: 'PP Writer Text';
   font-style: normal;
   font-weight: 375;
-  src: url('/assets/fonts/PPWriter-BookText.woff2') format('woff2');
+  src: url("/assets/fonts/PPWriter-BookText.woff2") format('woff2');
 }
-
 @font-face {
   font-family: 'PP Writer Text';
   font-style: italic;
-  font-weight: 400;
-  src: url('/assets/fonts/PPWriter-RegularItalic.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'PP Writer Text';
-  font-style: normal;
-  font-weight: 400;
-  src: url('/assets/fonts/PPWriter-RegularText.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'PP Writer Text';
-  font-style: italic;
-  font-weight: 700;
-  src: url('/assets/fonts/PPWriter-BoldItalic.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'PP Writer Text';
-  font-style: normal;
-  font-weight: 700;
-  src: url('/assets/fonts/PPWriter-BoldText.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'PP Writer Text';
-  font-style: italic;
-  font-weight: 800;
-  src: url('/assets/fonts/PPWriter-UltraboldItalic.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'PP Writer Text';
-  font-style: italic;
-  font-weight: 900;
-  src: url('/assets/fonts/PPWriter-BlackItalic.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'PP Writer Text';
-  font-style: normal;
-  font-weight: 900;
-  src: url('/assets/fonts/PPWriter-BlackText.woff2') format('woff2');
+  font-weight: 375;
+  src: url("/assets/fonts/PPWriter-BookItalic.woff2") format('woff2');
 }
