@@ -86,7 +86,7 @@ In another moment of cosmic intervention, Hera sends Athena to intervene. Odysse
 
 In the restored assembly, Thersites, an ordinary soldier known for his unhinged speech, attacks Agamemnon. He accuses the king of greed and recalls his mistreatment of Achilles.
 
-> ...It is not right for
+> It is not right for
 >
 > you, their leader, to lead in sorrow the sons of the Achaians.
 >
@@ -116,7 +116,7 @@ The poem then breaks for the Catalogue of Ships, an account of the Greek conting
 
 A messenger brings Achilles the news that he most fears: his friend Patroklos is dead, the Greeks and Trojans are fighting over his body, and Hector has seized Achilles's armor. Achilles collapses in grief: he covers himself with dust and cries out so violently that the messenger holds his hands, fearing that Achilles may kill himself. Thetis, hearing Achilles's cries, comes to Achilles, who tells her that Zeus's will has been done.
 
-> ... All these things the Olympian brought to accomplishment.
+> All these things the Olympian brought to accomplishment.
 >
 > But what pleasure is this to me, since my dear companion has perished,
 >
