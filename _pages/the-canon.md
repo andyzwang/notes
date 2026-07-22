@@ -1,12 +1,15 @@
 ---
-layout: page
-title: The Canon
+layout: page-hero
+title: The political theory canon
 permalink: /the-canon/
+image: /assets/img/the-discussion.jpg
+image_title: The Discussion
+image_author: Renato Guttuso
+image_date: 1960
+image_link: https://www.tate.org.uk/art/artworks/guttuso-the-discussion-t00420
 ---
 
-# The political theory canon
-
-This is my working list of core texts in political theory.
+**This is _one_ list of core texts in political theory.**
 
 Practically, students in Stanford's political theory program are expected to master these texts and authors before advancing to candidacy. Other institutions have, unsurprisingly, similar but not identical reading lists.[^1] Intellectually, the list reflects the fact that political theory is an ongoing conversation with its own tradition. Like any canon, its core texts are contingent, contested, and open to revision. Accordingly, this list serves as both my reading plan and a map of the major debates and themes that organize the discipline.
 
