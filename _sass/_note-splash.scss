@@ -98,6 +98,17 @@
   min-width: 1.5rem;
   margin: 0;
 }
+
+// Decorative star glyphs, paired with .note-splash-eyebrow + .note-splash-rule
+// on the home title (stars, then rule) and as a page-ending divider (rule,
+// then stars) — flexbox order alone gives the mirrored layout, no extra CSS.
+.eyebrow-stars {
+  font-size: clamp(0.8rem, 0.7rem + 0.5vw, 1.05rem);
+  line-height: 1;
+  color: var(--color-subtext);
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+}
 // Image — strict 3:2 crop. max-height / border-radius / margin reset the global img.
 .note-splash-media {
   display: contents;
