@@ -13,7 +13,7 @@ image_link: https://www.tate.org.uk/art/artworks/guttuso-the-discussion-t00420
 
 Practically, students in Stanford's political theory program are expected to master these texts and authors before advancing to candidacy. Other institutions have, unsurprisingly, similar but not identical reading lists.[^1] Intellectually, the list reflects the fact that political theory is an ongoing conversation with its own tradition. Like any canon, its core texts are contingent, contested, and open to revision. Accordingly, this list serves as both my reading plan and a map of the major debates and themes that organize the discipline.
 
-_N.B._ Greyed-out links indicate pages yet to be created. Unbolded authors mark additional texts from my training that, while not on Stanford's official reading list, were presented in conversation with them.
+*N.B.* Greyed-out links indicate pages yet to be created. Unbolded authors mark additional texts from my training that, while not on Stanford's official reading list, were presented in conversation with them.
 
 ## Ancient
 
@@ -391,4 +391,4 @@ _N.B._ Greyed-out links indicate pages yet to be created. Unbolded authors mark 
 
 ## Footnotes
 
-[^1]&#x3A; See, for example, the publicly available political theory reading lists and supplemental reading suggestions from [Yale](https://politicalscience.yale.edu/sites/default/files/2023-01-31-political_theory_reading_list_2021.pdf), [Columbia](https://polisci.columbia.edu/sites/polisci.columbia.edu/files/content/pdfs/Comps/PT%20comps%20revised%20reading%20list%20final%20(Nov%202020).pdf), and [UChicago](https://political-science.uchicago.edu/graduate-study/graduate-degree-requirements/comprehensive-exams/political-theory).
+[^1]: See, for example, the publicly available political theory reading lists and supplemental reading suggestions from [Yale](https://politicalscience.yale.edu/sites/default/files/2023-01-31-political_theory_reading_list_2021.pdf), [Columbia](https://polisci.columbia.edu/sites/polisci.columbia.edu/files/content/pdfs/Comps/PT%20comps%20revised%20reading%20list%20final%20(Nov%202020).pdf), and [UChicago](https://political-science.uchicago.edu/graduate-study/graduate-degree-requirements/comprehensive-exams/political-theory).

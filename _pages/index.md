@@ -13,18 +13,18 @@ permalink: /
 
 </div>
 
-> A historian who takes \[causation] as his point of departure stops telling
+> A historian who takes \[causation\] as his point of departure stops telling
 > the sequence of events like the beads of a rosary. Instead, he grasps the
-> _constellation_ which his own era has formed with a definite earlier one.
+> *constellation* which his own era has formed with a definite earlier one.
 >
-> <cite>Walter Benjamin, _Theses on the Philosophy of History_</cite>
-> {: .main-quote}
+> <cite>Walter Benjamin, *Theses on the Philosophy of History*</cite>
+{: .main-quote}
 
-**This site is an \[[about|experiment]] in thinking.**
+**This site is an [[about|experiment]] in thinking.**
 
-I use this public notebook to gather fragments, concepts, readings, and questions into shifting _constellations_, borrowing \[[Walter Benjamin|Walter Benjamin's]] metaphor. By linking texts across time and space — political theory, philosophy, literature, and beyond — I hope to trace connections between ideas and invite you to think alongside me as they take shape.
+I use this public notebook to gather fragments, concepts, readings, and questions into shifting *constellations*, borrowing [[Walter Benjamin|Walter Benjamin's]] metaphor. By linking texts across time and space — political theory, philosophy, literature, and beyond — I hope to trace connections between ideas and invite you to think alongside me as they take shape.
 
-Explore recently updated notes below, start with \[[the canon]], or jump <a href="#" id="random-note-link" class="internal-link">somewhere unexpected</a>.
+Explore recently updated notes below, start with [[the canon]], or jump <a href="#" id="random-note-link" class="internal-link">somewhere unexpected</a>.
 
 <hr>
 

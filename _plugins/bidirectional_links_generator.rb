@@ -16,15 +16,15 @@
 class BidirectionalLinksGenerator < Jekyll::Generator
   # Frontmatter fields whose wikilinks should be resolved the same way
   # as note body content (e.g. `author: "[[Homer]]"`)
-  METADATA_FIELDS = ["author"].freeze
+  METADATA_FIELDS = ['author'].freeze
 
   WIKILINK_REGEX = /\[\[([^\]]+)\]\]/.freeze
 
   def generate(site)
     @site = site
-    @all_notes = site.collections["notes"].docs
+    @all_notes = site.collections['notes'].docs
     @all_docs = @all_notes + site.pages
-    @link_extension = site.config["use_html_extension"] ? ".html" : ""
+    @link_extension = site.config['use_html_extension'] ? '.html' : ''
 
     @lookup = build_lookup_index(@all_docs)
     @ghost_nodes = {}
@@ -51,14 +51,14 @@ class BidirectionalLinksGenerator < Jekyll::Generator
       filename = File.basename(doc.basename, File.extname(doc.basename))
       index[normalize(filename)] = doc
 
-      title = doc.data["title"]
+      title = doc.data['title']
       index[normalize(title)] = doc if title.is_a?(String)
     end
     index
   end
 
   def normalize(str)
-    str.to_s.downcase.gsub(/[-_\s]+/, " ").strip
+    str.to_s.downcase.gsub(/[-_\s]+/, ' ').strip
   end
 
   def resolve_links_in_doc(doc)
@@ -75,7 +75,7 @@ class BidirectionalLinksGenerator < Jekyll::Generator
   # `inner` is whatever was inside the double brackets, e.g. "Homer" or
   # "the-political|the political".
   def replace_wikilink(doc, inner)
-    name, display = inner.split("|", 2)
+    name, display = inner.split('|', 2)
     display ||= name
     target = @lookup[normalize(name)]
 
@@ -86,7 +86,7 @@ class BidirectionalLinksGenerator < Jekyll::Generator
     else
       register_ghost_link(doc, name) if @all_notes.include?(doc)
       "<span title='There is no note that matches this link.' class='invalid-link'>" \
-      "<span class='invalid-link-brackets'>[[</span>#{display}<span class='invalid-link-brackets'>]]</span></span>"
+        "<span class='invalid-link-brackets'>[[</span>#{display}<span class='invalid-link-brackets'>]]</span></span>"
     end
   end
 
@@ -115,21 +115,21 @@ class BidirectionalLinksGenerator < Jekyll::Generator
   end
 
   def assign_backlinks
-    @all_notes.each { |note| note.data["backlinks"] = @backlinks[note.url] }
+    @all_notes.each { |note| note.data['backlinks'] = @backlinks[note.url] }
   end
 
   def write_graph_data
     graph_nodes = @all_notes
-      .reject { |note| note.path.include?("_notes/index.html") }
+      .reject { |note| note.path.include?('_notes/index.html') }
       .map do |note|
-      {
-        id: note_id_from_note(note),
-        path: "#{@site.baseurl}#{note.url}#{@link_extension}",
-        label: note.data["display_title"] || note.data["title"],
-      }
-    end
+        {
+          id: note_id_from_note(note),
+          path: "#{@site.baseurl}#{note.url}#{@link_extension}",
+          label: note.data['display_title'] || note.data['title'],
+        }
+      end
 
-    File.write("_includes/notes-graph.json", JSON.dump({
+    File.write('_includes/notes-graph.json', JSON.dump({
       edges: dedupe_edges(@graph_edges),
       nodes: graph_nodes + @ghost_nodes.values,
     }))
@@ -160,6 +160,6 @@ class BidirectionalLinksGenerator < Jekyll::Generator
   end
 
   def note_id_from_note(note)
-    note.data["title"].bytes.join
+    note.data['title'].bytes.join
   end
 end

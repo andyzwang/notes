@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require "open3"
+require 'open3'
 
 module Recents
   # Runs as a Jekyll Generator (during the `site.generate` phase, which is
@@ -27,22 +27,22 @@ module Recents
     priority :low
 
     def generate(site)
-      cfg = site.config["last-modified-at"] || {}
-      marker = cfg["ignore-commits-matching"] || "[structure]"
-      ignored = Array(cfg["ignore-commits"]).map { |s| s.to_s.strip }.reject(&:empty?)
+      cfg = site.config['last-modified-at'] || {}
+      marker = cfg['ignore-commits-matching'] || '[structure]'
+      ignored = Array(cfg['ignore-commits']).map { |s| s.to_s.strip }.reject(&:empty?)
 
       # Notes, plus the standalone hero pages (about / passages / the-canon)
       # that share the note hero and so display the same "Updated on" date.
-      hero_pages = site.pages.select { |p| p.data["layout"] == "page-hero" }
-      (site.collections["notes"].docs + hero_pages).each do |page|
+      hero_pages = site.pages.select { |p| p.data['layout'] == 'page-hero' }
+      (site.collections['notes'].docs + hero_pages).each do |page|
         time = last_modified_time(site.source, page.path, marker, ignored)
         next unless time
 
         # `last_modified_at` (a Time) drives the displayed date; the ISO
         # string in `last_modified_at_timestamp` is the sort key used by the
         # "Recent Notes" list on the home page (lexical sort == chronological).
-        page.data["last_modified_at"] = time
-        page.data["last_modified_at_timestamp"] = time.strftime("%FT%T%:z")
+        page.data['last_modified_at'] = time
+        page.data['last_modified_at_timestamp'] = time.strftime('%FT%T%:z')
       end
     end
 
@@ -53,7 +53,7 @@ module Recents
     # file's mtime, so a never-committed or wholly-ignored file still dates.
     def last_modified_time(source, rel_path, marker, ignored)
       commits = git_log_commits(source, rel_path, marker)
-        .reject { |sha, _| ignored_sha?(sha, ignored) }
+                .reject { |sha, _| ignored_sha?(sha, ignored) }
       commits = git_log_commits(source, rel_path, nil) if commits.empty?
 
       return Time.at(commits.first[1].to_i) unless commits.empty?
@@ -70,15 +70,15 @@ module Recents
     # first. When `marker` is given, commits whose message contains it are
     # skipped by git itself. Empty on error / no git.
     def git_log_commits(source, rel_path, marker)
-      args = ["git", "log", "--format=%H %ct"]
-      args += ["--fixed-strings", "--invert-grep", "--grep=#{marker}"] if marker
-      args += ["--", rel_path]
+      args = ['git', 'log', '--format=%H %ct']
+      args += ['--fixed-strings', '--invert-grep', "--grep=#{marker}"] if marker
+      args += ['--', rel_path]
 
       out, status = Open3.capture2(*args, chdir: source)
       return [] unless status.success?
 
       out.lines.filter_map do |line|
-        sha, ct = line.split(" ", 2)
+        sha, ct = line.split(' ', 2)
         ct = ct.to_s.strip
         [sha, ct] unless sha.to_s.empty? || ct.empty?
       end
