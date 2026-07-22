@@ -108,6 +108,7 @@
   color: var(--color-subtext);
   letter-spacing: 0.08em;
   white-space: nowrap;
+  user-select: none;
 }
 // Image — strict 3:2 crop. max-height / border-radius / margin reset the global img.
 .note-splash-media {
