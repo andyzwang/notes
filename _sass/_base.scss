@@ -75,6 +75,9 @@ mark {
 .footnotes {
   color: var(--color-subtext);
   font-size: 0.88em;
+  // Long URLs are single unbreakable tokens; let them wrap mid-string so a
+  // footnote can't stretch the page wider than its container (esp. on mobile).
+  overflow-wrap: anywhere;
 }
 
 .only-desktop{
