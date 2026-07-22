@@ -32,7 +32,7 @@ It was, therefore, a world of small states, fierce competition, and new modes of
 
 The central question of political thought — not just in antiquity, though acutely present here — is formulated by Josh Ober as follows:
 
-> **Who** decides, and **how**, the question of **who**, around **here**, gets **what**, and **why**?
+**Who** decides, and **how**, the question of **who**, around **here**, gets **what**, and **why**?
 
 This question is recursive (circular, though not illogical) in that the *who*, *how*, and *here* depend on the *what* at stake: different groups and peoples have decision authority, using different procedures, over different things, in different settings (for example, thinking about the family versus a democratic state).
 
