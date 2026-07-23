@@ -5,7 +5,7 @@ permalink: /passages/
 image: /assets/img/galerie-dorleans.jpg
 image_title: Galerie d'Orléans, au Palais Royal
 image_author: Philippe Benoist
-image_date: n.d
+image_date: c. 1840.
 image_link: https://www.parismuseescollections.paris.fr/fr/musee-carnavalet/oeuvres/vues-de-paris-galerie-d-orleans-au-palais-royal#infos-principales
 ---
 
