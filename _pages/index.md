@@ -12,11 +12,9 @@ permalink: /
   <hr class="note-splash-rule">
 </div>
 
-> A historian who takes \[causation\] as his point of departure stops telling
-> the sequence of events like the beads of a rosary. Instead, he grasps the
-> *constellation* which his own era has formed with a definite earlier one.
+> It's not that what is past casts its light on what is present, or what is present its light on what is past; rather, image is that wherein what has been comes together in a flash with the now to form a _constellation_. In other words, image is dialectics at a standstill.
 >
-> <cite>Walter Benjamin, *Theses on the Philosophy of History*</cite>
+> <cite>Walter Benjamin, *The Arcades Project* [N2a, 3]</cite>
 {: .main-quote}
 
 **This site is an [[about|experiment]] in thinking.**
