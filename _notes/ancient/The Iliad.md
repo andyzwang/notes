@@ -11,9 +11,9 @@ image_date: c. 1450
 image_link: https://www.getty.edu/art/collection/object/103RAK
 ---
 
-***The Iliad*** is an epic [[Poetry|poem]] from the 8th century BCE, attributed to [[Homer]]. As one of the oldest surviving pieces of literature, it is a foundational text for [[Ancient political thought|ancient political thought]].
+***The Iliad*** (Ἰλιάς) is an epic [[Poetry|poem]] from the 8th century BCE, attributed to [[Homer]]. As one of the oldest surviving pieces of literature, it is a foundational text for [[Ancient political thought|ancient political thought]].
 
-*The Iliad* tells a story from the 10th year of the Trojan War: the conflict between [[Achilles]] and [[Agamemnon]], and the consequences of Achilles’ subsequent withdrawal from battle. While the poem is primarily set during war, it is also a deeply political work: how can [[Justice|justice]] exist in a world governed by personal relationships, honor, and force — rather than political institutions or moral norms?
+*The Iliad*  tells a story from the 10th year of the Trojan War: the conflict between [[Achilles]] and [[Agamemnon]], and the consequences of Achilles’ subsequent withdrawal from battle. While the poem is primarily set during war, it is also a deeply political work: how can [[Justice|justice]] exist in a world governed by personal relationships, honor, and force — rather than political institutions or moral norms?
 
 ## Synopsis
 
