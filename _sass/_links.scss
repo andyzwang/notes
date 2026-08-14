@@ -51,6 +51,17 @@ a {
     color: var(--color-subtext);
     font-size: .88em;
   }
+
+  // Empty link in the hero caption — the ↗ is the whole thing. The caption is
+  // right-aligned, so the glyph's right side bearing reads as a gap at the end
+  // of the line; pull it back so the line ends flush with the one above.
+  &.note-splash-caption-source{
+    padding: 0;
+
+    &:after {
+      margin-right: -0.4em;
+    }
+  }
 }
 
 .backlink-box a{
